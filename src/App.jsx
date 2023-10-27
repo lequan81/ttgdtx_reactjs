@@ -1,16 +1,7 @@
 import { useLayoutEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import ScrollToTopBtn from "./components/ScrollToTopBtn";
-import Landing from "./pages/Landing";
-import About from "./pages/About";
-import FAQ from "./pages/FAQ";
-import ErrorPage from "./pages/ErrorPage";
-import NamHoc from "./pages/TuyenSinh/NamHoc";
-import ChuongTrinhKhac from "./pages/TuyenSinh/ChuongTrinhKhac";
-import DangKy from "./pages/DangKy";
+import * as Pages from "./pages/index.js";
 
 function App() {
   const location = useLocation();
@@ -19,25 +10,34 @@ function App() {
   }, [location]);
   return (
     <>
-      <ScrollToTopBtn />
-      <div className="min-h-screen w-full bg-white dark:bg-gray-900 border border-dashed border-red-400">
-        <Header />
-        <div className="h-full w-full bg-white dark:bg-gray-900">
+      <div className="min-h-screen w-full flex flex-col bg-white dark:bg-gray-900">
+        <Pages.Header />
+        <div className="flex flex-col w-full h-full flex-grow flex-1 bg-gray-100 dark:bg-gray-900">
           <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/tuyen-sinh/">
-              {/* <Route index element={<TuyenSinh />} /> */}
-              <Route path="nh-2023" element={<NamHoc />} />
-              <Route path="chuong-trinh-khac" element={<ChuongTrinhKhac />} />
+            <Route path="/" element={<Pages.Landing />} />
+            <Route path="/enroll">
+              <Route path="/enroll/2023" element={<Pages.CurrentYear />} />
+              <Route path="/enroll/other" element={<Pages.EnrollOther />} />
             </Route>
-            <Route path="/signin" element={<DangKy />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="*" element={<ErrorPage />} />
+            <Route path="/search">
+              <Route path="/search/grade" element={<Pages.Grade />} />
+              <Route
+                path="/search/extra-activities"
+                element={<Pages.Extra />}
+              />
+            </Route>
+            <Route path="/recent" element={<Pages.Recent />} />
+            <Route path="/other" element={<Pages.Other />} />
+            <Route path="/training" element={<Pages.Training />} />
+            <Route path="/signup" element={<Pages.SignUp />} />
+            <Route path="/about" element={<Pages.About />} />
+            <Route path="/faq" element={<Pages.FAQ />} />
+            <Route path="*" element={<Pages.ErrorPage />} />
           </Routes>
         </div>
+        <Pages.Footer location={location.pathname} />
       </div>
-      <Footer />
+      <Pages.ScrollToTopBtn />
     </>
   );
 }

@@ -1,6 +1,4 @@
-import React from "react";
-
-function About() {
+export function About() {
   return (
     <section
       id="#about"
@@ -110,5 +108,3 @@ function About() {
     </section>
   );
 }
-
-export default About;

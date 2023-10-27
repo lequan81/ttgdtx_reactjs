@@ -1,103 +1,94 @@
-import React from "react";
+import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 
-function FAQ() {
+export function FAQ() {
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-      <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
-        <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-          <div>
-            <p className="inline-block px-4 py-2 mb-2 text-2xl font-semibold tracking-wider text-blue-500 dark:text-white uppercase rounded-full bg-teal-accent-400">
-              Một số câu hỏi thường gặp
-            </p>
-          </div>
-          {/* <p className="text-base text-gray-800 dark:text-gray-300 md:text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
-          </p> */}
-        </div>
+    <div className="w-full mt-12 mb-6 px-4 sm:px-6 lg:px-8 mx-auto dark:bg-gray-900 bg-gray-100">
+      <div className="max-w-5xl mx-auto mb-10">
+        <h2 className="text-2xl font-bold md:text-3xl md:leading-tight dark:text-white text-gray-900 select-none mt-4">
+          Bạn đang thắc mắc rằng...
+        </h2>
       </div>
-      <div className="max-w-screen-xl sm:mx-auto">
-        <div className="grid grid-cols-1 gap-16 row-gap-8 lg:grid-cols-2">
-          <div className="space-y-8">
+
+      <div className="max-w-4xl mx-auto divide-y divide-gray-200 dark:divide-gray-700 cursor-default select-none">
+        <div className="py-8 first:pt-4">
+          <div className="flex gap-x-5">
+            <QuestionMarkCircleIcon className="flex-shrink-0 mt-1 w-7 h-7 text-gray-500" />
             <div>
-              <p className="mb-4 text-xl font-medium text-blue-500 dark:text-white">
-                The quick, brown fox jumps over a lazy dog?
-              </p>
-              <p className="text-gray-800 dark:text-gray-300">
-                Space, the final frontier. These are the voyages of the Starship
-                Enterprise. Its five-year mission: to explore strange new
-                worlds.
-                <br />
-                <br />
-                Many say exploration is part of our destiny, but it is actually
-                our duty to future generations.
-              </p>
-            </div>
-            <div>
-              <p className="mb-4 text-xl font-medium text-blue-500 dark:text-white">
-                The first mate and his Skipper too will do?
-              </p>
-              <p className="text-gray-800 dark:text-gray-300">
-                Well, the way they make shows is, they make one show. That show
-                is called a pilot.
-                <br />
-                <br />
-                Then they show that show to the people who make shows, and on
-                the strength of that one show they decide if they are going to
-                make more shows. Some pilots get picked and become television
-                programs.Some do not, become nothing. She starred in one of the
-                ones that became nothing.
-              </p>
-            </div>
-            <div>
-              <p className="mb-4 text-xl font-medium text-blue-500 dark:text-white">
-                Is the Space Pope reptilian!?
-              </p>
-              <p className="text-gray-800 dark:text-gray-300">
-                A flower in my garden, a mystery in my panties. Heart attack
-                never stopped old Big Bear. I did not even know we were calling
-                him Big Bear.
+              <h3 className="md:text-lg font-semibold text-gray-800 dark:text-gray-100">
+                Khi nào tôi có thể hủy khóa học?
+              </h3>
+              <p className="mt-1 text-gray-600 dark:text-gray-400">
+                Bạn có thể hủy khóa học bất cứ lúc nào bạn thích. Tuy nhiên
+                chúng tôi sẽ rất vui nếu bạn có thể cho chúng tôi xin một số
+                nhận xét về khóa học.
               </p>
             </div>
           </div>
-          <div className="space-y-8">
+        </div>
+
+        <div className="py-8 first:pt-4">
+          <div className="flex gap-x-5">
+            <QuestionMarkCircleIcon className="flex-shrink-0 mt-1 w-7 h-7 text-gray-500" />
             <div>
-              <p className="mb-4 text-xl font-medium text-blue-500 dark:text-white">
-                How much money you got on you?
-              </p>
-              <p className="text-gray-800 dark:text-gray-300">
-                The first mate and his Skipper too will do their very best to
-                make the others comfortable in their tropic island nest.
-                <br />
-                <br />
-                Michael Knight a young loner on a crusade to champion the cause
-                of the innocent. The helpless. The powerless in a world of
-                criminals who operate above the law. Here he comes Here comes
-                Speed Racer. He is a demon on wheels.
+              <h3 className="md:text-lg font-semibold text-gray-800 dark:text-gray-100">
+                Làm sao để biết tôi đã đăng ký thành công?
+              </h3>
+              <p className="mt-1 text-gray-600 dark:text-gray-400">
+                Khi bạn đã xác nhận email thông báo đăng ký thành công, hệ thống
+                sẽ gửi email xác nhận đến địa chỉ email bạn đã đăng ký trong
+                vòng từ 5 phút đến 1 tiếng
               </p>
             </div>
+          </div>
+        </div>
+
+        <div className="py-8 first:pt-4">
+          <div className="flex gap-x-5">
+            <QuestionMarkCircleIcon className="flex-shrink-0 mt-1 w-7 h-7 text-gray-500" />
             <div>
-              <p className="mb-4 text-xl font-medium text-blue-500 dark:text-white">
-                Galaxies Orions sword globular star cluster?
-              </p>
-              <p className="text-gray-800 dark:text-gray-300">
-                A business big enough that it could be listed on the NASDAQ goes
-                belly up. Disappears!
-                <br />
-                <br />
-                It ceases to exist without me. No, you clearly do not know who
-                you are talking to, so let me clue you in.
+              <h3 className="md:text-lg font-semibold text-gray-800 dark:text-gray-100">
+                Khi nào tôi sẽ nhận được phản hồi?
+              </h3>
+              <p className="mt-1 text-gray-600 dark:text-gray-400">
+                Sau khi bạn nhận được email xác nhận đăng ký thành công, trong
+                vòng 1-5 ngày sẽ có nhân viên tư vấn liên hệ và tư vấn cho bạn
               </p>
             </div>
+          </div>
+        </div>
+
+        <div className="py-8 first:pt-4">
+          <div className="flex gap-x-5">
+            <QuestionMarkCircleIcon className="flex-shrink-0 mt-1 w-7 h-7 text-gray-500" />
             <div>
-              <p className="mb-4 text-xl font-medium text-blue-500 dark:text-white">
-                When has justice ever been as simple as a rule book?
+              <h3 className="md:text-lg font-semibold text-gray-800 dark:text-gray-100">
+                Vì sao tôi vẫn chưa nhận được email thông báo xác nhận đăng ký?
+              </h3>
+              <p className="mt-1 text-gray-600 dark:text-gray-400">
+                Vì đường truyền Internet có thể bị trục trặc bất ngờ, nên có thể
+                email thông báo xác nhận đăng ký sẽ đến lâu hơn dự kiến. Bạn vui
+                lòng kiên nhẫn chờ đợi nhé!
               </p>
-              <p className="text-gray-800 dark:text-gray-300">
-                This is not about revenge. This is about justice. A lot of
-                things can change in twelve years, Admiral. Well, that is
-                certainly good to know. About four years. I got tired of hearing
-                how young I looked.
+            </div>
+          </div>
+        </div>
+
+        <div className="py-8 first:pt-4">
+          <div className="flex gap-x-5">
+            <QuestionMarkCircleIcon className="flex-shrink-0 mt-1 w-7 h-7 text-gray-500" />
+            <div>
+              <h3 className="md:text-lg font-semibold text-gray-800 dark:text-gray-100">
+                Làm sao để tra cứu kết quả học tập?
+              </h3>
+              <p className="mt-1 text-gray-600 dark:text-gray-400">
+                Mỗi sinh viên sẽ được cấp một mã sinh viên duy nhất, bạn hãy
+                dùng mã này để tra cứu
+                <a
+                  className="no-underline text-blue-500 font-medium"
+                  href="/search/grade"
+                >
+                  {" tại đây"}
+                </a>
               </p>
             </div>
           </div>
@@ -106,5 +97,3 @@ function FAQ() {
     </div>
   );
 }
-
-export default FAQ;
