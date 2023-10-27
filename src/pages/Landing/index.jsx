@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Team from "../../components/Team";
 import Stats from "../../components/Stats";
-import Blog from "../../components/Post";
+import Post from "../../components/Post";
+import data from "../../data/data.json";
 
-function Landing() {
+export function Landing() {
   const slides = [
     {
       url: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2620&q=80",
@@ -55,9 +56,9 @@ function Landing() {
           ></div>
         </div>
         <div className="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
-          <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
-            <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl sm:leading-none">
-              TTGDTX
+          <div className="mb-16 lg:my-40 lg:max-w-xl mx-4 lg:pr-5">
+            <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 dark:text-200 sm:text-4xl sm:leading-none">
+              {data.info[0].heading}
               {/* <br className="hidden md:block" />
               can imagine{" "}
               <span className="inline-block text-deep-purple-accent-400">
@@ -65,13 +66,11 @@ function Landing() {
               </span> */}
             </h2>
             <p className="pr-5 mb-5 text-base text-gray-800 dark:text-gray-100 md:text-lg">
-              Race silent subject pleasant swing straw exchange account tea hit
-              replace honor wash wide me establish distance clothing potatoes
-              student rice raw business physical
+              {data.info[0].description}
             </p>
             <div className="flex items-center">
               <a
-                href="/signin"
+                href="/signup"
                 className="inline-flex items-center justify-center py-2.5 px-3 mr-4 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-600 hover:bg-blue-500 focus:shadow-outline focus:outline-none"
               >
                 Đăng ký ngay
@@ -94,14 +93,12 @@ function Landing() {
       <div className="flex flex-row bg-gray-100 dark:bg-gray-900 border border-dashed border-green-400 w-full">
         <Team />
       </div>
-      <div className="flex flex-col mt-3.5 bg-gray-100 dark:bg-gray-900 border border-dashed border-green-400 w-full">
-        <h1 className="text-center text-blue-600 dark:text-white text-2xl uppercase font-bold mb-2">
+      {/* <div className="flex flex-col mt-3.5 bg-gray-100 dark:bg-gray-900 border border-dashed border-green-400 w-full">
+        <h1 className="text-center text-blue-600 dark:text-white text-2xl uppercase font-bold mb-2 mt-2">
           TIN TỨC MỚI NHẤT
         </h1>
-        <Blog />
-      </div>
+        <Post />
+      </div> */}
     </section>
   );
 }
-
-export default Landing;

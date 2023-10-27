@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Carousle({ slides = [] }) {
+export function Carousle({ slides = [] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const slideDuration = 3000;
 
@@ -23,5 +23,3 @@ function Carousle({ slides = [] }) {
     </div>
   );
 }
-
-export default Carousle;

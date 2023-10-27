@@ -1,5 +1,3 @@
-import React from "react";
-
 function BlogItem() {
   return (
     <div className="overflow-hidden duration-300 bg-white dark:bg-gray-800 rounded shadow-md shadow-gray-400 dark:shadow-none">

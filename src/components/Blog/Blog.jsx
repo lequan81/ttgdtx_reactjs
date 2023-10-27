@@ -1,6 +1,9 @@
-import React from "react";
+import { useEffect } from "react";
 
-function Blog() {
+export function Blog() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <div className="max-w-2xl px-6 py-16 mx-auto space-y-12">
       <article className="space-y-8 dark:bg-gray-800 dark:text-gray-50">
@@ -74,5 +77,3 @@ function Blog() {
     </div>
   );
 }
-
-export default Blog;

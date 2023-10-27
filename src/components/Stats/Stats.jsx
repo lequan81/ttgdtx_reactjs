@@ -1,11 +1,9 @@
-import React from "react";
-
-function Stats() {
+export function Stats() {
   return (
     <>
       <div className="flex flex-col w-full mt-2">
         <div className="px-6 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
-          <h1 className="text-center text-blue-600 dark:text-white text-3xl uppercase font-bold mb-2">
+          <h1 className="text-center text-blue-600 dark:text-white text-2xl uppercase font-bold mb-2 mt-2">
             VÌ SAO HƠN 50.000 HỌC VIÊN LỰA CHỌN TTGDTX?
           </h1>
           <div className="grid row-gap-8 sm:grid-cols-3 gap-x-10">
@@ -13,7 +11,7 @@ function Stats() {
               <h6 className="text-4xl font-bold text-blue-600 dark:text-blue-500">
                 97%
               </h6>
-              <p className="font-bold text-gray-800 dark:text-gray-200">
+              <p className="font-semibold text-gray-800 dark:text-gray-200 text-lg">
                 Sinh viên có việc làm
               </p>
             </div>
@@ -21,7 +19,7 @@ function Stats() {
               <h6 className="text-4xl font-bold text-blue-600 dark:text-blue-500">
                 8%
               </h6>
-              <p className="font-bold text-gray-800 dark:text-gray-200">
+              <p className="font-semibold text-gray-800 dark:text-gray-200 text-lg">
                 Học viên làm việc ở nước ngoài
               </p>
             </div>
@@ -29,24 +27,24 @@ function Stats() {
               <h6 className="text-4xl font-bold text-blue-600 dark:text-blue-500">
                 12%
               </h6>
-              <p className="font-bold text-gray-800 dark:text-gray-200">
+              <p className="font-semibold text-gray-800 dark:text-gray-200 text-lg">
                 Học viên khởi nghiệp
               </p>
             </div>
           </div>
         </div>
 
-        <div className="px-6 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
+        {/* <div className="px-6 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
           <div className="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full text-gray-900 dark:text-white">
             <div className="flex bg-gray-300 dark:bg-gray-800 rounded p-3">
-              {/* <div className="pt-1 mr-4 text-center">
+              <div className="pt-1 mr-4 text-center">
                 <div className="px-2 pb-1 mb-1 border-b border-gray-400">
                   <p className="text-sm text-blue-gray-700">Jul</p>
                 </div>
                 <div className="px-2">
                   <p className="text-lg font-bold">18</p>
                 </div>
-              </div> */}
+              </div>
               <div>
                 <div className="mb-2">
                   <a
@@ -101,14 +99,14 @@ function Stats() {
               </div>
             </div>
             <div className="flex bg-gray-300 dark:bg-gray-800 rounded p-3">
-              {/* <div className="pt-1 mr-4 text-center">
+              <div className="pt-1 mr-4 text-center">
                 <div className="px-2 pb-1 mb-1 border-b border-gray-400">
                   <p className="text-sm text-blue-gray-700">May</p>
                 </div>
                 <div className="px-2">
                   <p className="text-lg font-bold">6</p>
                 </div>
-              </div> */}
+              </div>
               <div>
                 <div className="mb-2">
                   <a
@@ -163,14 +161,14 @@ function Stats() {
               </div>
             </div>
             <div className="flex bg-gray-300 dark:bg-gray-800 rounded p-3">
-              {/* <div className="pt-1 mr-4 text-center">
+              <div className="pt-1 mr-4 text-center">
                 <div className="px-2 pb-1 mb-1 border-b border-gray-400">
                   <p className="text-sm text-blue-gray-700">Feb</p>
                 </div>
                 <div className="px-2">
                   <p className="text-lg font-bold">27</p>
                 </div>
-              </div> */}
+              </div>
               <div>
                 <div className="mb-2">
                   <a
@@ -225,10 +223,8 @@ function Stats() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
 }
-
-export default Stats;
