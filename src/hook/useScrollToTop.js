@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-export default function useScrollToTop(threshold = 300) {
+export default function useScrollToTop(threshold = 250) {
   const [shown, setShown] = useState(false);
   useEffect(() => {
     const scrollCallback = () => {

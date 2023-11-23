@@ -1,1 +1,2 @@
-export { Post as default } from "./Post";
+export { Post as Post } from "./Post";
+export { PostList as PostList } from "./PostList";

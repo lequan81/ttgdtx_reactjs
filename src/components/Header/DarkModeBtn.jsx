@@ -9,7 +9,7 @@ function DarkModeBtn() {
   );
   return (
     <>
-      <div className="flex items-center border border-dashed border-fuchsia-500 rounded-lg h-fit w-fit hover:bg-gray-200 dark:hover:bg-gray-700/50 group">
+      <div className="flex items-center rounded-lg h-fit w-fit hover:bg-gray-200 dark:hover:bg-gray-700/50 group">
         <button
           type="button"
           className="hs-dark-mode-active:hidden block hs-dark-mode p-1.5"
