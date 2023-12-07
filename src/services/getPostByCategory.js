@@ -21,6 +21,10 @@ export const getPostByCategory = async (categoryName) => {
               id
               url
             }
+            category {
+              title
+              name
+            }
           }
         }
       }

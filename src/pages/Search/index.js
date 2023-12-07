@@ -1,2 +1,2 @@
-export {Extra} from './Extra';
-export {Grade} from './Grade';
+export { Extra as Extra } from "./Extra";
+export { Grade as Grade } from "./Grade";

@@ -1,25 +1,36 @@
+import { useState, useEffect } from "react";
 import { useTitle } from "../../hook/useTitle";
-import RefItem from "./RefItem";
-import data from "../../data/data.json";
+import { getDocument } from "../../services/getDocument";
+import DocumentItem from "./DocumentItem";
 
-export function Ref() {
-  useTitle("Thông tin thêm");
+export function Document() {
+  const [documents, setDocuments] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const data = await getDocument();
+      setDocuments(data);
+    })();
+  }, []);
+
+  useTitle("Văn bản tham khảo");
   return (
     <section className="flex flex-col h-full overflow-y-auto mt-12 mb-10 w-full">
       <div className="flex items-center justify-center flex-col">
         <h1 className="text-center text-blue-600 dark:text-white text-xl uppercase font-bold mb-2 mt-4">
-          Thông tin thêm
+          Văn bản tham khảo
         </h1>
       </div>
       <div className="shadow-md shadow-gray-700 dark:shadow-none rounded flex w-full h-full">
         <div className="px-6 py-2.5 mx-auto w-full">
           <div className="grid gap-6 grid-cols-4 sm:max-w-sm sm:mx-auto lg:max-w-full">
-            {data.ref.map((item) => (
-              <RefItem
-                key={item.title}
-                title={item.title}
-                description={item.description}
-                path={item.path}
+            {documents.map((doc) => (
+              <DocumentItem
+                key={doc.id}
+                title={doc.title}
+                description={doc.description}
+                fileName={doc.fileName}
+                url={doc.url}
               />
             ))}
           </div>

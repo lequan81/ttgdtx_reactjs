@@ -107,7 +107,7 @@ export function Landing() {
             <div className="flex items-center mb-28">
               <a
                 href="/signup"
-                className="inline-flex items-center justify-center py-2.5 px-3 mr-4 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-600 hover:bg-blue-500 focus:shadow-outline focus:outline-none"
+                className="inline-flex items-center justify-center py-2.5 px-3 mr-4 font-medium tracking-wide text-white transition duration-300 rounded shadow-md bg-blue-600 hover:bg-blue-500 focus:shadow-outline focus:outline-none"
               >
                 Đăng ký ngay
               </a>

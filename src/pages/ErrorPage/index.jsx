@@ -1,15 +1,7 @@
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { Link, useNavigate } from "react-router-dom";
-import { useTitle } from "../../hook/useTitle";
 
 export function ErrorPage({ errorCode = "404" }) {
-  useTitle(
-    errorCode.toString().match("404")
-      ? "Rất tiếc, trang bạn tìm kiếm không tồn tại!"
-      : errorCode.toString().match("500")
-      ? "Rất tiếc, hệ thống gặp lỗi. Vui lòng quay lại trong ít phút nữa"
-      : ""
-  );
   const navigate = useNavigate();
   return (
     <>
@@ -33,7 +25,7 @@ export function ErrorPage({ errorCode = "404" }) {
               Quay lại trang trước
             </button>
             <Link
-              className="flex items-center justify-center py-2 px-3 border border-transparent font-medium text-white transition duration-200 rounded shadow-md bg-blue-600 hover:bg-blue-500 focus:shadow-outline focus:outline-none"
+              className="flex items-center justify-center py-2 px-3 border border-transparent font-medium text-sm text-white transition duration-200 rounded shadow-md bg-blue-600 hover:bg-blue-500 focus:shadow-outline focus:outline-none"
               to="/"
             >
               Trang chủ

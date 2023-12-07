@@ -27,8 +27,8 @@
         },
         {
           "id": 21,
-          "title": "CĐTC",
-          "subtTitle": "Thông tin tuyển sinh CĐTC",
+          "title": "Cao đẳng Trung cấp",
+          "subtTitle": "Thông tin tuyển sinh Cao đẳng Trung cấp",
           "path": "/tradeschool"
         },
         {
@@ -72,6 +72,13 @@
       "name": "signup",
       "isSubmenu": false,
       "path": "/signup",
+      "children": []
+    },
+    {
+      "title": "Văn bản",
+      "name": "document",
+      "isSubmenu": false,
+      "path": "/document",
       "children": []
     },
     {
@@ -139,7 +146,32 @@
     {
       "title": "Thông tin đăng ký",
       "subTitle": "Vui lòng điền tất cả thông tin vào các ô trống",
-      "subjects": ["Lớp 10", "CĐTC - Dược", "CĐTC - Cơ khí", "CĐTC - Điện tử"]
+      "subjects": [
+        {
+          "value": "",
+          "title": "------"
+        },
+        {
+          "value": "Lớp 10",
+          "title": "Lớp 10"
+        },
+        {
+          "value": "Kinh doanh Thương mại",
+          "title": "Kinh doanh Thương mại"
+        },
+        {
+          "value": "Du lịch",
+          "title": "Du lịch"
+        },
+        {
+          "value": "Cơ khí",
+          "title": "Cơ khí"
+        },
+        {
+          "value": "May",
+          "title": "May"
+        }
+      ]
     }
   ],
   "ref": [

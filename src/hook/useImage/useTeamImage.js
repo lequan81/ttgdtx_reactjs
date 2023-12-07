@@ -8,35 +8,27 @@ export const useTeamImage = () => {
   useEffect(() => {
     const teamInfo = [
       {
-        name: "John Doe",
-        onPosition: "CEO",
+        name: "Nguyễn Văn A",
+        onPosition: "Giám đốc",
       },
       {
-        name: "John Smith",
-        onPosition: "CTO",
+        name: "Võ Thành Sự",
+        onPosition: "Phó Giám đốc",
       },
       {
-        name: "Jane Doe",
-        onPosition: "Director",
-      },
-      {
-        name: "Jane Smith",
-        onPosition: "Project Manager",
-      },
-      {
-        name: "",
-        onPosition: "",
+        name: "Nguyễn Thị Thanh Tâm",
+        onPosition: "Chủ tịch Công đoàn",
       },
     ];
 
     if (isValid) {
       let imageUrl = new URL(
-        `/public/images/teamImage/jpg/team${count}.jpg`,
+        `../../assets/images/teamImage/jpg/teams${count}.jpg`,
         import.meta.url
       ).pathname;
 
       let imageWebpUrl = new URL(
-        `/public/images/teamImage/webp/team${count}.webp`,
+        `../../assets/images/teamImage/webp/team${count}.webp`,
         import.meta.url
       ).pathname;
 
@@ -48,12 +40,12 @@ export const useTeamImage = () => {
             name: teamInfo[count].name || "Không tên",
             onPosition: teamInfo[count].onPosition || "Giáo viên/Trợ giảng",
             url: !imageWebpUrl.includes("undefined")
-              ? imageWebpUrl.replace("/public/", "/")
+              ? imageWebpUrl
               : `https://api.dicebear.com/7.x/initials/svg?randomizeIds=true&seed=${
                   teamInfo[count].name || "Anonymous"
                 }`,
             fallbackUrl: !imageUrl.includes("undefined")
-              ? imageUrl.replace("/public/", "/")
+              ? imageUrl
               : `https://api.dicebear.com/7.x/initials/svg?randomizeIds=true&seed=${
                   teamInfo[count].name || "Anonymous"
                 }`,

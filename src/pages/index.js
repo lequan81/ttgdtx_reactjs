@@ -4,6 +4,7 @@ export { Landing } from "./Landing";
 export { Grade10, TradeSchool, Other } from "./Enroll";
 export { Grade, Extra } from "./Search";
 export { Ref } from "./Ref";
+export { Document } from "./Document";
 export { SignUp } from "./SignUp";
 export { Recent } from "./Recent";
 export { Training } from "./Training";

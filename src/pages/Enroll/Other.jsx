@@ -11,7 +11,7 @@ export function Other() {
       <div className="shadow-md shadow-gray-700 dark:shadow-none rounded flex w-full h-full">
         <div className="px-6 py-2.5 mx-auto w-full">
           <div className="grid gap-6 lg:grid-cols-4 sm:max-w-sm sm:mx-auto lg:max-w-full">
-            <PostList category={"other"} />
+            <PostList category={"other"} isNested={true} />
           </div>
         </div>
       </div>

@@ -34,9 +34,9 @@ export function Recently() {
                   post.coverImage?.url ||
                   "https://picsum.photos/seed/picsum/600"
                 }
-                hashtag={post.hashtag}
+                hashtag={post.category.name}
                 createdAt={post.createdAt}
-                path={`/recently/${post.slug}`}
+                path={`recently/${post.slug}`}
               />
             ))}
           </div>

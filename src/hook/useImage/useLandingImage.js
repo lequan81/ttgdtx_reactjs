@@ -8,12 +8,12 @@ export const useLandingImage = () => {
   useEffect(() => {
     if (isValid) {
       let imageUrl = new URL(
-        `/public/images/landingImage/jpg/landingImage${count}.jpg`,
+        `../../assets/images/landingImage/jpg/landingImage${count}.jpg`,
         import.meta.url
       ).pathname;
 
       let imageWebpUrl = new URL(
-        `/public/images/landingImage/webp/landingImage${count}.webp`,
+        `../../assets/images/landingImage/webp/landingImage${count}.webp`,
         import.meta.url
       ).pathname;
 
@@ -22,12 +22,8 @@ export const useLandingImage = () => {
           ...images,
           {
             id: count,
-            url: !imageWebpUrl.includes("undefined")
-              ? imageWebpUrl.replace("/public/", "/")
-              : "",
-            fallbackUrl: !imageUrl.includes("undefined")
-              ? imageUrl.replace("/public/", "/")
-              : "",
+            url: !imageWebpUrl.includes("undefined") ? imageWebpUrl : "",
+            fallbackUrl: !imageUrl.includes("undefined") ? imageUrl : "",
           },
         ]);
         setCount(count + 1);

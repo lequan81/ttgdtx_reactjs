@@ -40,8 +40,9 @@ export function Contact() {
             />
           ),
           ariaLabel: "address",
-          value: "102 Hai Bà Trưng, KP8, thị trấn Vĩnh An, Vĩnh Cửu, Đồng Nai",
-          href: "https://www.google.com/maps",
+          value:
+            "102 Phan Chu Trinh, KP8, thị trấn Vĩnh An, Vĩnh Cửu, Đồng Nai",
+          href: "https://maps.app.goo.gl/FjbgZDYWGJ9a8ArUA?g_st=iz",
         },
         {
           title: "Email",
@@ -56,8 +57,8 @@ export function Contact() {
             />
           ),
           ariaLabel: "email",
-          value: "info@email.com",
-          href: "mailto:info@email.com",
+          value: "gdtx.gdtxvinhcuu@dongnai.edu.vn",
+          href: "mailto:gdtx.gdtxvinhcuu@dongnai.edu.vn",
         },
       ],
     },
@@ -77,7 +78,7 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-2 mt-10 md:grid-cols-2 lg:grid-cols-3">
           {contactInfo[0].children.map((item) => (
             <ContactItem
               key={item.title}

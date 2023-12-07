@@ -2,7 +2,6 @@ import { useLayoutEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
-import { useTitle } from "../../hook/useTitle";
 import { getPostContent } from "../../services/getPostContent";
 import HashtagItem from "./HashtagItem";
 
@@ -49,8 +48,6 @@ export function Blog() {
     });
   }, [results]);
 
-  useTitle(blogDatas.title);
-
   return (
     <div className="w-full px-20 mt-16 mx-auto">
       <article
@@ -65,7 +62,7 @@ export function Blog() {
             <div className="space-x-24 flex flex-row w-full">
               <div className="flex flex-row grow">
                 <div className="flex flex-col">
-                  <h1 className="text-4xl font-bold">{blogDatas.title}</h1>
+                  <h1 className="text-3xl font-bold">{blogDatas.title}</h1>
                   <p className=" dark:bg-blue-400 dark:text-gray-900 text-blue-500 bg-sky-100 rounded-sm w-fit flex items-center justify-center text-left tracking-wide text-base mt-4 px-1.5 py-1">
                     {blogDatas.category.name}
                   </p>
@@ -83,26 +80,25 @@ export function Blog() {
                 </p>
               </div>
             </div>
-            <div className="dark:text-gray-100">
+            <div className="dark:text-gray-100 mx-4">
               {Object.keys(blogDatas.content).length !== 0 && (
                 <RichText
                   content={blogDatas.content}
                   references={blogDatas.references}
                   renderers={{
-                    p: ({ children }) => {
-                      if (children.props.content.length > 0) {
-                        return (
-                          <p className="text-gray-900 dark:text-white mb-1.5">
-                            {children}
-                          </p>
-                        );
-                      } else return <br />;
-                    },
+                    p: ({ children }) =>
+                      children.props.content[0].text !== "\n\n" ? (
+                        <p className="text-gray-900 dark:text-white mb-1.5">
+                          {children}
+                        </p>
+                      ) : (
+                        <br className="my-1.5 py-1.5" />
+                      ),
                     img: ({ src, altText }) => (
                       <figure className="mx-auto my-2 max-w-2xl bg-white/30 dark:bg-gray-800/70">
                         <img
                           loading="lazy"
-                          className="object-cover bg-center aspect-video rounded bg-no-repeat max-w-2xl mx-auto my-2"
+                          className="object-cover bg-center aspect-video rounded bg-no-repeat max-w-2xl mx-auto my-2 bg-transparent"
                           src={src}
                           alt={altText}
                         />
@@ -122,7 +118,11 @@ export function Blog() {
         <div className="hidden md:flex items-center justify-start w-3/12 py-2 dark:text-gray-400 text-gray-700 group">
           <button
             className="flex items-center justify-center text-sm gap-x-2 group-hover:text-blue-500 dark:group-hover:text-gray-200"
-            onClick={() => navigate(-1)}
+            onClick={() =>
+              location.pathname.includes("/recently")
+                ? navigate("/")
+                : navigate(-1)
+            }
           >
             <ArrowLeftIcon className="w-5 h-5 rtl:rotate-180" strokeWidth={2} />
             <span className="font-semibold">Quay lại</span>

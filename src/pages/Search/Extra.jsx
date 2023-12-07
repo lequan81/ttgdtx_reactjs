@@ -13,7 +13,7 @@ export function Extra() {
         <div className="px-6 py-2.5 mx-auto w-full">
           <div className="grid gap-6 lg:grid-cols-4 sm:max-w-sm sm:mx-auto lg:max-w-full">
             {/* Post List */}
-            <PostList category={"extra-activities"} />
+            <PostList category={"extra-activities"} isNested={true} />
           </div>
         </div>
       </div>

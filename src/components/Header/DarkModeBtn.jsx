@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import useDarkMode from "../../hook/useDarkMode";
 
 function DarkModeBtn() {
@@ -19,7 +19,10 @@ function DarkModeBtn() {
             setIsDarkMode(!isDarkMode);
           }}
         >
-          <SunIcon className="w-6 h-6 text-gray-600 group-hover:text-blue-600 font-medium dark:text-gray-400 dark:group-hover:text-gray-200" />
+          <SunIcon
+            className="w-5 h-5 text-gray-600 group-hover:text-blue-600 font-medium dark:text-gray-400 dark:group-hover:text-gray-200 group-hover:rotate-180 duration-300"
+            strokeWidth={2}
+          />
         </button>
         <button
           type="button"
@@ -30,7 +33,10 @@ function DarkModeBtn() {
             setIsDarkMode(!isDarkMode);
           }}
         >
-          <MoonIcon className="w-6 h-6 text-gray-600 group-hover:text-blue-600 font-medium dark:text-gray-400 dark:group-hover:text-gray-200" />
+          <MoonIcon
+            className="w-5 h-5 text-gray-600 group-hover:text-blue-600 font-medium dark:text-gray-400 dark:group-hover:text-gray-200 group-hover:rotate-[360deg] duration-500"
+            strokeWidth={2}
+          />
         </button>
       </div>
     </>
