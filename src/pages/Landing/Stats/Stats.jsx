@@ -5,7 +5,7 @@ export function Stats() {
         <div className="container px-6 py-8 mx-auto">
           <div className="text-center">
             <h1 className="text-center text-blue-600 dark:text-blue-500 text-xl uppercase font-bold mb-2 mt-2">
-              Vì sao hơn 8.000 học viên lựa chọn TT GDNN-GDTX Vĩnh Cửu
+              Vì sao hơn 8.000 học viên lựa chọn Trung tâm GDNN-GDTX Vĩnh Cửu
             </h1>
           </div>
         </div>

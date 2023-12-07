@@ -57,9 +57,11 @@ export function Landing() {
           ></div>
         </div>
         <div className="relative flex flex-col items-start w-full max-w-xl px-4 md:px-0 lg:px-8 lg:max-w-screen-xl">
-          <div className="h-fit mt-16 max-w-2xl mx-4 pr-5">
-            <h2 className="mb-8 font-sans text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl sm:leading-none">
-              {data.landing[0].heading}
+          <div className="h-fit mt-16 max-w-xl mx-4 pr-5">
+            <h2 className="mb-8 font-sans text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl sm:leading-none w-3/4">
+              {/* {data.landing[0].heading} */}
+              Trung tâm Giáo dục nghề nghiệp - Giáo dục thường xuyên huyện Vĩnh
+              Cửu
               {/* <br className="hidden md:block" />
               can imagine{" "}
               <span className="inline-block text-deep-purple-accent-400">

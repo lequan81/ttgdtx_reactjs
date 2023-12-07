@@ -19,6 +19,14 @@ export const useTeamImage = () => {
         name: "Nguyễn Thị Thanh Tâm",
         onPosition: "Chủ tịch Công đoàn",
       },
+      {
+        name: "Nguyễn Thị Thu Huyền",
+        onPosition: "Phòng Đào tạo nghề",
+      },
+      {
+        name: "Phạm Thị Hòa",
+        onPosition: "Phòng Hành chính tổng hợp",
+      },
     ];
 
     if (isValid) {

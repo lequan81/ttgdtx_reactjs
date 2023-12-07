@@ -4,10 +4,10 @@ export function Footer() {
   return (
     <footer className="px-4 py-1 mt-auto mx-auto w-full text-gray-900 dark:text-white md:px-16 lg:px-8 bg-gray-200 dark:bg-gray-800 bottom-0 fixed z-10">
       <div className="flex items-center flex-row w-full">
-        <p className="w-1/3 flex items-center justify-start text-sm text-gray-600 dark:text-gray-300">
+        <p className="w-1/2 flex items-center justify-start text-sm text-gray-600 dark:text-gray-300">
           © 2023 TTGDNN-GDTX huyện Vĩnh Cửu.
         </p>
-        <ul className="flex flex-row w-full flex-grow items-center justify-center mb-3 mr-12 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5">
+        <ul className="flex flex-row w-full flex-grow items-center justify-end mb-3 mr-12 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5">
           <li>
             <NavLink
               to="/faq"
@@ -51,7 +51,7 @@ export function Footer() {
             </NavLink>
           </li>
         </ul>
-        <div className="flex w-1/3 flex-row items-center justify-end">
+        <div className="flex w-fit flex-row items-center justify-end">
           {/* Instagram */}
           {/* <a
             href="#"
