@@ -4,6 +4,7 @@ import { RichText } from "@graphcms/rich-text-react-renderer";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { getPostContent } from "../../services/getPostContent";
 import HashtagItem from "./HashtagItem";
+import Button from "../Button";
 
 export function Blog() {
   useLayoutEffect(() => {
@@ -49,9 +50,9 @@ export function Blog() {
   }, [results]);
 
   return (
-    <div className="w-full px-20 mt-16 mx-auto">
+    <div className="w-full sm:px-20 px-0 sm:mt-16 mt-12 mx-auto">
       <article
-        className={`space-y-8 text-gray-900 dark:text-gray-50 p-6 min-h-[80vh] shadow-md shadow-gray-300 dark:shadow-none rounded-sm ${
+        className={`space-y-8 text-gray-900 dark:text-gray-50 sm:p-6 p-4 min-h-[80vh] shadow-md shadow-gray-300 dark:shadow-none rounded-sm ${
           blogDatas.isDone
             ? "dark:bg-gray-800/70 bg-white/50"
             : "dark:bg-gray-800 bg-white/80 animate-pulse"
@@ -59,16 +60,25 @@ export function Blog() {
       >
         {blogDatas.isDone === true && (
           <>
-            <div className="space-x-24 flex flex-row w-full">
-              <div className="flex flex-row grow">
-                <div className="flex flex-col">
-                  <h1 className="text-3xl font-bold">{blogDatas.title}</h1>
-                  <p className=" dark:bg-blue-400 dark:text-gray-900 text-blue-500 bg-sky-100 rounded-sm w-fit flex items-center justify-center text-left tracking-wide text-base mt-4 px-1.5 py-1">
-                    {blogDatas.category.name}
-                  </p>
-                </div>
+            <div className="sm:space-x-24 space-x-0 flex sm:flex-row flex-col w-full">
+              <div className="flex flex-col w-full grow">
+                <h1 className="sm:text-3xl text-lg font-bold">
+                  {blogDatas.title}
+                </h1>
+                <p className=" dark:bg-blue-400 dark:text-gray-900 text-blue-500 bg-sky-100 rounded-sm w-fit flex items-center justify-center text-left tracking-wide sm:text-base text-sm mt-4 px-1.5 py-1">
+                  {blogDatas.category.name}
+                </p>
+                <p className="text-xs sm:hidden mt-2 text-gray-700 dark:text-gray-400">
+                  {new Date(
+                    blogDatas.createdAt || "01/01/1970"
+                  ).toLocaleDateString("vi-VN", {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric",
+                  })}
+                </p>
               </div>
-              <div className="flex items-center w-fit dark:text-gray-400">
+              <div className="hidden sm:flex items-center grow flex-row w-fit dark:text-gray-400">
                 <p className="text-sm">
                   {new Date(
                     blogDatas.createdAt || "01/01/1970"
@@ -80,7 +90,7 @@ export function Blog() {
                 </p>
               </div>
             </div>
-            <div className="dark:text-gray-100 mx-4">
+            <div className="dark:text-gray-100 sm:mx-4 mx-1">
               {Object.keys(blogDatas.content).length !== 0 && (
                 <RichText
                   content={blogDatas.content}
@@ -88,17 +98,17 @@ export function Blog() {
                   renderers={{
                     p: ({ children }) =>
                       children.props.content[0].text !== "\n\n" ? (
-                        <p className="text-gray-900 dark:text-white mb-1.5">
+                        <p className="text-gray-900 dark:text-white mb-1.5 sm:text-base text-sm">
                           {children}
                         </p>
                       ) : (
                         <br className="my-1.5 py-1.5" />
                       ),
                     img: ({ src, altText }) => (
-                      <figure className="mx-auto my-2 max-w-2xl bg-white/30 dark:bg-gray-800/70">
+                      <figure className="mx-auto my-2 sm:max-w-2xl w-full bg-white/30 dark:bg-gray-800/70">
                         <img
                           loading="lazy"
-                          className="object-cover bg-center aspect-video rounded bg-no-repeat max-w-2xl mx-auto my-2 bg-transparent"
+                          className="object-cover bg-center aspect-video rounded bg-no-repeat sm:max-w-2xl w-full mx-auto my-2 bg-transparent"
                           src={src}
                           alt={altText}
                         />
@@ -114,21 +124,31 @@ export function Blog() {
           </>
         )}
       </article>
-      <div className="mx-2 text-sm dark:text-gray-400 mt-3 mb-9 flex flex-row space-x-0 md:space-x-2">
-        <div className="hidden md:flex items-center justify-start w-3/12 py-2 dark:text-gray-400 text-gray-700 group">
-          <button
-            className="flex items-center justify-center text-sm gap-x-2 group-hover:text-blue-500 dark:group-hover:text-gray-200"
-            onClick={() =>
+      <div className="mx-2 text-sm dark:text-gray-400 sm:mt-3 sm:mb-9 mt-4 mb-24 flex sm:flex-row flex-col-reverse space-x-0 space-y-2 sm:space-y-0 sm:space-x-2">
+        <div className="flex items-center justify-start sm:w-3/12 w-full py-2 dark:text-gray-400 text-gray-700 group">
+          <Button
+            title={"Quay lại"}
+            type={"button"}
+            onClickHandle={() =>
               location.pathname.includes("/recently")
                 ? navigate("/")
                 : navigate(-1)
             }
-          >
+            isIcon={true}
+            isLoading={false}
+            icon={
+              <ArrowLeftIcon
+                className="w-5 h-5 rtl:rotate-180"
+                strokeWidth={2}
+              />
+            }
+          />
+          {/* <button className="flex items-center justify-center text-sm gap-x-2 group-hover:text-blue-500 dark:group-hover:text-gray-200">
             <ArrowLeftIcon className="w-5 h-5 rtl:rotate-180" strokeWidth={2} />
             <span className="font-semibold">Quay lại</span>
-          </button>
+          </button> */}
         </div>
-        <div className="flex items-center justify-start flex-grow md:flex-grow-0 md:justify-end w-full space-x-2">
+        <div className="flex items-center justify-start flex-grow sm:flex-grow-0 sm:justify-end w-full space-x-2">
           {blogDatas.hashtag.map((data) => (
             <HashtagItem key={data} title={data} />
           ))}

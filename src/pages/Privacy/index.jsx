@@ -2,7 +2,7 @@ export function Privacy() {
   return (
     <section className="flex flex-col h-full overflow-y-auto mt-12 mb-10 w-full">
       <div className="flex items-center justify-center flex-col">
-        <h1 className="text-center text-blue-600 dark:text-white text-xl uppercase font-bold mb-2 mt-4">
+        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl text-lg uppercase font-bold mb-2 mt-4">
           Chính sách bảo mật
         </h1>
       </div>

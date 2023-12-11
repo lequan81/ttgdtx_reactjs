@@ -24,10 +24,9 @@ export const getStudentGrade = async (className, studentId) => {
         });
       })
       .catch(() => {
-        result = -1;
+        result = -5;
       });
   }
-  console.log(result);
   return result !== undefined ? result : -4;
 };
 

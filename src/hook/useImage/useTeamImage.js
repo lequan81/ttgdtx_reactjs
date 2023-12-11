@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import data from "../../data/data.json";
 
 export const useTeamImage = () => {
   const [images, setImages] = useState([]);
@@ -6,29 +7,6 @@ export const useTeamImage = () => {
   const [isValid, setIsValid] = useState(true);
 
   useEffect(() => {
-    const teamInfo = [
-      {
-        name: "Nguyễn Văn A",
-        onPosition: "Giám đốc",
-      },
-      {
-        name: "Võ Thành Sự",
-        onPosition: "Phó Giám đốc",
-      },
-      {
-        name: "Nguyễn Thị Thanh Tâm",
-        onPosition: "Chủ tịch Công đoàn",
-      },
-      {
-        name: "Nguyễn Thị Thu Huyền",
-        onPosition: "Phòng Đào tạo nghề",
-      },
-      {
-        name: "Phạm Thị Hòa",
-        onPosition: "Phòng Hành chính tổng hợp",
-      },
-    ];
-
     if (isValid) {
       let imageUrl = new URL(
         `../../assets/images/teamImage/jpg/teams${count}.jpg`,
@@ -40,22 +18,23 @@ export const useTeamImage = () => {
         import.meta.url
       ).pathname;
 
-      if (count < teamInfo.length) {
+      if (count < data.teams[0].children.length) {
         setImages([
           ...images,
           {
             id: count,
-            name: teamInfo[count].name || "Không tên",
-            onPosition: teamInfo[count].onPosition || "Giáo viên/Trợ giảng",
+            name: data.teams[0].children[count].name || "Không tên",
+            onPosition:
+              data.teams[0].children[count].onPosition || "Giáo viên/Trợ giảng",
             url: !imageWebpUrl.includes("undefined")
               ? imageWebpUrl
-              : `https://api.dicebear.com/7.x/initials/svg?randomizeIds=true&seed=${
-                  teamInfo[count].name || "Anonymous"
+              : `https://api.dicebear.com/7.x/initials/svg?fontSize=40&randomizeIds=true&seed=${
+                  data.teams[0].children[count].name || "Anonymous"
                 }`,
             fallbackUrl: !imageUrl.includes("undefined")
               ? imageUrl
-              : `https://api.dicebear.com/7.x/initials/svg?randomizeIds=true&seed=${
-                  teamInfo[count].name || "Anonymous"
+              : `https://api.dicebear.com/7.x/initials/svg?fontSize=40&randomizeIds=true&seed=${
+                  data.teams[0].children[count].name || "Anonymous"
                 }`,
           },
         ]);

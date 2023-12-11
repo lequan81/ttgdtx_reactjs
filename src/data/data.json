@@ -2,6 +2,7 @@
   "landing": [
     {
       "heading": "Trung tâm GDNN-GDTX huyện Vĩnh Cửu",
+      "title": "GDNN-GDTX huyện Vĩnh Cửu",
       "description": "Chương trình đào tạo của trung tâm GDNN-GDTX huyện Vĩnh Cửu được thiết kế dựa trên sự tham vấn của chuyên gia, chú trọng thực hành, phù hợp với nhu cầu mà nhà tuyển dụng tìm kiếm ở nguồn nhân lực thế hệ mới."
     }
   ],
@@ -89,10 +90,72 @@
       "children": []
     }
   ],
+  "contact": [
+    {
+      "title": "Thông tin liên hệ",
+      "subTitle": "Sự hài lòng của các bạn là trách nhiệm của chúng tôi",
+      "children": [
+        {
+          "title": "Liên hệ",
+          "subTitle": "Thứ 2 - Thứ 6 từ 8h - 19h",
+          "isIcon": true,
+          "icon": "phone",
+          "ariaLabel": "phone number",
+          "value": "0975940054",
+          "href": "tel:0975940054"
+        },
+        {
+          "title": "Địa chỉ",
+          "subTitle": "Luôn mở cửa các ngày trong tuần",
+          "isIcon": true,
+          "icon": "address",
+          "ariaLabel": "address",
+          "value": "102 Phan Chu Trinh, KP8, thị trấn Vĩnh An, Vĩnh Cửu, Đồng Nai",
+          "href": "https://maps.app.goo.gl/FjbgZDYWGJ9a8ArUA?g_st=iz"
+        },
+        {
+          "title": "Email",
+          "subTitle": "Làm việc 24/7",
+          "isIcon": true,
+          "icon": "email",
+          "ariaLabel": "email",
+          "value": "gdtx.gdtxvinhcuu@dongnai.edu.vn",
+          "href": "mailto:gdtx.gdtxvinhcuu@dongnai.edu.vn"
+        }
+      ]
+    }
+  ],
   "teams": [
     {
       "title": "Về chúng tôi",
-      "subTitle": "Giảng viên giàu kinh nghiệm, có trình độ chuyên môn cao, trải qua kì tuyển chọn đặc biệt"
+      "subTitle": "Giảng viên giàu kinh nghiệm, có trình độ chuyên môn cao, trải qua kì tuyển chọn đặc biệt",
+      "children": [
+        {
+          "name": "Nguyễn Văn A",
+          "onPosition": "Giám đốc",
+          "contact": ""
+        },
+        {
+          "name": "Võ Thành Sự",
+          "onPosition": "Phó Giám đốc",
+          "contact": ""
+        },
+        {
+          "name": "Nguyễn Thị Thanh Tâm",
+          "onPosition": "Chủ tịch Công đoàn",
+          "contact": ""
+        },
+        {
+          "name": "Ngô Thị Thu Huyền",
+          "onPosition": "Phòng Đào tạo nghề",
+          "contact": ""
+        },
+        {
+          "name": "Phạm Thị Hòa",
+          "onPosition": "Phòng Hành chính tổng hợp",
+          "contact": ""
+        }
+      ]
     }
   ],
   "faq": [
@@ -111,7 +174,7 @@
           "id": 2,
           "isLink": false,
           "ques": "Làm sao để biết tôi đã đăng ký thành công?",
-          "ans": "Khi bạn đã xác nhận email thông báo đăng ký thành công, hệ thống sẽ gửi email xác nhận đến địa chỉ email bạn đã đăng ký trong vòng từ 5 phút đến 1 tiếng",
+          "ans": "Khi bạn đã đăng ký thành công, hệ thống sẽ hiển thị thông báo đã đăng ký thành công trên màn hình",
           "linkTitle": "",
           "href": ""
         },
@@ -119,20 +182,12 @@
           "id": 3,
           "isLink": false,
           "ques": "Khi nào tôi sẽ nhận được phản hồi?",
-          "ans": "Sau khi bạn nhận được email xác nhận đăng ký thành công, trong vòng 1-5 ngày sẽ có nhân viên tư vấn liên hệ và tư vấn cho bạn",
+          "ans": "Sau khi bạn đăng ký thành công, trong vòng 1-5 ngày sẽ có nhân viên tư vấn liên hệ và tư vấn cho bạn",
           "linkTitle": "",
           "href": ""
         },
         {
           "id": 4,
-          "isLink": false,
-          "ques": "Vì sao tôi vẫn chưa nhận được email thông báo xác nhận đăng ký?",
-          "ans": "Vì đường truyền Internet có thể bị trục trặc bất ngờ, nên có thể email thông báo xác nhận đăng ký sẽ đến lâu hơn dự kiến. Bạn vui lòng kiên nhẫn chờ đợi nhé!",
-          "linkTitle": "",
-          "href": ""
-        },
-        {
-          "id": 5,
           "isLink": true,
           "ques": "Làm sao để tra cứu kết quả học tập?",
           "ans": "Mỗi sinh viên sẽ được cấp một mã sinh viên duy nhất, bạn hãy dùng mã này để tra cứu",
@@ -177,7 +232,7 @@
   "ref": [
     {
       "title": "UBND huyện Vĩnh Cửu",
-      "description": "",
+      "description": "Website chính thức của UBND huyện Vĩnh Cửu",
       "path": "https://vinhcuu.dongnai.gov.vn/Pages/home.aspx"
     }
   ]

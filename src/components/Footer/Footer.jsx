@@ -2,60 +2,65 @@ import { NavLink } from "react-router-dom";
 
 export function Footer() {
   return (
-    <footer className="px-4 py-1 mt-auto mx-auto w-full text-gray-900 dark:text-white md:px-16 lg:px-8 bg-gray-200 dark:bg-gray-800 bottom-0 fixed z-10">
-      <div className="flex items-center flex-row w-full">
-        <p className="w-1/2 flex items-center justify-start text-sm text-gray-600 dark:text-gray-300">
-          © 2023 TTGDNN-GDTX huyện Vĩnh Cửu.
+    <footer className="px-4 py-1 mt-auto mx-auto w-full text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-800 bottom-0 fixed z-10">
+      <div className="flex items-center flex-col sm:flex-row w-full">
+        <p className="sm:w-1/2 w-0 flex items-center justify-start text-sm text-gray-700 dark:text-gray-300">
+          <span className="hidden sm:block">
+            © 2023 TTGDNN-GDTX huyện Vĩnh Cửu
+          </span>
         </p>
-        <ul className="flex flex-row w-full flex-grow items-center justify-end mb-3 mr-12 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5">
+        <ul className="flex flex-row w-full flex-grow sm:gap-x-4 mr-0 sm:mr-4 items-center justify-around sm:justify-end mb-3 lg:mb-0">
           <li>
             <NavLink
               to="/faq"
               className={({ isActive }) =>
-                `text-sm transition-colors duration-300 ${
+                `text-xs sm:text-sm transition-colors whitespace-pre-line sm:whitespace-normal duration-300 ${
                   isActive
                     ? "text-blue-500"
-                    : "text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500"
+                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
                 }`
               }
             >
-              Câu hỏi thường gặp
+              {`Câu hỏi \n thường gặp`}
             </NavLink>
           </li>
           <li>
             <NavLink
               to="/privacy"
               className={({ isActive }) =>
-                `text-sm transition-colors duration-300 ${
+                `text-xs sm:text-sm transition-colors whitespace-pre-line sm:whitespace-normal duration-300 ${
                   isActive
                     ? "text-blue-500"
-                    : "text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500"
+                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
                 }`
               }
             >
-              Chính sách bảo mật
+              {`Chính sách \n bảo mật`}
             </NavLink>
           </li>
           <li>
             <NavLink
               to="/statement"
               className={({ isActive }) =>
-                `text-sm transition-colors duration-300 ${
+                `text-xs sm:text-sm transition-colors whitespace-pre-line sm:whitespace-normal duration-300 ${
                   isActive
                     ? "text-blue-500"
-                    : "text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500"
+                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
                 }`
               }
             >
-              Các điều khoản
+              {`Các \n điều khoản`}
             </NavLink>
           </li>
         </ul>
-        <div className="flex w-fit flex-row items-center justify-end">
+        <div className="flex flex-grow md:flex-grow-0 sm:w-fit w-full flex-row items-center sm:justify-end sm:mb-0 mb-2">
+          <p className="sm:hidden flex items-center w-full justify-start text-sm text-gray-700 dark:text-gray-300">
+            <span className="block">© 2023 TTGDNN-GDTX huyện Vĩnh Cửu</span>
+          </p>
           {/* Instagram */}
           {/* <a
             href="#"
-            className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-400"
+            className="mx-2 text-gray-700 transition-colors duration-300 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-400"
             aria-label="Instagram"
           >
             <svg
@@ -70,7 +75,7 @@ export function Footer() {
           <a
             href="https://www.facebook.com/profile.php?id=100069135613333&mibextid=LQQJ4d"
             target="_blank"
-            className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+            className="mx-2 text-gray-700 transition-colors duration-300 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
             aria-label="Facebook"
             rel="noreferrer"
           >

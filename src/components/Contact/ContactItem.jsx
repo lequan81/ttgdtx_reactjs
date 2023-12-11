@@ -17,9 +17,11 @@ function ContactItem({
       <h2 className="mt-4 text-lg font-medium text-gray-800 dark:text-white">
         {title}
       </h2>
-      <p className="mt-2 text-gray-500 dark:text-gray-400">{subTitle}</p>
+      <p className="mt-2 text-gray-700 dark:text-gray-400 text-sm sm:text-base">
+        {subTitle}
+      </p>
       <a
-        className="mt-2 text-blue-500 dark:text-blue-400"
+        className="mt-2 text-blue-700 dark:text-blue-400"
         href={href}
         aria-label={ariaLabel}
         title={ariaLabel}

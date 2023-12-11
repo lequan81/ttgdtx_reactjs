@@ -12,7 +12,7 @@ export default function GradeItem({
     <>
       <label
         htmlFor={id}
-        className="leading-7 text-sm text-gray-600 dark:text-gray-200"
+        className="leading-7 text-sm text-gray-700 dark:text-gray-200"
       >
         {title}
         <span className="text-red-500"> {isRequired ? " *" : null}</span>

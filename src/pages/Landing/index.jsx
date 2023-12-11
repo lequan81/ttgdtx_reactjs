@@ -7,6 +7,7 @@ import Team from "./Team";
 import Stats from "./Stats";
 import Recently from "./Recently";
 import data from "../../data/data.json";
+import Button from "../../components/Button";
 
 export function Landing() {
   useTitle("Trang chủ");
@@ -31,7 +32,7 @@ export function Landing() {
       <div className="bg-white/70 dark:bg-gray-800/30 shadow-md transition-shadow shadow-gray-400 dark:shadow-none relative flex flex-col py-4 lg:pt-0 lg:flex-col lg:pb-0">
         <div className="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
           <svg
-            className="absolute left-0 z-10 max-w-sm w-full hidden h-full text-blue-500 dark:text-blue-700 origin-center transition-transform transform-gpu -translate-x-1/2 lg:block animate-none"
+            className="sm:absolute left-0 z-10 max-w-sm w-full hidden h-full text-blue-500 dark:text-blue-700 origin-center transition-transform transform-gpu -translate-x-1/2 lg:block animate-none"
             viewBox="0 0 100 100"
             fill="currentColor"
             preserveAspectRatio="none slice"
@@ -49,7 +50,7 @@ export function Landing() {
                   }
                 : {}
             }
-            className={`w-full h-full object-cover bg-no-repeat bg-center bg-cover duration-500 ${
+            className={`sm:block hidden w-full h-full object-cover bg-no-repeat bg-center bg-cover duration-500 ${
               slides.length > 0
                 ? ""
                 : "bg-gray-300 dark:bg-gray-700 animate-pulse"
@@ -57,37 +58,32 @@ export function Landing() {
           ></div>
         </div>
         <div className="relative flex flex-col items-start w-full max-w-xl px-4 md:px-0 lg:px-8 lg:max-w-screen-xl">
-          <div className="h-fit mt-16 max-w-xl mx-4 pr-5">
-            <h2 className="mb-8 font-sans text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl sm:leading-none w-3/4">
+          <div className="h-fit sm:mt-16 mt-2 sm:max-w-xl w-full mx-4 pr-5">
+            <h2 className="sm:mb-8 mb-4 font-sans sm:text-3xl text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:leading-none sm:w-3/4 w-11/12">
               {/* {data.landing[0].heading} */}
               Trung tâm Giáo dục nghề nghiệp - Giáo dục thường xuyên huyện Vĩnh
               Cửu
-              {/* <br className="hidden md:block" />
-              can imagine{" "}
-              <span className="inline-block text-deep-purple-accent-400">
-                is real
-              </span> */}
             </h2>
-            <p className="pr-36 mb-10 text-base text-gray-800 dark:text-gray-100 md:text-lg">
+            <p className="sm:pr-36 pr-0 px-2 mb-10 text-base text-gray-800 dark:text-gray-100">
               {data.landing[0].description}
             </p>
 
             <div className="mb-8 space-y-3 text-base">
               <p className="flex items-center -mx-2 text-gray-900 dark:text-gray-200">
                 <CheckCircleIcon
-                  className="w-6 h-6 mx-2 text-blue-500"
+                  className="sm:w-6 sm:h-6 w-5 h-5 mx-2 text-blue-500"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={2}
                 />
-                <span className="mx-2">
+                <span className="mx-2 text-base">
                   Đội ngũ giảng viên nhiều kinh nghiệm
                 </span>
               </p>
 
               <p className="flex items-center -mx-2 text-gray-900 dark:text-gray-200">
                 <CheckCircleIcon
-                  className="w-6 h-6 mx-2 text-blue-500"
+                  className="sm:w-6 sm:h-6 w-5 h-5 mx-2 text-blue-500"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={2}
@@ -97,7 +93,7 @@ export function Landing() {
 
               <p className="flex items-center -mx-2 text-gray-900 dark:text-gray-200">
                 <CheckCircleIcon
-                  className="w-6 h-6 mx-2 text-blue-500"
+                  className="sm:w-6 sm:h-6 w-5 h-5 mx-2 text-blue-500"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={2}
@@ -106,20 +102,8 @@ export function Landing() {
               </p>
             </div>
 
-            <div className="flex items-center mb-28">
-              <a
-                href="/signup"
-                className="inline-flex items-center justify-center py-2.5 px-3 mr-4 font-medium tracking-wide text-white transition duration-300 rounded shadow-md bg-blue-600 hover:bg-blue-500 focus:shadow-outline focus:outline-none"
-              >
-                Đăng ký ngay
-              </a>
-              {/* <a
-                href="#about"
-                aria-label=""
-                className="inline-flex items-center font-semibold text-gray-800 hover:bg-gray-400 dark:hover:bg-gray-800 dark:text-gray-500 transition-colors duration-200 hover:text-blue-500 h-12 px-6 rounded"
-              >
-                Tìm hiểu thêm
-              </a> */}
+            <div className="flex items-center sm:mb-28">
+              <Button title={"Đăng ký ngay"} path={"/signup"} />
             </div>
           </div>
         </div>

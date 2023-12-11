@@ -19,10 +19,10 @@ function DropDownButton({ title, path }) {
           {title}
         </span>
         <ChevronDownIcon
-          className={`ml-2 w-2.5 h-2.5 group-focus:text-gray-100 ${
+          className={`ml-2 w-2.5 h-2.5 group-focus:text-gray-700 dark:group-focus:text-gray-100 ${
             location.pathname.includes(path)
               ? "text-gray-800 dark:text-gray-200"
-              : "group-hover:text-gray-800 dark:group-hover:text-gray-200 "
+              : "dark:group-hover:text-gray-200 group-hover:text-gray-700"
           }`}
           stroke="currentColor"
           strokeWidth="2"
