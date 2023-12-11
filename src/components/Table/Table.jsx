@@ -1,13 +1,9 @@
-import {
-  QuestionMarkCircleIcon,
-  ArrowLeftIcon,
-} from "@heroicons/react/24/outline";
+import { XCircleIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
 import TableItem from "./TableItem";
 import Button from "../Button";
 
 export function Table({ data }) {
-  console.log(data);
   const navigate = useNavigate();
   return (
     <div className="container sm:px-4 px-0 mx-auto">
@@ -291,8 +287,8 @@ export function Table({ data }) {
           ) : (
             <div className="flex items-center mt-6 text-center border rounded-lg h-fit dark:border-gray-700">
               <div className="flex flex-col w-full px-4 py-8 mx-auto">
-                <div className="p-3 mx-auto text-blue-500 bg-blue-100 rounded-full dark:bg-gray-800">
-                  <QuestionMarkCircleIcon
+                <div className="p-3 mx-auto text-red-500 bg-red-100 rounded-full dark:bg-gray-800">
+                  <XCircleIcon
                     strokeWidth={2}
                     fill="none"
                     stroke="currentColor"

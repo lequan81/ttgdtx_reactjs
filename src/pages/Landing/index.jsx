@@ -1,6 +1,5 @@
 import { useState, useLayoutEffect } from "react";
 import { useLandingImage } from "../../hook/useImage/useLandingImage";
-import { useTitle } from "../../hook/useTitle";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import Contact from "../../components/Contact";
 import Team from "./Team";
@@ -10,7 +9,6 @@ import data from "../../data/data.json";
 import Button from "../../components/Button";
 
 export function Landing() {
-  useTitle("Trang chủ");
   // eslint-disable-next-line no-unused-vars
   const [slides, setSlides] = useLandingImage();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,7 +27,7 @@ export function Landing() {
 
   return (
     <section className="mt-12 w-full bg-gray-100 dark:bg-gray-900 shadow-lg transition-shadow shadow-gray-400 dark:shadow-none ">
-      <div className="bg-white/70 dark:bg-gray-800/30 shadow-md transition-shadow shadow-gray-400 dark:shadow-none relative flex flex-col py-4 lg:pt-0 lg:flex-col lg:pb-0">
+      <div className="bg-white/70 dark:bg-gray-800/30 shadow-md transition-shadow shadow-gray-300 dark:shadow-none relative flex flex-col py-4 lg:pt-0 lg:flex-col lg:pb-0">
         <div className="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
           <svg
             className="sm:absolute left-0 z-10 max-w-sm w-full hidden h-full text-blue-500 dark:text-blue-700 origin-center transition-transform transform-gpu -translate-x-1/2 lg:block animate-none"

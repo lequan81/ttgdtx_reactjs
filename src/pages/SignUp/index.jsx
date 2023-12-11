@@ -1,17 +1,16 @@
 import { useState } from "react";
-import { useTitle } from "../../hook/useTitle";
-import Button from "../../components/Button";
-import Input from "../../components/Input";
-import { validateForm } from "../../services/validate";
-import { postSignUp } from "../../services/postSignUp";
 import {
   CheckCircleIcon,
   ExclamationCircleIcon,
 } from "@heroicons/react/24/outline";
+import Button from "../../components/Button";
+import Input from "../../components/Input";
+import { Toast } from "../../components/Toast";
+import { validateForm } from "../../services/validate";
+import { postSignUp } from "../../services/postSignUp";
 import data from "../../data/data.json";
 
 export function SignUp() {
-  useTitle("Đăng ký khóa học");
   const [error, setError] = useState({
     fullnameErr: { isValid: true, message: String },
     emailErr: { isValid: true, String },
@@ -30,7 +29,7 @@ export function SignUp() {
     email: "",
     address: "",
     phone: "",
-    lesson: data.signUp[0].subjects[0].value || "----",
+    lesson: data.signUp[0].subjects[0].value || "",
     isDone: false,
   });
 
@@ -57,7 +56,7 @@ export function SignUp() {
             isValid: true,
             message: "",
           },
-          lessonErr: { isValid: false, message: "" },
+          lessonErr: { isValid: true, message: "" },
         });
         break;
       }
@@ -83,6 +82,7 @@ export function SignUp() {
           },
           lessonErr: { isValid: false, message: "Vui lòng chọn khóa học!" },
         });
+        Toast("error", "Có lỗi xảy ra. Vui lòng thử lại!");
         break;
       }
       case -2: {
@@ -107,6 +107,7 @@ export function SignUp() {
           },
           lessonErr: { isValid: true, message: "" },
         });
+        Toast("warning", "Vui lòng nhập lại Họ và Tên!");
         break;
       }
       case -3: {
@@ -131,6 +132,7 @@ export function SignUp() {
           },
           lessonErr: { isValid: true, message: "" },
         });
+        Toast("warning", "Vui lòng kiểm tra lại email!");
         break;
       }
       case -4: {
@@ -155,6 +157,7 @@ export function SignUp() {
           },
           lessonErr: { isValid: true, message: "" },
         });
+        Toast("warning", "Vui lòng nhập địa chỉ!");
         break;
       }
       case -5: {
@@ -179,6 +182,7 @@ export function SignUp() {
           },
           lessonErr: { isValid: true, message: "" },
         });
+        Toast("warning", "Vui lòng nhập lại số điện thoại!");
         break;
       }
       case -6: {
@@ -206,6 +210,7 @@ export function SignUp() {
           },
           lessonErr: { isValid: false, message: "Vui lòng chọn khóa học!" },
         });
+        Toast("warning", "Vui lòng chọn khóa học!");
         break;
       }
     }
@@ -213,6 +218,8 @@ export function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    handleErrors(0); //reset all errors if have any
+    Toast("info", "Vui lòng đợi...");
     setIsDone({
       loading: true,
       success: false,
@@ -237,7 +244,21 @@ export function SignUp() {
               success: result.ok,
               show: false,
             });
+            Toast("success", "Đã đăng ký thành công");
           } else {
+            Toast("error", "Có lỗi xảy ra. Vui lòng đợi và thử lại!");
+            //reset formData
+            setFormData({
+              fullname: "",
+              email: "",
+              address: "",
+              phone: "",
+              lesson: data.signUp[0].subjects[0].value || "",
+              isDone: false,
+            });
+            setTimeout(() => {
+              setIsDone({ loading: false, success: false, show: false });
+            }, 300);
             setTimeout(() => {
               setIsDone({
                 loading: false,
@@ -256,7 +277,7 @@ export function SignUp() {
   return (
     <section className="flex flex-col flex-grow h-full items-center justify-start bg-gray-100 dark:bg-gray-900 w-full mt-12">
       <div className="flex items-center justify-center flex-col">
-        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl text-lg uppercase font-bold mb-2 mt-4">
+        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl text-lg uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal">
           {data.signUp[0].title}
         </h1>
         <p className="text-center leading-relaxed sm:text-lg text-sm text-gray-800 dark:text-gray-200">
@@ -279,7 +300,7 @@ export function SignUp() {
                 isRequired={true}
                 isSelected={false}
                 type={"text"}
-                placeholder={"Nguyễn Văn A"}
+                placeholder={"Nguyễn Thị D"}
                 handleChange={handleChange}
                 status={error.fullnameErr}
               />
@@ -307,7 +328,7 @@ export function SignUp() {
                 isRequired={true}
                 isSelected={false}
                 type={"text"}
-                placeholder={"avannguyen@email.com"}
+                placeholder={"demo@email.com"}
                 handleChange={handleChange}
                 status={error.emailErr}
               />
@@ -320,7 +341,7 @@ export function SignUp() {
                 isRequired={true}
                 isSelected={false}
                 type={"text"}
-                placeholder={"789-012-3456"}
+                placeholder={"09890123456"}
                 handleChange={handleChange}
                 status={error.phoneErr}
               />

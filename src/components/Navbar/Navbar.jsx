@@ -1,62 +1,65 @@
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import NavbarItem from "./NavbarItem";
 import DropDownMenu from "./DropDownMenu";
 import data from "../../data/data.json";
 export default function Navbar() {
   return (
-    <div className="container flex items-center justify-end h-full w-fit sm:w-full text-gray-700 dark:text-gray-300 order-3 sm:order-2">
-      <div className="sm:hidden">
+    <>
+      <div className="sm:hidden flex w-full justify-end items-center order-2">
         <button
           type="button"
-          className="hs-collapse-toggle w-9 h-9 flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-white/20 text-white hover:border-white/40 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+          className="hs-collapse-toggle w-9 h-9 flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-gray-300 dark:border-gray-700 text-gray-900 hover:text-blue-500 hover:bg-gray-200 dark:text-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none"
           data-hs-collapse="#navbar-collapse-with-animation"
           aria-controls="navbar-collapse-with-animation"
           aria-label="Toggle navigation"
         >
-          <svg
-            className="hs-collapse-open:hidden flex-shrink-0 w-4 h-4"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <line x1="3" x2="21" y1="6" y2="6" />
-            <line x1="3" x2="21" y1="12" y2="12" />
-            <line x1="3" x2="21" y1="18" y2="18" />
-          </svg>
-          <svg
-            className="hs-collapse-open:block hidden flex-shrink-0 w-4 h-4"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M18 6 6 18" />
-            <path d="m6 6 12 12" />
-          </svg>
+          <Bars3Icon
+            className="hs-collapse-open:hidden flex-shrink-0 w-5 h-5"
+            strokeWidth={2}
+          />
+          <XMarkIcon
+            className="hs-collapse-open:block hidden flex-shrink-0 w-5 h-5"
+            strokeWidth={2}
+          />
         </button>
       </div>
-      {data.menu.map((item) => {
-        return item.isSubmenu ? (
-          <DropDownMenu key={item.name} data={item} />
-        ) : (
-          <NavbarItem
-            key={item.name}
-            title={item.title}
-            path={item.path}
-            isSubmenu={false}
-          />
-        );
-      })}
-    </div>
+
+      <div className="sm:hidden top-12 w-full fixed z-10">
+        <div
+          id="navbar-collapse-with-animation"
+          className="hs-collapse dark:hs-collapse-open:bg-gray-900/[.98] hs-collapse-open:bg-white hs-collapse-close:bg-transparent p-4 hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
+        >
+          <div className="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7">
+            {data.menu.map((item) => {
+              return item.isSubmenu ? (
+                <DropDownMenu key={item.name} data={item} isCollapsed={true} />
+              ) : (
+                <NavbarItem
+                  key={item.name}
+                  title={item.title}
+                  path={item.path}
+                  isSubmenu={false}
+                  isCollapsed={true}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </div>
+      <div className="container sm:flex items-center justify-end h-full w-fit sm:w-full text-gray-700 dark:text-gray-300 order-3 sm:order-2 hs-collapse hidden">
+        {data.menu.map((item) => {
+          return item.isSubmenu ? (
+            <DropDownMenu key={item.name} data={item} />
+          ) : (
+            <NavbarItem
+              key={item.name}
+              title={item.title}
+              path={item.path}
+              isSubmenu={false}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 }

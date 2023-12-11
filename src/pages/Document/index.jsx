@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useTitle } from "../../hook/useTitle";
 import { getDocument } from "../../services/getDocument";
 import DocumentItem from "./DocumentItem";
 
@@ -13,11 +12,10 @@ export function Document() {
     })();
   }, []);
 
-  useTitle("Văn bản tham khảo");
   return (
     <section className="flex flex-col h-full overflow-y-auto mt-12 mb-10 w-full">
       <div className="flex items-center justify-center flex-col">
-        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl text-lg uppercase font-bold mb-2 mt-4">
+        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl text-lg uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal">
           Văn bản tham khảo
         </h1>
       </div>

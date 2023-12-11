@@ -5,11 +5,14 @@ import DarkModeBtn from "./DarkModeBtn";
 
 export function Header() {
   return (
-    <header className="flex flex-row h-12 fixed z-40 top-0 w-full bg-white text-sm dark:bg-gray-800 shadow shadow-gray-300 dark:shadow-none">
-      <nav className="w-full px-3.5 flex flex-row items-center">
-        <Heading heading={data.landing[0].heading} />
-        <Navbar />
-        <DarkModeBtn />
+    <header className="flex flex-row h-12 fixed z-20 top-0 w-full bg-white text-sm dark:bg-gray-800 shadow shadow-gray-300 dark:shadow-none">
+      {/* <nav className="w-full px-3.5 relative flex flex-row items-center"> */}
+      <nav className="relative w-full mx-auto sm:mx-0 sm:px-3 sm:flex sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-row w-full h-full items-center">
+          <Heading heading={data.landing[0].heading} />
+          <Navbar />
+          <DarkModeBtn />
+        </div>
       </nav>
     </header>
   );

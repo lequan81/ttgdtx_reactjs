@@ -3,29 +3,30 @@ const url = import.meta.env.VITE_GRADE_ENDPOINT;
 export const getStudentGrade = async (className, studentId) => {
   let classValid = checkClass(className);
   let studentValid = checkStudenId(studentId);
-  let classExist = checkExist(className);
+  let classExist = await checkExist(className);
   let result;
 
-  if (!classValid && !studentValid) {
-    return -1;
-  } else {
-    if (!classValid) return -2;
-    if (!classExist) return -3;
-    if (!studentValid) return -4;
-  }
+  if (!classValid && !studentValid) return -1;
+  if (!classValid) return -2;
+  if (!classExist) return -3;
+  if (!studentValid) return -4;
+  if (!window.navigator.onLine) return -5;
   if (studentValid && classValid && classExist) {
     await fetch(`${url}?classes=${className}`)
       .then((response) => response.json())
       .then((data) => {
-        data[0].data.map((student) => {
-          if (student.studentId === Number(studentId)) {
-            result = student;
-          }
-        });
+        if (data[0] === undefined) {
+          result = -3;
+          return -3;
+        } else {
+          data[0].data.map((student) => {
+            if (student.studentId === Number(studentId)) {
+              result = student;
+            }
+          });
+        }
       })
-      .catch(() => {
-        result = -5;
-      });
+      .catch(() => {});
   }
   return result !== undefined ? result : -4;
 };
@@ -50,8 +51,6 @@ async function checkExist(className) {
     .then((data) => {
       return data[0].classes === className && data[0].classes !== undefined;
     })
-    .catch(() => {
-      return false;
-    });
+    .catch(() => {});
   return isValid;
 }

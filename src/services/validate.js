@@ -43,7 +43,7 @@ function checkEmail(email) {
 }
 
 function checkLesson(lesson) {
-  return lesson.toString().trim() === "----" ? false : true;
+  return lesson.toString().trim() === "" ? false : true;
 }
 
 function checkAddress(address) {

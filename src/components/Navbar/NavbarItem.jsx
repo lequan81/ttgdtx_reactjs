@@ -1,7 +1,25 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
-function NavbarItem({ title, path, isSubmenu }) {
-  return (
+function NavbarItem({ title, path, isSubmenu, isCollapsed = false }) {
+  const location = useLocation();
+  return isCollapsed ? (
+    <a
+      className={`font-medium max-w-fit text-sm ${
+        isSubmenu
+          ? `px-2 py-1 my-1 ${
+              location.pathname === path && "bg-blue-600 rounded text-white"
+            }`
+          : "border-b-[3px] text-gray-900 dark:text-white"
+      } ${
+        location.pathname === path
+          ? "text-gray-800 dark:text-gray-200 border-blue-500"
+          : "border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500"
+      }`}
+      href={path}
+    >
+      {title}
+    </a>
+  ) : (
     <NavLink
       className={({ isActive }) =>
         `hidden sm:flex ${

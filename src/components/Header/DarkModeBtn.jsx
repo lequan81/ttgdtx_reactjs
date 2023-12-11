@@ -8,7 +8,7 @@ function DarkModeBtn() {
     colorTheme === "light" ? true : false
   );
   return (
-    <div className="flex items-center rounded-lg h-fit sm:w-fit w-full justify-end sm:justify-normal mr-4 sm:mr-0 bg-transparent sm:hover:bg-gray-200 sm:dark:hover:bg-gray-700/50 group order-2 sm:order-3">
+    <div className="flex items-center rounded-lg h-fit w-fit justify-end sm:justify-normal mx-4 sm:mx-0 bg-transparent sm:hover:bg-gray-200 sm:dark:hover:bg-gray-700/50 group order-2 sm:order-3">
       <button
         type="button"
         className="block p-1.5"

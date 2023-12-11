@@ -143,10 +143,6 @@ export function Blog() {
               />
             }
           />
-          {/* <button className="flex items-center justify-center text-sm gap-x-2 group-hover:text-blue-500 dark:group-hover:text-gray-200">
-            <ArrowLeftIcon className="w-5 h-5 rtl:rotate-180" strokeWidth={2} />
-            <span className="font-semibold">Quay lại</span>
-          </button> */}
         </div>
         <div className="flex items-center justify-start flex-grow sm:flex-grow-0 sm:justify-end w-full space-x-2">
           {blogDatas.hashtag.map((data) => (

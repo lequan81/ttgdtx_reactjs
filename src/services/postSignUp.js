@@ -1,4 +1,5 @@
-const url = import.meta.env.VITE_SIGNUP_ENDPOINT;
+// const url = import.meta.env.VITE_SIGNUP_ENDPOINT;
+const url = "";
 
 export const postSignUp = async (data) => {
   let result = await fetch(url, {

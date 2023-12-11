@@ -1,5 +1,6 @@
 import { useLayoutEffect, lazy, Suspense } from "react";
 import { useRoutes, useLocation } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import * as Pages from "./pages/index.js";
 lazy(() => import("./pages/index.js"));
 
@@ -152,6 +153,7 @@ function App() {
     <>
       <div className="min-h-screen w-full flex flex-col bg-white dark:bg-gray-900">
         <Pages.Header />
+        <Toaster />
         <div className="flex flex-col w-full h-full flex-grow flex-1 bg-gray-100 dark:bg-gray-900">
           {useRoutes(routes)}
         </div>

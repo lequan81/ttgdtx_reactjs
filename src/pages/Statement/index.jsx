@@ -2,11 +2,11 @@ export function Statement() {
   return (
     <section className="flex flex-col h-full overflow-y-auto mt-12 mb-10 w-full">
       <div className="flex items-center justify-center flex-col">
-        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl text-lg uppercase font-bold mb-2 mt-4">
+        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl text-lg uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal">
           Các điều khoản
         </h1>
       </div>
-      <div className="shadow-md shadow-gray-700 dark:shadow-none rounded flex w-full h-full">
+      <div className="shadow-none rounded flex w-full h-full">
         <div className="px-6 py-2.5 mx-auto w-full max-w-5xl text-gray-900 dark:text-gray-100 leading-6">
           <div className="mb-8">
             <p className="text-left font-semibold text-lg mb-2">
@@ -103,8 +103,8 @@ export function Statement() {
               chúng tôi cũng có thể chọn gửi email cho tất cả người dùng đã đăng
               ký của chúng tôi với các chi tiết mới
             </p>
-            <p className="mt-6 text-sm italic">
-              Cập nhật lần cuối: ngày 23 tháng 12 năm 2023
+            <p className="mt-6 mb-16 sm:mb-0 text-sm italic">
+              Cập nhật lần cuối: ngày 12 tháng 12 năm 2023
             </p>
           </div>
         </div>
