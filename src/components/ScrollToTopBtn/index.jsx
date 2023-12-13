@@ -1,7 +1,7 @@
 import { ArrowSmallUpIcon } from "@heroicons/react/24/outline";
 import useScrollToTop from "../../hook/useScrollToTop";
 
-export const ScrollToTopBtn = () => {
+export default function ScrollToTopBtn() {
   const { shown, scrollToTop } = useScrollToTop(300);
 
   return (
@@ -15,4 +15,4 @@ export const ScrollToTopBtn = () => {
       <ArrowSmallUpIcon className="h-5 w-5" strokeWidth={2} />
     </button>
   );
-};
+}

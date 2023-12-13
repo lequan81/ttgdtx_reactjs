@@ -69,13 +69,6 @@
       "children": []
     },
     {
-      "title": "Đăng ký",
-      "name": "signup",
-      "isSubmenu": false,
-      "path": "/signup",
-      "children": []
-    },
-    {
       "title": "Văn bản",
       "name": "document",
       "isSubmenu": false,
@@ -87,6 +80,13 @@
       "name": "ref",
       "isSubmenu": false,
       "path": "/ref",
+      "children": []
+    },
+    {
+      "title": "Đăng ký",
+      "name": "signup",
+      "isSubmenu": false,
+      "path": "/signup",
       "children": []
     }
   ],

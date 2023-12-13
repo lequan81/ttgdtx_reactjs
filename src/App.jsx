@@ -99,14 +99,6 @@ function App() {
       ],
     },
     {
-      path: "/signup",
-      element: (
-        <Suspense fallback={<></>}>
-          <Pages.SignUp />
-        </Suspense>
-      ),
-    },
-    {
       path: "/ref",
       element: (
         <Suspense fallback={<></>}>
@@ -119,6 +111,14 @@ function App() {
       element: (
         <Suspense fallback={<></>}>
           <Pages.Document />
+        </Suspense>
+      ),
+    },
+    {
+      path: "/signup",
+      element: (
+        <Suspense fallback={<></>}>
+          <Pages.SignUp />
         </Suspense>
       ),
     },

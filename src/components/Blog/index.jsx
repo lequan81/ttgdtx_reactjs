@@ -6,7 +6,7 @@ import { getPostContent } from "../../services/getPostContent";
 import HashtagItem from "./HashtagItem";
 import Button from "../Button";
 
-export function Blog() {
+export default function Blog() {
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -48,6 +48,7 @@ export function Blog() {
       });
     });
   }, [results]);
+  console.log(blogDatas.content);
 
   return (
     <div className="w-full sm:px-20 px-0 sm:mt-16 mt-12 mx-auto">
@@ -90,19 +91,20 @@ export function Blog() {
                 </p>
               </div>
             </div>
-            <div className="dark:text-gray-100 sm:mx-4 mx-1">
+            <div className="dark:text-gray-100 sm:mx-4 mx-1 whitespace-pre-line">
               {Object.keys(blogDatas.content).length !== 0 && (
                 <RichText
                   content={blogDatas.content}
                   references={blogDatas.references}
                   renderers={{
                     p: ({ children }) =>
-                      children.props.content[0].text !== "\n\n" ? (
+                      children.props.content[0].text !==
+                      ("\n\n" || "\n" || "") ? (
                         <p className="text-gray-900 dark:text-white mb-1.5 sm:text-base text-sm">
                           {children}
                         </p>
                       ) : (
-                        <br className="my-1.5 py-1.5" />
+                        <br />
                       ),
                     img: ({ src, altText }) => (
                       <figure className="mx-auto my-2 sm:max-w-2xl w-full bg-white/30 dark:bg-gray-800/70">
@@ -124,8 +126,8 @@ export function Blog() {
           </>
         )}
       </article>
-      <div className="mx-2 text-sm dark:text-gray-400 sm:mt-3 sm:mb-9 mt-4 mb-24 flex sm:flex-row flex-col-reverse space-x-0 space-y-2 sm:space-y-0 sm:space-x-2">
-        <div className="flex items-center justify-start sm:w-3/12 w-full py-2 dark:text-gray-400 text-gray-700 group">
+      <div className="mx-2 text-sm dark:text-gray-400 sm:mt-3 sm:mb-9 mt-4 mb-28 flex flex-row space-y-0 sm:space-x-2">
+        <div className="flex items-center justify-between sm:w-3/12 w-full py-2 dark:text-gray-400 text-gray-700 group">
           <Button
             title={"Quay lại"}
             type={"button"}
@@ -144,7 +146,7 @@ export function Blog() {
             }
           />
         </div>
-        <div className="flex items-center justify-start flex-grow sm:flex-grow-0 sm:justify-end w-full space-x-2">
+        <div className="flex items-center flex-grow justify-end w-full space-x-2">
           {blogDatas.hashtag.map((data) => (
             <HashtagItem key={data} title={data} />
           ))}

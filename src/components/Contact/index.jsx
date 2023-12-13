@@ -2,7 +2,7 @@ import ContactItem from "./ContactItem";
 import ContactIcon from "./ContactIcon";
 import data from "../../data/data.json";
 
-export function Contact() {
+export default function Contact() {
   return (
     <div className="flex flex-col w-full mt-2">
       <div className="container px-6 sm:py-8 py-4 mx-auto">
@@ -17,7 +17,7 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:gap-x-2 gap-y-8 sm:gap-y-0 sm:mt-10 mt-6 mb-20 sm:mb-0 sm:grid-cols-3">
+        <div className="grid grid-cols-1 sm:gap-x-2 gap-y-8 sm:gap-y-0 sm:mt-10 mt-6 mb-28 space-y-4 sm:space-y-0 sm:mb-0 sm:grid-cols-3">
           {data.contact[0].children.map((item) => (
             <ContactItem
               key={item.title}

@@ -69,20 +69,20 @@ export function SignUp() {
         setError({
           fullnameErr: {
             isValid: false,
-            message: "Họ và Tên không hợp lệ. Vui lòng thử lại!",
+            message: "Họ và Tên không hợp lệ. Vui lòng thử lại",
           },
           emailErr: {
             isValid: false,
-            message: "Email không hợp lệ. Vui lòng thử lại!",
+            message: "Email không hợp lệ. Vui lòng thử lại",
           },
-          addressErr: { isValid: false, message: "Vui lòng nhập địa chỉ!" },
+          addressErr: { isValid: false, message: "Vui lòng nhập địa chỉ" },
           phoneErr: {
             isValid: false,
-            message: `Số điện thoại không hợp lệ.\n Vui lòng thử lại!`,
+            message: `Số điện thoại không hợp lệ.\n Vui lòng thử lại`,
           },
-          lessonErr: { isValid: false, message: "Vui lòng chọn khóa học!" },
+          lessonErr: { isValid: false, message: "Vui lòng chọn khóa học" },
         });
-        Toast("error", "Có lỗi xảy ra. Vui lòng thử lại!");
+        Toast("error", "Có lỗi xảy ra. Vui lòng thử lại");
         break;
       }
       case -2: {
@@ -94,7 +94,7 @@ export function SignUp() {
         setError({
           fullnameErr: {
             isValid: false,
-            message: "Họ và Tên không hợp lệ. Vui lòng thử lại!",
+            message: "Họ và Tên không hợp lệ. Vui lòng thử lại",
           },
           emailErr: {
             isValid: true,
@@ -107,7 +107,7 @@ export function SignUp() {
           },
           lessonErr: { isValid: true, message: "" },
         });
-        Toast("warning", "Vui lòng nhập lại Họ và Tên!");
+        Toast("warning", "Vui lòng nhập lại Họ và Tên");
         break;
       }
       case -3: {
@@ -123,7 +123,7 @@ export function SignUp() {
           },
           emailErr: {
             isValid: false,
-            message: "Email không hợp lệ. Vui lòng thử lại!",
+            message: "Email không hợp lệ. Vui lòng thử lại",
           },
           addressErr: { isValid: true, message: "" },
           phoneErr: {
@@ -132,7 +132,7 @@ export function SignUp() {
           },
           lessonErr: { isValid: true, message: "" },
         });
-        Toast("warning", "Vui lòng kiểm tra lại email!");
+        Toast("warning", "Vui lòng nhập lại email");
         break;
       }
       case -4: {
@@ -150,14 +150,14 @@ export function SignUp() {
             isValid: true,
             message: "Email hợp lệ",
           },
-          addressErr: { isValid: false, message: "Vui lòng nhập địa chỉ!" },
+          addressErr: { isValid: false, message: "Vui lòng nhập địa chỉ" },
           phoneErr: {
             isValid: true,
             message: "",
           },
           lessonErr: { isValid: true, message: "" },
         });
-        Toast("warning", "Vui lòng nhập địa chỉ!");
+        Toast("warning", "Vui lòng nhập địa chỉ");
         break;
       }
       case -5: {
@@ -178,11 +178,11 @@ export function SignUp() {
           addressErr: { isValid: true, message: "Địa chỉ hợp lệ" },
           phoneErr: {
             isValid: false,
-            message: "Số điện thoại không hợp lệ.\n Vui lòng thử lại!",
+            message: "Số điện thoại không hợp lệ.\n Vui lòng thử lại",
           },
           lessonErr: { isValid: true, message: "" },
         });
-        Toast("warning", "Vui lòng nhập lại số điện thoại!");
+        Toast("warning", "Vui lòng nhập lại số điện thoại");
         break;
       }
       case -6: {
@@ -208,69 +208,81 @@ export function SignUp() {
             isValid: true,
             message: "Số điện thoại hợp lệ",
           },
-          lessonErr: { isValid: false, message: "Vui lòng chọn khóa học!" },
+          lessonErr: { isValid: false, message: "Vui lòng chọn khóa học" },
         });
-        Toast("warning", "Vui lòng chọn khóa học!");
+        Toast("warning", "Vui lòng chọn khóa học");
         break;
       }
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleIsDone = (type) => {
+    switch (type) {
+      case "loading": {
+        setIsDone({
+          loading: true,
+          success: false,
+          show: true,
+        });
+        break;
+      }
+      case "success": {
+        setIsDone({
+          loading: false,
+          success: true,
+          show: false,
+        });
+        break;
+      }
+      case "error": {
+        // reset formData
+        setFormData({
+          fullname: "",
+          email: "",
+          address: "",
+          phone: "",
+          lesson: data.signUp[0].subjects[0].value || "",
+          isDone: false,
+        });
+        setTimeout(() => {
+          setIsDone({ loading: false, success: false, show: false });
+        }, 300);
+        setTimeout(() => {
+          setIsDone({
+            loading: false,
+            success: false,
+            show: true,
+          });
+        }, 5000);
+        break;
+      }
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     handleErrors(0); //reset all errors if have any
-    Toast("info", "Vui lòng đợi...");
-    setIsDone({
-      loading: true,
-      success: false,
-      show: true,
-    });
-    let errorCode = validateForm(
-      formData.fullname,
-      formData.email,
-      formData.phone,
-      formData.address,
-      formData.lesson
-    );
-    if (errorCode === true) {
+    handleIsDone("loading");
+    let errorCode = validateForm(formData);
+
+    if (typeof errorCode === "number" && errorCode <= 0) {
+      // all errors are below 0 (start with -1)
+      handleErrors(errorCode);
+    } else {
       // clear all previous error message
       handleErrors(0);
-      (async () => {
-        let result = await postSignUp(formData);
-        if (result !== undefined) {
-          if (result.ok) {
-            setIsDone({
-              loading: false,
-              success: result.ok,
-              show: false,
-            });
-            Toast("success", "Đã đăng ký thành công");
-          } else {
-            Toast("error", "Có lỗi xảy ra. Vui lòng đợi và thử lại!");
-            //reset formData
-            setFormData({
-              fullname: "",
-              email: "",
-              address: "",
-              phone: "",
-              lesson: data.signUp[0].subjects[0].value || "",
-              isDone: false,
-            });
-            setTimeout(() => {
-              setIsDone({ loading: false, success: false, show: false });
-            }, 300);
-            setTimeout(() => {
-              setIsDone({
-                loading: false,
-                success: false,
-                show: true,
-              });
-            }, 4500);
-          }
-        }
-      })();
-    } else {
-      handleErrors(errorCode);
+      Toast("info", "Vui lòng đợi...");
+      let res = await postSignUp(formData);
+      if (typeof res === "number" && res <= 0) {
+        handleIsDone("error");
+        Toast("error", "Lỗi kết nối tới server");
+        setTimeout(() => {
+          Toast("info", "Vui lòng kiểm tra kết nối Internet và thử lại");
+        }, 1500);
+      } else {
+        Toast("success", "Đã đăng ký thành công");
+        handleIsDone("success");
+      }
     }
   };
 
@@ -289,10 +301,10 @@ export function SignUp() {
       {isDone.show === true ? (
         <form
           onSubmit={handleSubmit}
-          className="shadow-md transition-shadow shadow-gray-300 dark:shadow-none rounded px-8 mx-auto sm:mt-8 sm:mb-8 sm:py-8 py-4 mt-4 mb-32 bg-white dark:bg-gray-800 border border-gray-200 dark:border-none flex flex-col w-full max-w-4xl"
+          className="shadow-md transition-shadow shadow-gray-300 dark:shadow-none sm:rounded px-8 mx-auto mt-8 sm:mb-8 sm:py-8 py-4 mb-32 bg-white dark:bg-gray-800 border border-gray-200 dark:border-none flex flex-col w-full max-w-4xl"
         >
-          <div className="md:flex mb-4">
-            <div className="md:w-5/12 px-3">
+          <div className="sm:flex mb-4">
+            <div className="sm:w-5/12 px-3">
               <Input
                 isLoading={isDone.loading}
                 id={"fullname"}
@@ -305,7 +317,7 @@ export function SignUp() {
                 status={error.fullnameErr}
               />
             </div>
-            <div className="md:w-7/12 px-3">
+            <div className="sm:w-7/12 px-3">
               <Input
                 isLoading={isDone.loading}
                 id={"address"}
@@ -319,8 +331,8 @@ export function SignUp() {
               />
             </div>
           </div>
-          <div className="md:flex mb-4">
-            <div className="md:w-5/12 px-3">
+          <div className="sm:flex mb-4">
+            <div className="sm:w-5/12 px-3">
               <Input
                 isLoading={isDone.loading}
                 id={"email"}
@@ -333,7 +345,7 @@ export function SignUp() {
                 status={error.emailErr}
               />
             </div>
-            <div className="md:w-3/12 px-3">
+            <div className="sm:w-3/12 px-3">
               <Input
                 isLoading={isDone.loading}
                 id={"phone"}
@@ -346,7 +358,7 @@ export function SignUp() {
                 status={error.phoneErr}
               />
             </div>
-            <div className="md:w-4/12 px-3">
+            <div className="sm:w-4/12 px-3">
               <Input
                 isLoading={isDone.loading}
                 id={"lesson"}
@@ -369,10 +381,10 @@ export function SignUp() {
           </div>
         </form>
       ) : (
-        <div className="flex items-center mt-6 text-center border rounded-lg h-fit w-full max-w-md dark:border-gray-700">
-          <div className="flex flex-col w-full px-4 py-8 mx-auto">
+        <div className="flex items-center mt-6 text-center border sm:rounded-lg h-fit sm:w-full w-3/4 mx-auto sm:mx-0 max-w-md dark:border-gray-700">
+          <div className="flex flex-col w-full px-4 sm:py-8 py-4 mx-auto">
             <div
-              className={`p-3 mx-auto rounded-full dark:bg-gray-800 ${
+              className={`p-1 sm:p-2 mx-auto rounded-full dark:bg-gray-800 ${
                 isDone.success
                   ? "text-green-500 bg-green-100"
                   : "text-red-500 bg-red-100"
@@ -383,24 +395,24 @@ export function SignUp() {
                   strokeWidth={2}
                   fill="none"
                   stroke="currentColor"
-                  className="w-8 h-8"
+                  className="sm:w-8 sm:h-8 w-7 h-7"
                 />
               ) : (
                 <ExclamationCircleIcon
                   strokeWidth={2}
                   fill="none"
                   stroke="currentColor"
-                  className="w-8 h-8"
+                  className="sm:w-8 sm:h-8 w-7 h-7"
                 />
               )}
             </div>
-            <h1 className="mt-3 text-lg text-gray-800 dark:text-white">
-              {isDone.success ? "Đã gửi thành công" : "Có lỗi xảy ra"}
+            <h1 className="mt-3 sm:text-lg text-base font-medium sm:font-normal text-gray-800 dark:text-white">
+              {isDone.success ? "Đã đăng ký thành công" : "Có lỗi xảy ra"}
             </h1>
-            <p className="mt-2 text-gray-500 dark:text-gray-400 whitespace-pre-line">
+            <p className="mt-2 text-sm sm:text-base text-gray-500 dark:text-gray-400 whitespace-pre-line">
               {isDone.success
                 ? "Cảm ơn bạn đã tin tưởng chúng tôi! \n Chúng tôi sẽ thông báo tới bạn sớm nhất có thể"
-                : "Đã có lỗi xảy ra! Xin vui lòng đợi và thử lại"}
+                : "Xin vui lòng đợi và thử lại"}
             </p>
           </div>
         </div>

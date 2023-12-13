@@ -1,4 +1,4 @@
-export function Button({
+export default function Button({
   title,
   isBold = false,
   type = "default",
@@ -25,11 +25,11 @@ export function Button({
       onClick={onClickHandle}
       className={`flex items-center justify-center ${
         isIcon
-          ? "text-sm gap-x-2 group-hover:text-blue-500 dark:group-hover:text-gray-200"
-          : `py-2 px-3 font-medium text-white transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none ${
+          ? "text-sm gap-x-2 group-hover:text-blue-500 dark:group-hover:text-gray-200 w-fit"
+          : `w-full py-2 px-3 font-medium text-white transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none ${
               isLoading
                 ? "bg-blue-500 cursor-default"
-                : "bg-blue-600 hover:bg-blue-500 mr-4"
+                : "bg-blue-600 hover:bg-blue-500 active:bg-blue-500 sm:mr-4"
             }`
       }`}
     >

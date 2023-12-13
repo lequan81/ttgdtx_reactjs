@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import TableItem from "./TableItem";
 import Button from "../Button";
 
-export function Table({ data }) {
+export default function Table({ data }) {
   const navigate = useNavigate();
   return (
     <div className="container sm:px-4 px-0 mx-auto">
@@ -287,12 +287,12 @@ export function Table({ data }) {
           ) : (
             <div className="flex items-center mt-6 text-center border rounded-lg h-fit dark:border-gray-700">
               <div className="flex flex-col w-full px-4 py-8 mx-auto">
-                <div className="p-3 mx-auto text-red-500 bg-red-100 rounded-full dark:bg-gray-800">
+                <div className="p-1.5 sm:p-2 mx-auto text-red-500 bg-red-100 rounded-full dark:bg-gray-800">
                   <XCircleIcon
                     strokeWidth={2}
                     fill="none"
                     stroke="currentColor"
-                    className="w-8 h-8"
+                    className="sm:w-8 sm:h-8 h-7 w-7"
                   />
                 </div>
                 <h1 className="mt-3 text-lg text-gray-800 dark:text-white">

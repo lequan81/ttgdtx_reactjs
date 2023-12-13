@@ -21,7 +21,7 @@ export function Document() {
       </div>
       <div className="shadow-md shadow-gray-700 dark:shadow-none rounded flex w-full h-full">
         <div className="px-6 py-2.5 mx-auto w-full">
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-4 sm:max-w-full">
+          <div className="grid gap-6 grid-cols-1 mb-16 sm:mb-0 sm:grid-cols-4 sm:max-w-full">
             {documents.map((doc) => (
               <DocumentItem
                 key={doc.id}

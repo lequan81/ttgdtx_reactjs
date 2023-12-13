@@ -1,9 +1,9 @@
-export const validateForm = (fullname, email, phone, address, lesson) => {
-  let nameValid = checkFullname(fullname);
-  let phoneValid = checkPhone(phone);
-  let emailValid = checkEmail(email);
-  let addressValid = checkAddress(address);
-  let lessonValid = checkLesson(lesson);
+export const validateForm = (data) => {
+  let nameValid = checkFullname(data.fullname);
+  let phoneValid = checkPhone(data.phone);
+  let emailValid = checkEmail(data.email);
+  let addressValid = checkAddress(data.address);
+  let lessonValid = checkLesson(data.lesson);
 
   if (nameValid && phoneValid && lessonValid && emailValid && addressValid) {
     return true;
@@ -28,24 +28,24 @@ export const validateForm = (fullname, email, phone, address, lesson) => {
 function checkFullname(fullname) {
   var regex =
     /^([a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđ]+)((\s{1}[a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđ]+){1,})$/g; // regex here
-  return regex.test(fullname.toString().toLowerCase().trim());
+  return regex.test(String(fullname).toLowerCase().trim());
 }
 
 function checkPhone(phone) {
   var regex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g; // regex here
-  return regex.test(phone.toString().trim());
+  return regex.test(String(phone).trim());
 }
 
 function checkEmail(email) {
   var regex =
     /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i; // regex here
-  return regex.test(email.toString().trim());
+  return regex.test(String(email).trim());
 }
 
 function checkLesson(lesson) {
-  return lesson.toString().trim() === "" ? false : true;
+  return String(lesson).trim() === "" ? false : true;
 }
 
 function checkAddress(address) {
-  return address.toString().trim() === "" ? false : true;
+  return String(address).trim() === "" ? false : true;
 }

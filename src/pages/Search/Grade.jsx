@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Table } from "../../components/Table";
 import { getStudentGrade } from "../../services/getStudentGrade";
 import { Toast } from "../../components/Toast";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
+import Table from "../../components/Table";
 
 export function Grade() {
   const [error, setError] = useState({
@@ -14,8 +14,8 @@ export function Grade() {
   const [studentData, setStudentData] = useState({});
 
   const [classGradeList, setClassGradeList] = useState({
-    studentId: String,
-    className: String,
+    studentId: "",
+    className: "",
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -40,56 +40,51 @@ export function Grade() {
             message: "",
           },
         });
-        Toast("success", "Đã tải xong");
         break;
       }
       case -1: {
-        setIsLoading(false);
         setError({
           classNameErr: {
             isValid: false,
-            message: "Tên lớp không hợp lệ.\n Vui lòng thử lại!",
+            message: "Tên lớp không hợp lệ.\n Vui lòng thử lại",
           },
           studentIdErr: {
             isValid: false,
-            message: "Số thứ tự không hợp lệ. \n Vui lòng thử lại!",
+            message: "Số thứ tự không hợp lệ. \n Vui lòng thử lại",
           },
         });
         Toast("error", "Có lỗi xảy ra. Vui lòng thử lại");
         break;
       }
       case -2: {
-        setIsLoading(false);
         setError({
           classNameErr: {
             isValid: false,
-            message: "Tên lớp không hợp lệ.\n Vui lòng thử lại!",
+            message: "Tên lớp không hợp lệ.\n Vui lòng thử lại",
           },
           studentIdErr: {
             isValid: true,
             message: "",
           },
         });
-        Toast("warning", "Tên lớp không hợp lệ. Vui lòng thử lại!");
+        Toast("warning", "Tên lớp không hợp lệ. Vui lòng thử lại");
         break;
       }
       case -3: {
-        setIsLoading(false);
         setError({
           classNameErr: {
             isValid: false,
-            message: "Tên lớp không tồn tại. \n Vui lòng thử lại!",
+            message: "Tên lớp không tồn tại. \n Vui lòng thử lại",
           },
           studentIdErr: {
             isValid: true,
             message: "",
           },
         });
-        Toast("error", "Tên lớp không tồn tại. Vui lòng thử lại!");
+        Toast("error", "Tên lớp không tồn tại. Vui lòng thử lại");
         break;
       }
       case -4: {
-        setIsLoading(false);
         setError({
           classNameErr: {
             isValid: true,
@@ -97,25 +92,27 @@ export function Grade() {
           },
           studentIdErr: {
             isValid: false,
-            message: "Số thứ tự không hợp lệ. \n Vui lòng thử lại!",
+            message: "Số thứ tự không hợp lệ. \n Vui lòng thử lại",
           },
         });
-        Toast("warning", "Số thứ tự không hợp lệ. Vui lòng thử lại!");
+        Toast("warning", "Số thứ tự không hợp lệ. Vui lòng thử lại");
         break;
       }
       case -5: {
-        setIsLoading(false);
         setError({
           classNameErr: {
             isValid: true,
             message: "",
           },
           studentIdErr: {
-            isValid: false,
+            isValid: true,
             message: "",
           },
         });
-        Toast("error", "Lỗi kết nối. Vui lòng thử lại!");
+        Toast("error", "Lỗi kết nối tới server");
+        setTimeout(() => {
+          Toast("info", "Vui lòng kiểm tra kết nối Internet và thử lại");
+        }, 1500);
         break;
       }
     }
@@ -124,19 +121,18 @@ export function Grade() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     handleErrors(0); //reset all errors if have
-    Toast("info", "Vui lòng đợi...");
     setIsLoading(true);
-    let errorCode = await getStudentGrade(
-      classGradeList.className,
-      classGradeList.studentId
-    );
-    if (typeof errorCode === "number") {
-      handleErrors(errorCode);
-    } else {
-      handleErrors(0);
-      setIsExist(true);
-      setStudentData(errorCode);
+    Toast("info", "Vui lòng đợi...");
+    let res = await getStudentGrade(classGradeList);
+    if (typeof res === "number") {
       setIsLoading(false);
+      handleErrors(res);
+    } else {
+      setStudentData(res);
+      setIsExist(true);
+      handleErrors(0);
+      setIsLoading(false);
+      Toast("success", "Đã tải xong");
     }
   };
 
@@ -155,7 +151,7 @@ export function Grade() {
       {isExist === false && (
         <form
           onSubmit={handleSubmit}
-          className="shadow-md transition-shadow shadow-gray-300 dark:shadow-none rounded px-6 mt-4 py-6 justify-center bg-white dark:bg-gray-800 border border-gray-300 dark:border-none flex flex-row max-w-3xl"
+          className="shadow-md transition-shadow shadow-gray-300 dark:shadow-none sm:rounded px-6 mt-10 sm:mt-4 py-6 justify-center bg-white dark:bg-gray-800 border border-gray-300 dark:border-none flex flex-row max-w-3xl"
         >
           <div className="relative flex sm:flex-row flex-col items-start w-full">
             <div className="sm:w-2/6 px-3 h-28">

@@ -21,7 +21,7 @@ function ContactItem({
         {subTitle}
       </p>
       <a
-        className="mt-2 text-blue-700 dark:text-blue-400"
+        className="mt-2 text-blue-700 dark:text-blue-400 w-10/12"
         href={href}
         aria-label={ariaLabel}
         title={ariaLabel}
