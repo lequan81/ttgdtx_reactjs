@@ -1,47 +1,45 @@
 const url = import.meta.env.VITE_GRADE_ENDPOINT;
 
-export const getStudentGrade = async (className, studentId) => {
-  let classValid = checkClass(className);
-  let studentValid = checkStudenId(studentId);
-  let classExist = await checkExist(className);
-  let result;
+let result;
+
+export const getStudentGrade = async (data) => {
+  let classValid = checkClass(data.className);
+  let studentValid = checkStudenId(data.studentId);
+  let classExist = await checkExist(data.className);
 
   if (!classValid && !studentValid) return -1;
   if (!classValid) return -2;
-  if (!classExist) return -3;
+  if (!classExist && classExist !== -5) return -3;
   if (!studentValid) return -4;
-  if (!window.navigator.onLine) return -5;
   if (studentValid && classValid && classExist) {
-    await fetch(`${url}?classes=${className}`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data[0] === undefined) {
-          result = -3;
-          return -3;
-        } else {
-          data[0].data.map((student) => {
-            if (student.studentId === Number(studentId)) {
-              result = student;
-            }
-          });
-        }
-      })
-      .catch(() => {});
+    await getData(data.className, data.studentId);
   }
-  return result !== undefined ? result : -4;
+
+  if (!window.navigator.onLine || classExist === -5 || result === -5) {
+    return -5;
+  }
+  if (result === undefined) {
+    return -4;
+  } else {
+    return result;
+  }
 };
 
 function checkClass(className) {
-  const regex = /^([0-9][a-zA-z]?|[0-9])/g; // regex here
-  return regex.test(className.toString().toLowerCase().trim());
+  if (String(className).trim() === "") {
+    return false;
+  } else {
+    const regex = /^([0-9][a-zA-z]?|[0-9])/g; // regex here
+    return regex.test(String(className).toLowerCase().trim());
+  }
 }
 
 function checkStudenId(studentId) {
-  if (studentId.toString().trim() === "") {
+  if (String(studentId).trim() === "") {
     return false;
   } else {
     const regex = /^([0-9])/g;
-    return regex.test(studentId.toString().trim());
+    return regex.test(String(studentId).toString().trim());
   }
 }
 
@@ -49,8 +47,31 @@ async function checkExist(className) {
   let isValid = await fetch(`${url}?classes=${className}`)
     .then((response) => response.json())
     .then((data) => {
-      return data[0].classes === className && data[0].classes !== undefined;
+      return (
+        data[0].classes === String(className) && data[0].classes !== undefined
+      );
     })
-    .catch(() => {});
+    .catch(() => {
+      return -5;
+    });
   return isValid;
+}
+
+async function getData(className, studentId) {
+  await fetch(`${url}?classes=${className}`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data[0] === undefined) {
+        return -3;
+      } else {
+        data[0].data.forEach((student) => {
+          if (student.studentId === Number(studentId)) {
+            result = student;
+          }
+        });
+      }
+    })
+    .catch(() => {
+      return -5;
+    });
 }

@@ -2,7 +2,7 @@ import ContactItem from "./ContactItem";
 import ContactIcon from "./ContactIcon";
 import data from "../../data/data.json";
 
-export function Contact() {
+export default function Contact() {
   return (
     <div className="flex flex-col w-full mt-2">
       <div className="container px-6 sm:py-8 py-4 mx-auto">

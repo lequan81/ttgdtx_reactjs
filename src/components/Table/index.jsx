@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import TableItem from "./TableItem";
 import Button from "../Button";
 
-export function Table({ data }) {
+export default function Table({ data }) {
   const navigate = useNavigate();
   return (
     <div className="container sm:px-4 px-0 mx-auto">

@@ -1,4 +1,4 @@
-export { Header as Header } from "./Header";
-export { Footer as Footer } from "./Footer";
-export { ScrollToTopBtn as ScrollToTopBtn } from "./ScrollToTopBtn";
-export { Blog as Blog } from "./Blog";
+export { default as Header } from "./Header";
+export { default as Footer } from "./Footer";
+export { default as ScrollToTopBtn } from "./ScrollToTopBtn";
+export { default as Blog } from "./Blog";

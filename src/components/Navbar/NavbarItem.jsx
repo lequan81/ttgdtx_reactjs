@@ -7,7 +7,9 @@ function NavbarItem({ title, path, isSubmenu, isCollapsed = false }) {
       className={`font-medium max-w-fit text-sm ${
         isSubmenu
           ? `px-2 py-1 my-1 ${
-              location.pathname === path && "bg-blue-600 rounded text-white"
+              location.pathname === path
+                ? "bg-blue-600 rounded text-white"
+                : "text-gray-900 dark:text-white"
             }`
           : "border-b-[3px] text-gray-900 dark:text-white"
       } ${

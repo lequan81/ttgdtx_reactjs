@@ -11,22 +11,22 @@ export function Toast(type, title) {
     (t) => (
       <div
         className={`flex flex-row grow items-center justify-center z-30 w-full mx-auto ${
-          t.visible ? "fixed top-2" : "-top-96 hidden"
+          t.visible ? "relative top-2" : "-top-96 hidden"
         }`}
       >
         <div
-          className={`flex w-full max-w-sm mx-12 overflow-hidden bg-white rounded-md shadow-none dark:bg-gray-800 border 
-          ${type === "success" && "border-green-500"}
-          ${type === "info" && "border-blue-500"}
-          ${type === "warning" && "border-orange-500"}
-          ${type === "error" && "border-red-500"}`}
+          className={`flex min-w-fit max-w-sm pr-6 overflow-hidden rounded sm:rounded-md shadow-none dark:bg-gray-800 border cursor-default 
+          ${type === "success" && "bg-emerald-50 border-emerald-500"}
+          ${type === "info" && "bg-sky-50 border-sky-500"}
+          ${type === "warning" && "bg-orange-50 border-orange-500"}
+          ${type === "error" && "bg-red-50 border-red-500"}`}
         >
           <div
             className={`flex items-center justify-center w-12 
-          ${type === "success" && "bg-emerald-500"}
-          ${type === "info" && "bg-sky-500"}
-          ${type === "warning" && "bg-orange-500"}
-          ${type === "error" && "bg-red-500"}`}
+          ${type === "success" && "dark:bg-emerald-500 bg-emerald-400"}
+          ${type === "info" && "dark:bg-sky-500 bg-sky-400"}
+          ${type === "warning" && "dark:bg-orange-500 bg-orange-400"}
+          ${type === "error" && "dark:bg-red-500 bg-red-400"}`}
           >
             {type === "success" && (
               <CheckCircleIcon className="w-6 h-6 text-white" strokeWidth={2} />
@@ -64,6 +64,6 @@ export function Toast(type, title) {
         </div>
       </div>
     ),
-    { id: "unique-notification", position: "top-center" }
+    { id: type, position: "top-center" }
   );
 }

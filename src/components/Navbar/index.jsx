@@ -5,10 +5,10 @@ import data from "../../data/data.json";
 export default function Navbar() {
   return (
     <>
-      <div className="sm:hidden flex w-full justify-end items-center order-2">
+      <div className="sm:hidden flex w-fit justify-end items-center order-3 mr-4">
         <button
           type="button"
-          className="hs-collapse-toggle w-9 h-9 flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-gray-300 dark:border-gray-700 text-gray-900 hover:text-blue-500 hover:bg-gray-200 dark:text-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none"
+          className="hs-collapse-toggle w-9 h-9 flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white active:text-blue-500 dark:focus:outline-none"
           data-hs-collapse="#navbar-collapse-with-animation"
           aria-controls="navbar-collapse-with-animation"
           aria-label="Toggle navigation"

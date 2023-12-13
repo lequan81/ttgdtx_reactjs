@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="px-4 py-1 mt-auto mx-auto w-full text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-800 bottom-0 fixed z-10">
+    <footer className="px-4 py-1 mt-auto mx-auto w-full text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-700 sm:dark:bg-gray-800 bottom-0 fixed z-10 ">
       <div className="flex items-center flex-col sm:flex-row w-full">
         <p className="sm:w-1/2 w-0 flex items-center justify-start text-sm text-gray-700 dark:text-gray-300">
           <span className="hidden sm:block">
@@ -17,7 +17,7 @@ export function Footer() {
                 `text-xs sm:text-sm transition-colors whitespace-pre-line sm:whitespace-normal duration-300 ${
                   isActive
                     ? "text-blue-500"
-                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
+                    : "dark:text-white sm:text-gray-700 sm:dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
                 }`
               }
             >
@@ -31,7 +31,7 @@ export function Footer() {
                 `text-xs sm:text-sm transition-colors whitespace-pre-line sm:whitespace-normal duration-300 ${
                   isActive
                     ? "text-blue-500"
-                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
+                    : "dark:text-white sm:text-gray-700 sm:dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
                 }`
               }
             >
@@ -45,7 +45,7 @@ export function Footer() {
                 `text-xs sm:text-sm transition-colors whitespace-pre-line sm:whitespace-normal duration-300 ${
                   isActive
                     ? "text-blue-500"
-                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
+                    : "dark:text-white sm:text-gray-700 sm:dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
                 }`
               }
             >
@@ -55,7 +55,9 @@ export function Footer() {
         </ul>
         <div className="flex flex-grow md:flex-grow-0 sm:w-fit w-full flex-row items-center sm:justify-end sm:mb-0 mb-2">
           <p className="sm:hidden flex items-center w-full justify-start text-sm text-gray-700 dark:text-gray-300">
-            <span className="block">© 2023 TTGDNN-GDTX huyện Vĩnh Cửu</span>
+            <span className="block text-xs font-medium">
+              © 2023 TTGDNN-GDTX huyện Vĩnh Cửu
+            </span>
           </p>
           {/* Instagram */}
           {/* <a
@@ -82,7 +84,7 @@ export function Footer() {
             <svg
               viewBox="0 0 16 16"
               fill="currentColor"
-              className="h-5 w-5 fill-current"
+              className="h-4 w-4 sm:h-5 sm:w-5"
             >
               <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
             </svg>
