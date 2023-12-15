@@ -148,12 +148,12 @@
         {
           "name": "Ngô Thị Thu Huyền",
           "onPosition": "Phòng Đào tạo nghề",
-          "contact": ""
+          "contact": "0975940054"
         },
         {
           "name": "Phạm Thị Hòa",
           "onPosition": "Phòng Hành chính tổng hợp",
-          "contact": ""
+          "contact": "0916605479"
         }
       ]
     }
@@ -234,6 +234,16 @@
       "title": "UBND huyện Vĩnh Cửu",
       "description": "Website chính thức của UBND huyện Vĩnh Cửu",
       "path": "https://vinhcuu.dongnai.gov.vn/Pages/home.aspx"
+    },
+    {
+      "title": "Sở Thông Tin và Truyền Thông tỉnh Đồng Nai",
+      "description": "Website chính thức của Sở Thông Tin và Truyền Thông tỉnh Đồng Nai",
+      "path": "https://stttt.dongnai.gov.vn/Pages/home.aspx"
+    },
+    {
+      "title": "Sở Giáo dục và Đào tạo tỉnh Đồng Nai",
+      "description": "Website chính thức của Sở Thông Tin và Truyền Thông tỉnh Đồng Nai",
+      "path": "http://sgddt.dongnai.gov.vn/"
     }
   ]
 }

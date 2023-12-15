@@ -54,7 +54,7 @@ export function Privacy() {
               Chúng tôi là ai và cách liên hệ với chúng tôi
             </p>
             <p className="mb-1.5">
-              Trung tâm GDNN-GDTX huyện Vĩnh Cửu, 102 Hai Bà Trưng, KP8, thị
+              Trung tâm GDNN-GDTX huyện Vĩnh Cửu, 102 Phan Chu Trinh, KP8, thị
               trấn Vĩnh An, Vĩnh Cửu, Đồng Nai là đơn vị kiểm soát dữ liệu liên
               quan đến dữ liệu cá nhân của bạn. Điều này có nghĩa là chúng tôi
               chịu trách nhiệm quyết định cách thức và lý do chúng tôi giữ và sử
