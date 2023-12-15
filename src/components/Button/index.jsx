@@ -23,7 +23,7 @@ export default function Button({
       type={type}
       formNoValidate={true}
       onClick={onClickHandle}
-      className={`flex items-center justify-center ${
+      className={`flex items-center justify-center w-full sm:w-fit ${
         isIcon
           ? "text-sm gap-x-2 group-hover:text-blue-500 dark:group-hover:text-gray-200 w-fit"
           : `w-full py-2 px-3 font-medium text-white transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none ${
