@@ -5,7 +5,7 @@ const graphqlAPI = import.meta.env.VITE_GRAPHCMS_ENDPOINT;
 export const getRecentPost = async () => {
   const query = gql`
     query recentPost {
-      posts(orderBy: createdAt_DESC, stage: PUBLISHED, first: 6) {
+      posts(orderBy: createdAt_DESC, stage: PUBLISHED, first: 12) {
         id
         title
         description
@@ -13,7 +13,7 @@ export const getRecentPost = async () => {
         slug
         coverImage {
           id
-          url
+          url(transformation: {document: {output: {format: webp}}})
         }
         category {
           name

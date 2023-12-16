@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import data from "../../data/data.json";
+import data from "../data/data.json";
 
-export const useTeamImage = () => {
+export const useTeamData = () => {
   const [images, setImages] = useState([]);
   const [count, setCount] = useState(0);
   const [isValid, setIsValid] = useState(true);
@@ -9,12 +9,12 @@ export const useTeamImage = () => {
   useEffect(() => {
     if (isValid) {
       let imageUrl = new URL(
-        `../../assets/images/teamImage/jpg/teams${count}.jpg`,
+        `../assets/images/teamImage/jpg/teams${count}.jpg`,
         import.meta.url
       ).pathname;
 
       let imageWebpUrl = new URL(
-        `../../assets/images/teamImage/webp/team${count}.webp`,
+        `../assets/images/teamImage/webp/team${count}.webp`,
         import.meta.url
       ).pathname;
 
@@ -36,6 +36,10 @@ export const useTeamImage = () => {
               : `https://api.dicebear.com/7.x/initials/svg?fontSize=40&randomizeIds=true&seed=${
                   data.teams[0].children[count].name || "Anonymous"
                 }`,
+            email: data.teams[0].children[count].email || "Không có thông tin",
+            phone: data.teams[0].children[count].phone || "Không có thông tin",
+            address:
+              data.teams[0].children[count].address || "Không có thông tin",
           },
         ]);
         setCount(count + 1);

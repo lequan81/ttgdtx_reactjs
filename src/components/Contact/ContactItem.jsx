@@ -4,15 +4,21 @@ function ContactItem({
   title,
   subTitle,
   href,
-  ariaLabel,
+  arialLabel,
   value,
 }) {
   return (
     <div className="flex flex-col items-center justify-center text-center">
       {isIcon && (
-        <span className="p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+        <a
+          className="p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800"
+          href={href}
+          title={arialLabel}
+          target="_blank"
+          rel="noreferrer"
+        >
           {icon}
-        </span>
+        </a>
       )}
       <h2 className="mt-4 text-lg font-medium text-gray-800 dark:text-white">
         {title}
@@ -21,10 +27,11 @@ function ContactItem({
         {subTitle}
       </p>
       <a
-        className="mt-2 text-blue-700 dark:text-blue-400 w-10/12"
+        className="mt-2 text-blue-700 dark:text-blue-400 w-full sm:w-10/12"
         href={href}
-        aria-label={ariaLabel}
-        title={ariaLabel}
+        title={arialLabel}
+        target="_blank"
+        rel="noreferrer"
       >
         {value}
       </a>

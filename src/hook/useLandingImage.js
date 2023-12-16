@@ -8,12 +8,12 @@ export const useLandingImage = () => {
   useEffect(() => {
     if (isValid) {
       let imageUrl = new URL(
-        `../../assets/images/landingImage/jpg/landingImage${count}.jpg`,
+        `../assets/images/landingImage/jpg/landingImage${count}.jpg`,
         import.meta.url
       ).pathname;
 
       let imageWebpUrl = new URL(
-        `../../assets/images/landingImage/webp/landingImage${count}.webp`,
+        `../assets/images/landingImage/webp/landingImage${count}.webp`,
         import.meta.url
       ).pathname;
 

@@ -48,59 +48,50 @@ export default function Blog() {
       });
     });
   }, [results]);
-  console.log(blogDatas.content);
 
   return (
     <div className="w-full sm:px-20 px-0 sm:mt-16 mt-12 mx-auto">
       <article
-        className={`space-y-8 text-gray-900 dark:text-gray-50 sm:p-6 p-4 min-h-[80vh] shadow-md shadow-gray-300 dark:shadow-none rounded-sm ${
+        className={`xl:space-y-8 space-y-4 text-gray-900 dark:text-gray-50 sm:p-6 p-4 min-h-[80vh] shadow-md shadow-gray-300 dark:shadow-none rounded-sm ${
           blogDatas.isDone
-            ? "dark:bg-gray-800/70 bg-white/50"
+            ? "dark:bg-gray-800/70 bg-white"
             : "dark:bg-gray-800 bg-white/80 animate-pulse"
         }`}
       >
         {blogDatas.isDone === true && (
           <>
-            <div className="sm:space-x-24 space-x-0 flex sm:flex-row flex-col w-full">
-              <div className="flex flex-col w-full grow">
-                <h1 className="sm:text-3xl text-lg font-bold">
-                  {blogDatas.title}
-                </h1>
-                <p className=" dark:bg-blue-400 dark:text-gray-900 text-blue-500 bg-sky-100 rounded-sm w-fit flex items-center justify-center text-left tracking-wide sm:text-base text-sm mt-4 px-1.5 py-1">
-                  {blogDatas.category.name}
-                </p>
-                <p className="text-xs sm:hidden mt-2 text-gray-700 dark:text-gray-400">
-                  {new Date(
-                    blogDatas.createdAt || "01/01/1970"
-                  ).toLocaleDateString("vi-VN", {
-                    day: "2-digit",
-                    month: "2-digit",
-                    year: "numeric",
-                  })}
-                </p>
-              </div>
-              <div className="hidden sm:flex items-center grow flex-row w-fit dark:text-gray-400">
-                <p className="text-sm">
-                  {new Date(
-                    blogDatas.createdAt || "01/01/1970"
-                  ).toLocaleDateString("vi-VN", {
-                    day: "2-digit",
-                    month: "2-digit",
-                    year: "numeric",
-                  })}
-                </p>
+            <div className="sm:space-x-24 space-x-0 flex flex-col w-full">
+              <div className="flex flex-col w-full grow gap-y-2">
+                <div className="flex flex-row items-center justify-between w-full">
+                  <p className=" dark:bg-sky-600 dark:text-white text-blue-500 bg-sky-100 rounded-sm w-fit flex items-center justify-center text-left tracking-wide text-sm px-1.5 py-0.5">
+                    {blogDatas.category.name}
+                  </p>
+                  <p className="text-xs text-gray-700 dark:text-gray-400">
+                    {new Date(
+                      blogDatas.createdAt || "01/01/1970"
+                    ).toLocaleDateString("vi-VN", {
+                      day: "2-digit",
+                      month: "2-digit",
+                      year: "numeric",
+                    })}
+                  </p>
+                </div>
+                <div className="flex flex-row w-full">
+                  <h1 className="xl:text-2xl md:text-xl sm:text-lg font-bold">
+                    {blogDatas.title}
+                  </h1>
+                </div>
               </div>
             </div>
-            <div className="dark:text-gray-100 sm:mx-4 mx-1 whitespace-pre-line">
+            <div className="dark:text-gray-100 whitespace-pre-line">
               {Object.keys(blogDatas.content).length !== 0 && (
                 <RichText
                   content={blogDatas.content}
                   references={blogDatas.references}
                   renderers={{
                     p: ({ children }) =>
-                      children.props.content[0].text !==
-                      ("\n\n" || "\n" || "") ? (
-                        <p className="text-gray-900 dark:text-white mb-1.5 sm:text-base text-sm">
+                      children.props.content[0].text !== "" ? (
+                        <p className="text-gray-900 dark:text-white mb-1.5 text-sm xl:text-base">
                           {children}
                         </p>
                       ) : (
@@ -126,8 +117,8 @@ export default function Blog() {
           </>
         )}
       </article>
-      <div className="mx-2 text-sm dark:text-gray-400 sm:mt-3 sm:mb-9 mt-4 mb-28 flex flex-row space-y-0 sm:space-x-2">
-        <div className="flex items-center justify-between sm:w-3/12 w-full py-2 dark:text-gray-400 text-gray-700 group">
+      <div className="mx-2 text-sm dark:text-gray-400 lg:mt-3 lg:mb-9 mt-4 mb-32 flex flex-row space-x-2 md:space-x-4">
+        <div className="flex lg:items-center items-start justify-between sm:w-3/12 w-full py-2 dark:text-gray-400 text-gray-700 group">
           <Button
             title={"Quay lại"}
             type={"button"}

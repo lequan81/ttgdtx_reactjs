@@ -25,6 +25,15 @@ export const validateForm = (data) => {
   }
 };
 
+export const validateGrade = (data) => {
+  let classValid = checkClass(data.className);
+  let studentValid = checkStudenId(data.studentId);
+
+  if (!classValid && !studentValid) return -1;
+  if (!classValid) return -2;
+  if (!studentValid) return -4;
+};
+
 function checkFullname(fullname) {
   var regex =
     /^([a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđ]+)((\s{1}[a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđ]+){1,})$/g; // regex here
@@ -48,4 +57,22 @@ function checkLesson(lesson) {
 
 function checkAddress(address) {
   return String(address).trim() === "" ? false : true;
+}
+
+function checkClass(className) {
+  if (String(className).trim() === "") {
+    return false;
+  } else {
+    const regex = /^([0-9][a-zA-z]?|[0-9])/g; // regex here
+    return regex.test(String(className).toLowerCase().trim());
+  }
+}
+
+function checkStudenId(studentId) {
+  if (String(studentId).trim() === "") {
+    return false;
+  } else {
+    const regex = /^([0-9])/g;
+    return regex.test(String(studentId).toString().trim());
+  }
 }

@@ -23,13 +23,13 @@ export default function Button({
       type={type}
       formNoValidate={true}
       onClick={onClickHandle}
-      className={`flex items-center justify-center w-full sm:w-fit ${
+      className={`flex items-center justify-center ${
         isIcon
           ? "text-sm gap-x-2 group-hover:text-blue-500 dark:group-hover:text-gray-200 w-fit"
-          : `w-full py-2 px-3 font-medium text-white transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none ${
+          : `lg:w-fit w-full py-2 px-3 font-medium text-white transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none ${
               isLoading
                 ? "bg-blue-500 cursor-default"
-                : "bg-blue-600 hover:bg-blue-500 active:bg-blue-500 sm:mr-4"
+                : "bg-blue-600 hover:bg-blue-500 active:bg-blue-500 xl:mr-4"
             }`
       }`}
     >
@@ -55,8 +55,8 @@ export default function Button({
       ) : (
         icon
       )}
-      <span className={`${isBold && "font-semibold"}`}>
-        {isLoading === false && title}
+      <span className={`text-sm ${isBold ? "font-semibold" : ""}`}>
+        {isLoading === false ? title : ""}
       </span>
     </button>
   );

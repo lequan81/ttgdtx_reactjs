@@ -13,8 +13,6 @@ export function PostList({ category, isNested = false }) {
     setIsLoading(false);
   }, [category]);
 
-  console.log(results);
-
   return (
     <>
       {results.length > 0 ? (

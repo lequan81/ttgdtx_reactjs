@@ -8,9 +8,9 @@ export default function Table({ data }) {
   return (
     <div className="container sm:px-4 px-0 mx-auto">
       <div className="flex flex-col mt-6 items-center mb-10">
-        <div className="-my-2 overflow-x-auto sm:-mx-6">
+        <div className="-my-2 overflow-x-auto lg:-mx-6">
           {data !== undefined ? (
-            <div className="inline-block sm:w-fit w-[21rem] py-2 align-middle mb-16 sm:mb-2">
+            <div className="inline-block md:w-fit w-[22rem] py-2 align-middle mb-16 sm:mb-2">
               <div className="sm:overflow-hidden overflow-y-scroll md:rounded-lg border border-gray-400 dark:border-gray-700">
                 <table className="table-automax-w-full divide-y divide-gray-300 dark:divide-gray-700">
                   <caption className="p-3 text-left rtl:text-right bg-white dark:bg-gray-900">
@@ -77,7 +77,7 @@ export default function Table({ data }) {
                     ))}
                   </tbody>
                   <tfoot>
-                    <tr className="hidden sm:flex flex-row gap-x-16">
+                    <tr className="hidden lg:flex flex-row gap-x-16">
                       <td className="py-3.5 pl-2 text-left float-left flex flex-col gap-y-4">
                         <p className="font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
                           {"TB HK I: "}
@@ -168,11 +168,11 @@ export default function Table({ data }) {
                         </p>
                       </td>
                     </tr>
-                    <tr className="sm:hidden">
+                    <tr className="lg:hidden">
                       <td className="py-3.5 pl-1.5 whitespace-nowrap text-left float-left flex flex-col gap-y-2">
                         <p className="font-normal text-gray-700 dark:text-gray-300 text-xs">
                           {"TB HK I: "}
-                          <span className="font-semibold text-gray-900 dark:text-gray-100 text-sm">
+                          <span className="font-semibold text-gray-900 dark:text-gray-100 text-xs">
                             {data.overall[0].avgSem1 !== -1
                               ? data.overall[0].avgSem1
                               : " -"}
@@ -180,7 +180,7 @@ export default function Table({ data }) {
                         </p>
                         <p className="font-normal text-gray-700 dark:text-gray-300 text-xs">
                           {"TB HK II: "}
-                          <span className="font-semibold text-gray-900 dark:text-gray-100 text-sm">
+                          <span className="font-semibold text-gray-900 dark:text-gray-100 text-xs">
                             {data.overall[1].avgSem2 !== -1
                               ? data.overall[1].avgSem2
                               : " -"}
@@ -188,7 +188,7 @@ export default function Table({ data }) {
                         </p>
                         <p className="font-normal text-gray-700 dark:text-gray-300 text-xs">
                           {"TB năm: "}
-                          <span className="font-semibold text-gray-900 dark:text-gray-100 text-sm">
+                          <span className="font-semibold text-gray-900 dark:text-gray-100 text-xs">
                             {data.overall[2].allYear !== -1
                               ? data.overall[2].allYear
                               : " -"}

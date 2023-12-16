@@ -15,8 +15,7 @@ export const getPostContent = async (slug) => {
         hashtag
         coverImage {
           id
-          url
-          altText
+          url(transformation: {document: {output: {format: webp}}})
         }
         content {
           json
@@ -24,7 +23,7 @@ export const getPostContent = async (slug) => {
           references {
             ... on Asset {
               id
-              url
+              url(transformation: {document: {output: {format: webp}}})
               mimeType
               altText
             }

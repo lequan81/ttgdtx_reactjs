@@ -5,16 +5,16 @@ export default function Footer() {
     <footer className="px-4 py-1 mt-auto mx-auto w-full text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-700 sm:dark:bg-gray-800 bottom-0 fixed z-10 ">
       <div className="flex items-center flex-col sm:flex-row w-full">
         <p className="sm:w-1/2 w-0 flex items-center justify-start text-sm text-gray-700 dark:text-gray-300">
-          <span className="hidden sm:block">
+          <span className="hidden sm:block text-xs xl:text-sm min-w-max">
             © 2023 TTGDNN-GDTX huyện Vĩnh Cửu
           </span>
         </p>
-        <ul className="flex flex-row w-full flex-grow sm:gap-x-4 mr-0 sm:mr-4 items-center justify-around sm:justify-end mb-3 lg:mb-0">
+        <ul className="flex flex-row w-full flex-grow sm:gap-x-4 mr-0 sm:mr-4 items-center justify-around sm:justify-end mb-3 sm:mb-0">
           <li>
             <NavLink
               to="/faq"
               className={({ isActive }) =>
-                `text-xs sm:text-sm transition-colors whitespace-pre-line sm:whitespace-normal duration-300 ${
+                `text-xs xl:text-sm transition-colors whitespace-pre-line sm:whitespace-normal duration-300 ${
                   isActive
                     ? "text-blue-500"
                     : "dark:text-white sm:text-gray-700 sm:dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
@@ -28,7 +28,7 @@ export default function Footer() {
             <NavLink
               to="/privacy"
               className={({ isActive }) =>
-                `text-xs sm:text-sm transition-colors whitespace-pre-line sm:whitespace-normal duration-300 ${
+                `text-xs xl:text-sm transition-colors whitespace-pre-line sm:whitespace-normal duration-300 ${
                   isActive
                     ? "text-blue-500"
                     : "dark:text-white sm:text-gray-700 sm:dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
@@ -42,7 +42,7 @@ export default function Footer() {
             <NavLink
               to="/statement"
               className={({ isActive }) =>
-                `text-xs sm:text-sm transition-colors whitespace-pre-line sm:whitespace-normal duration-300 ${
+                `text-xs xl:text-sm transition-colors whitespace-pre-line sm:whitespace-normal duration-300 ${
                   isActive
                     ? "text-blue-500"
                     : "dark:text-white sm:text-gray-700 sm:dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
@@ -75,16 +75,16 @@ export default function Footer() {
           </a> */}
           {/* Facebook */}
           <a
+            className="mx-2 text-gray-700 transition-colors duration-300 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
             href="https://www.facebook.com/profile.php?id=100069135613333&mibextid=LQQJ4d"
             target="_blank"
-            className="mx-2 text-gray-700 transition-colors duration-300 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
             aria-label="Facebook"
             rel="noreferrer"
           >
             <svg
               viewBox="0 0 16 16"
               fill="currentColor"
-              className="h-4 w-4 sm:h-5 sm:w-5"
+              className="h-4 w-4 xl:h-5 xl:w-5"
             >
               <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
             </svg>

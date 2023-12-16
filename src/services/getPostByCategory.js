@@ -19,7 +19,7 @@ export const getPostByCategory = async (categoryName) => {
             createdAt
             coverImage {
               id
-              url
+              url(transformation: {document: {output: {format: webp}}})
             }
             category {
               title

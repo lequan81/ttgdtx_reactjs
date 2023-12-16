@@ -7,7 +7,8 @@ export default function ScrollToTopBtn() {
   return (
     <button
       id="scroll-to-top-btn"
-      className={` z-20 w-8 h-8 transition-transform duration-200 flex fixed right-6 sm:bottom-10 bottom-24 bg-blue-500 rounded text-white justify-center items-center shadow shadow-gray-500 dark:shadow-none ${
+      aria-label="scroll to top button"
+      className={` z-20 w-8 h-8 transition-transform duration-200 flex fixed right-6 md:bottom-12 bottom-20 bg-blue-500 rounded text-white justify-center items-center shadow shadow-gray-500 dark:shadow-none ${
         shown ? "scale-100" : "scale-0"
       }`}
       onClick={scrollToTop}

@@ -2,7 +2,7 @@
   "landing": [
     {
       "heading": "Trung tâm GDNN-GDTX huyện Vĩnh Cửu",
-      "title": "GDNN-GDTX huyện Vĩnh Cửu",
+      "title": "Trung tâm Giáo dục nghề nghiệp -\n Giáo dục thường xuyên huyện Vĩnh Cửu",
       "description": "Chương trình đào tạo của trung tâm GDNN-GDTX huyện Vĩnh Cửu được thiết kế dựa trên sự tham vấn của chuyên gia, chú trọng thực hành, phù hợp với nhu cầu mà nhà tuyển dụng tìm kiếm ở nguồn nhân lực thế hệ mới."
     }
   ],
@@ -100,7 +100,7 @@
           "subTitle": "Thứ 2 - Thứ 6 từ 8h - 19h",
           "isIcon": true,
           "icon": "phone",
-          "ariaLabel": "phone number",
+          "arialLabel": "phone number",
           "value": "0975940054",
           "href": "tel:0975940054"
         },
@@ -109,7 +109,7 @@
           "subTitle": "Luôn mở cửa các ngày trong tuần",
           "isIcon": true,
           "icon": "address",
-          "ariaLabel": "address",
+          "arialLabel": "address",
           "value": "102 Phan Chu Trinh, KP8, thị trấn Vĩnh An, Vĩnh Cửu, Đồng Nai",
           "href": "https://maps.app.goo.gl/FjbgZDYWGJ9a8ArUA?g_st=iz"
         },
@@ -118,7 +118,7 @@
           "subTitle": "Làm việc 24/7",
           "isIcon": true,
           "icon": "email",
-          "ariaLabel": "email",
+          "arialLabel": "email",
           "value": "gdtx.gdtxvinhcuu@dongnai.edu.vn",
           "href": "mailto:gdtx.gdtxvinhcuu@dongnai.edu.vn"
         }
@@ -133,27 +133,37 @@
         {
           "name": "Nguyễn Văn A",
           "onPosition": "Giám đốc",
-          "contact": ""
+          "phone": "",
+          "email": "",
+          "address": ""
         },
         {
           "name": "Võ Thành Sự",
           "onPosition": "Phó Giám đốc",
-          "contact": ""
+          "phone": "",
+          "email": "",
+          "address": ""
         },
         {
           "name": "Nguyễn Thị Thanh Tâm",
           "onPosition": "Chủ tịch Công đoàn",
-          "contact": ""
+          "phone": "",
+          "email": "",
+          "address": ""
         },
         {
           "name": "Ngô Thị Thu Huyền",
           "onPosition": "Phòng Đào tạo nghề",
-          "contact": "0975940054"
+          "phone": "0975940054",
+          "email": "",
+          "address": ""
         },
         {
           "name": "Phạm Thị Hòa",
           "onPosition": "Phòng Hành chính tổng hợp",
-          "contact": "0916605479"
+          "phone": "0916605479",
+          "email": "",
+          "address": ""
         }
       ]
     }

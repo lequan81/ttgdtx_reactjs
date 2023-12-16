@@ -289,7 +289,7 @@ export function SignUp() {
   return (
     <section className="flex flex-col flex-grow h-full items-center justify-start bg-gray-100 dark:bg-gray-900 w-full mt-12">
       <div className="flex items-center justify-center flex-col">
-        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl text-lg uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal">
+        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl lg:text-lg md:text-base uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal">
           {data.signUp[0].title}
         </h1>
         <p className="text-center leading-relaxed sm:text-lg text-sm text-gray-800 dark:text-gray-200">

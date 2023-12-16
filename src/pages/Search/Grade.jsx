@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { getStudentGrade } from "../../services/getStudentGrade";
 import { Toast } from "../../components/Toast";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import Table from "../../components/Table";
+import { getStudentGrade } from "../../services/getStudentGrade";
+import { validateGrade } from "../../services/validate";
 
 export function Grade() {
   const [error, setError] = useState({
@@ -118,28 +119,36 @@ export function Grade() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     handleErrors(0); //reset all errors if have
     setIsLoading(true);
-    Toast("info", "Vui lòng đợi...");
-    let res = await getStudentGrade(classGradeList);
+    let res = validateGrade(classGradeList);
     if (typeof res === "number") {
       setIsLoading(false);
       handleErrors(res);
     } else {
-      setStudentData(res);
-      setIsExist(true);
-      handleErrors(0);
-      setIsLoading(false);
-      Toast("success", "Đã tải xong");
+      (async () => {
+        res = await getStudentGrade(classGradeList);
+        if (typeof res === "number") {
+          setIsLoading(false);
+          handleErrors(res);
+        } else {
+          Toast("info", "Vui lòng đợi...");
+          setStudentData(res);
+          setIsExist(true);
+          handleErrors(0);
+          setIsLoading(false);
+          Toast("success", "Đã tải xong");
+        }
+      })();
     }
   };
 
   return (
     <section className="flex flex-col flex-grow h-full items-center justify-start bg-gray-100 dark:bg-gray-900 w-full mt-12">
       <div className="flex items-center justify-center flex-col">
-        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl text-lg uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal">
+        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl lg:text-lg md:text-base uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal">
           Tra cứu điểm thi
         </h1>
         <p className="text-center leading-relaxed sm:text-lg text-sm text-gray-800 dark:text-gray-200">
@@ -178,7 +187,7 @@ export function Grade() {
                 status={error.studentIdErr}
               />
             </div>
-            <div className="sm:w-1/6 w-full flex sm:grow flex-grow-0 flex-row items-center justify-center sm:h-24 h-fit mt-1">
+            <div className="sm:w-1/6 mx-auto w-full flex lg:grow flex-grow-0 flex-row items-center justify-center sm:h-24 h-fit mt-1">
               <Button title={"Tra cứu"} type="submit" isLoading={isLoading} />
             </div>
           </div>

@@ -4,8 +4,8 @@ import data from "../../data/data.json";
 
 export default function Contact() {
   return (
-    <div className="flex flex-col w-full mt-2">
-      <div className="container px-6 sm:py-8 py-4 mx-auto">
+    <div className="flex flex-col w-full mt-2 md:mt-6">
+      <div className="container px-6 py-0 lg:py-6 mx-auto">
         <div className="text-center">
           <h1 className="text-center text-blue-600 dark:text-blue-500 sm:text-xl text-lg uppercase font-bold mb-2 mt-2">
             {data.contact[0].title || "Thông tin liên hệ"}
@@ -17,7 +17,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:gap-x-2 gap-y-8 sm:gap-y-0 sm:mt-10 mt-6 mb-28 space-y-4 sm:space-y-0 sm:mb-0 sm:grid-cols-3">
+        <div className="grid grid-cols-1 lg:gap-x-2 gap-y-8 lg:gap-y-0 lg:mt-10 mt-6 mb-24 sm:mb-8 space-y-4 lg:space-y-0 lg:grid-cols-3">
           {data.contact[0].children.map((item) => (
             <ContactItem
               key={item.title}
@@ -26,7 +26,7 @@ export default function Contact() {
               title={item.title}
               subTitle={item.subTitle}
               href={item.href}
-              ariaLabel={item.ariaLabel}
+              arialLabel={item.arialLabel}
               value={item.value}
             />
           ))}
