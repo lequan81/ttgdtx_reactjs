@@ -12,14 +12,20 @@ export function Ref() {
       <div className="shadow-none rounded flex w-full h-full">
         <div className="px-6 py-2.5 mx-auto w-full">
           <div className="grid gap-6 grid-cols-1 mb-16 sm:mb-0 sm:grid-cols-4 md:grid-cols-3 xl:grid-cols-4 sm:max-w-full">
-            {data.ref.map((item) => (
-              <RefItem
-                key={item.title}
-                title={item.title}
-                description={item.description}
-                path={item.path}
-              />
-            ))}
+            {data.ref.length > 0 ? (
+              data.ref.map((item) => (
+                <RefItem
+                  key={item.title}
+                  title={item.title}
+                  description={item.description}
+                  path={item.path}
+                />
+              ))
+            ) : (
+              <p className="text-center leading-relaxed sm:text-lg text-base text-gray-800 dark:text-gray-200 col-span-4">
+                Không có thông tin thêm nào gần đây
+              </p>
+            )}
           </div>
         </div>
       </div>
