@@ -25,7 +25,7 @@ export default function Button({
       onClick={onClickHandle}
       className={`flex items-center justify-center ${
         isIcon
-          ? "text-sm gap-x-2 group-hover:text-blue-500 dark:group-hover:text-gray-200 w-fit"
+          ? "text-sm gap-x-2 hover:text-blue-500 dark:hover:text-gray-200 w-fit"
           : `lg:w-fit w-full py-2 px-3 font-medium text-white transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none ${
               isLoading
                 ? "bg-blue-500 cursor-default"

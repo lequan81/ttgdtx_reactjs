@@ -14,7 +14,7 @@ export function ErrorPage() {
           <p className="sm:text-xl text-base mt-6 text-gray-700 dark:text-gray-300">
             Rất tiếc, trang bạn tìm kiếm không tồn tại!
           </p>
-          <div className="flex items-center justify-center w-full gap-x-6 py-2 dark:text-gray-400 text-gray-700 group mt-2.5">
+          <div className="flex items-center justify-center w-full gap-x-6 py-2 dark:text-gray-400 text-gray-700 mt-2.5">
             <Button
               title={"Quay lại"}
               type={"button"}
