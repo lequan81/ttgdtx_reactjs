@@ -10,21 +10,26 @@ export const getStudentGrade = async (data) => {
 };
 
 async function getData(className, studentId) {
-  let result = -3;
-  await fetch(`${url}?classes=${className}`)
-    .catch(() => (result = -5))
-    .then((response) => response.json())
-    .then((data) => {
-      if (data[0] !== undefined) result = -3;
-      if (data[0].classes !== undefined) {
-        result = -4;
-        data[0].data.forEach((student) => {
-          if (student.studentId === Number(studentId)) {
-            result = student;
-          }
-        });
+  try {
+    const response = await fetch(`${url}?classes=${className}`);
+    if (!response.ok) {
+      return -5;
+    }
+    const data = await response.json();
+
+    if (data[0] === undefined || data[0].classes === undefined) {
+      return -3;
+    }
+
+    for (let i = 0; i < data[0].data.length; i++) {
+      const student = data[0].data[i];
+      if (student.studentId === Number(studentId)) {
+        return student;
       }
-    })
-    .catch(() => {});
-  return result;
+    }
+
+    return -4;
+  } catch (error) {
+    return -5;
+  }
 }

@@ -1,4 +1,4 @@
-export default function Button({
+const Button = ({
   title,
   isBold = false,
   type = "default",
@@ -8,7 +8,7 @@ export default function Button({
   target = "",
   onClickHandle,
   isLoading,
-}) {
+}) => {
   return type === "default" ? (
     <a
       href={path}
@@ -60,4 +60,5 @@ export default function Button({
       </span>
     </button>
   );
-}
+};
+export default Button;

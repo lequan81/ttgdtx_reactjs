@@ -5,18 +5,18 @@ import {
 } from "@heroicons/react/24/outline";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
-import { Toast } from "../../components/Toast";
+import Toast from "../../components/Toast";
 import { validateForm } from "../../services/validate";
 import { postSignUp } from "../../services/postSignUp";
 import data from "../../data/data.json";
 
 export function SignUp() {
   const [error, setError] = useState({
-    fullnameErr: { isValid: true, message: String },
-    emailErr: { isValid: true, String },
-    addressErr: { isValid: true, String },
-    phoneErr: { isValid: true, String },
-    lessonErr: { isValid: true, String },
+    fullnameErr: { isValid: true, message: "" },
+    emailErr: { isValid: true, message: "" },
+    addressErr: { isValid: true, message: "" },
+    phoneErr: { isValid: true, message: "" },
+    lessonErr: { isValid: true, message: "" },
     isDone: false,
   });
   const [isDone, setIsDone] = useState({
@@ -33,11 +33,19 @@ export function SignUp() {
     isDone: false,
   });
 
-  const handleChange = (e) =>
+  const handleChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
+    setError((prevState) => ({
+      ...prevState,
+      [`${e.target.name}Err`]: {
+        isValid: true,
+        message: "",
+      },
+    }));
+  };
 
   const handleErrors = (errorCode) => {
     switch (errorCode) {

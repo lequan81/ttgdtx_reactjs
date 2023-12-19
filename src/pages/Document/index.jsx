@@ -10,8 +10,8 @@ export function Document() {
     (async () => {
       const data = await getDocument();
       setDocuments(data);
+      setIsLoading(false);
     })();
-    setIsLoading(false);
   }, [documents]);
 
   return (
@@ -21,11 +21,12 @@ export function Document() {
           Văn bản tham khảo
         </h1>
       </div>
-      <div className="shadow-md shadow-gray-700 dark:shadow-none rounded flex w-full h-full">
+      <div className="shadow-none rounded flex w-full h-full">
         <div className="px-6 py-2.5 mx-auto w-full">
           <div className="grid gap-6 grid-cols-1 mb-16 sm:mb-0 sm:grid-cols-4 md:grid-cols-3 xl:grid-cols-4 sm:max-w-full">
-            {documents.length > 0
-              ? documents.map((doc) => (
+            {loading === false ? (
+              documents.length > 0 ? (
+                documents.map((doc) => (
                   <DocumentItem
                     key={doc.id}
                     title={doc.title}
@@ -34,11 +35,12 @@ export function Document() {
                     url={doc.url}
                   />
                 ))
-              : loading === false && (
-                  <p className="text-center leading-relaxed sm:text-lg text-base text-gray-800 dark:text-gray-200 col-span-4">
-                    Không có văn bản nào gần đây
-                  </p>
-                )}
+              ) : (
+                <p className="text-center leading-relaxed sm:text-lg text-base text-gray-800 dark:text-gray-200 col-span-4">
+                  Không có văn bản nào gần đây
+                </p>
+              )
+            ) : null}
           </div>
         </div>
       </div>

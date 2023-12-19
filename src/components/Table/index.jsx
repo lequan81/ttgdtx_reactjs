@@ -81,7 +81,7 @@ export default function Table({ data }) {
                       <td className="py-3.5 pl-2 text-left float-left flex flex-col gap-y-4">
                         <p className="font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
                           {"TB HK I: "}
-                          <span className="sm:inline block font-semibold text-gray-900 dark:text-gray-100 sm:text-sm">
+                          <span className="sm:inline block float-right font-semibold text-gray-900 dark:text-gray-100 sm:text-sm">
                             {data.overall[0].avgSem1 !== -1
                               ? data.overall[0].avgSem1
                               : " -"}
@@ -89,7 +89,7 @@ export default function Table({ data }) {
                         </p>
                         <p className="font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
                           {"TB HK II: "}
-                          <span className="sm:inline block font-semibold text-gray-900 dark:text-gray-100 sm:text-sm">
+                          <span className="sm:inline block font-semibold float-right text-gray-900 dark:text-gray-100 sm:text-sm">
                             {data.overall[1].avgSem2 !== -1
                               ? data.overall[1].avgSem2
                               : " -"}
@@ -97,7 +97,7 @@ export default function Table({ data }) {
                         </p>
                         <p className="font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
                           {"TB năm: "}
-                          <span className="sm:inline block font-semibold text-gray-900 dark:text-gray-100 sm:text-sm">
+                          <span className="sm:inline block font-semibold float-right text-gray-900 dark:text-gray-100 sm:text-sm">
                             {data.overall[2].allYear !== -1
                               ? data.overall[2].allYear
                               : " -"}
@@ -152,7 +152,7 @@ export default function Table({ data }) {
                         <p className="font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
                           Tình trạng:
                           <span
-                            className={`sm:inline block sm:px-3 px-1 sm:py-1 py-0.5 sm:ml-4 ml-0 sm:mt-0 mt-2 font-semibold text-xs sm:text-sm sm:rounded-2xl rounded-sm dark:bg-gray-800 ${
+                            className={`sm:inline block sm:px-3 px-1 sm:py-1 py-0.5 sm:ml-4 ml-0 sm:mt-0 mt-2 font-semibold text-xs sm:text-sm rounded-sm dark:bg-gray-800 ${
                               data.isGraduated
                                 ? "text-emerald-500 bg-emerald-100/60"
                                 : "text-red-500 bg-red-100/60"
@@ -172,7 +172,7 @@ export default function Table({ data }) {
                       <td className="py-3.5 pl-1.5 whitespace-nowrap text-left float-left flex flex-col gap-y-2">
                         <p className="font-normal text-gray-700 dark:text-gray-300 text-xs">
                           {"TB HK I: "}
-                          <span className="font-semibold text-gray-900 dark:text-gray-100 text-xs">
+                          <span className="font-semibold float-right text-gray-900 dark:text-gray-100 text-xs">
                             {data.overall[0].avgSem1 !== -1
                               ? data.overall[0].avgSem1
                               : " -"}
@@ -180,7 +180,7 @@ export default function Table({ data }) {
                         </p>
                         <p className="font-normal text-gray-700 dark:text-gray-300 text-xs">
                           {"TB HK II: "}
-                          <span className="font-semibold text-gray-900 dark:text-gray-100 text-xs">
+                          <span className="font-semibold float-right text-gray-900 dark:text-gray-100 text-xs">
                             {data.overall[1].avgSem2 !== -1
                               ? data.overall[1].avgSem2
                               : " -"}
@@ -188,7 +188,7 @@ export default function Table({ data }) {
                         </p>
                         <p className="font-normal text-gray-700 dark:text-gray-300 text-xs">
                           {"TB năm: "}
-                          <span className="font-semibold text-gray-900 dark:text-gray-100 text-xs">
+                          <span className="font-semibold float-right text-gray-900 dark:text-gray-100 text-xs">
                             {data.overall[2].allYear !== -1
                               ? data.overall[2].allYear
                               : " -"}

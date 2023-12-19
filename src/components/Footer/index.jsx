@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-
-export default function Footer() {
+import { memo } from "react";
+const Footer = memo(() => {
   return (
     <footer className="px-4 py-1 mt-auto mx-auto w-full text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-700 sm:dark:bg-gray-800 bottom-0 fixed z-10 ">
       <div className="flex items-center flex-col sm:flex-row w-full">
@@ -93,4 +93,7 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+});
+
+Footer.displayName = "Footer";
+export default Footer;

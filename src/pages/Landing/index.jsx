@@ -1,15 +1,14 @@
 import { useState } from "react";
-import { useLandingImage } from "../../hook/useLandingImage";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import Contact from "../../components/Contact";
 import Team from "./Team";
 import Stats from "./Stats";
 import Recently from "./Recently";
-import data from "../../data/data.json";
 import Button from "../../components/Button";
+import data from "../../data/data.json";
 
 export function Landing() {
-  const [slides] = useLandingImage();
+  const slides = data.images.landingImages;
   const [currentIndex, setCurrentIndex] = useState(0);
   const slideDuration = 9200;
 

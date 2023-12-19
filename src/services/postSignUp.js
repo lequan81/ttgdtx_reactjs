@@ -1,19 +1,24 @@
 const url = import.meta.env.VITE_SIGNUP_ENDPOINT;
 
 export const postSignUp = async (data) => {
-  let result = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((res) => {
-      return res.ok;
-    })
-    .catch(() => {
-      return -1;
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...data,
+        createdAt: new Date().toLocaleDateString("vi-VN", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+        }),
+      }),
     });
 
-  return result !== undefined ? result : -1;
+    return response.status;
+  } catch (error) {
+    return -1;
+  }
 };

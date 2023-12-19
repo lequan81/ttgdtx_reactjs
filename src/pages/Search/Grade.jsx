@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Toast } from "../../components/Toast";
+import Toast from "../../components/Toast";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import Table from "../../components/Table";
@@ -8,8 +8,8 @@ import { validateGrade } from "../../services/validate";
 
 export function Grade() {
   const [error, setError] = useState({
-    classNameErr: { isValid: true, message: String },
-    studentIdErr: { isValid: true, message: String },
+    classNameErr: { isValid: true, message: "" },
+    studentIdErr: { isValid: true, message: "" },
   });
 
   const [studentData, setStudentData] = useState({});
@@ -22,11 +22,19 @@ export function Grade() {
   const [isLoading, setIsLoading] = useState(false);
   const [isExist, setIsExist] = useState(false);
 
-  const handleChange = (e) =>
+  const handleChange = (e) => {
     setClassGradeList((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
+    setError((prevState) => ({
+      ...prevState,
+      [`${e.target.name}Err`]: {
+        isValid: true,
+        message: "",
+      },
+    }));
+  };
 
   const handleErrors = (errorCode) => {
     switch (errorCode) {
@@ -129,12 +137,12 @@ export function Grade() {
       handleErrors(res);
     } else {
       (async () => {
+        Toast("info", "Vui lòng đợi...");
         res = await getStudentGrade(classGradeList);
         if (typeof res === "number") {
           setIsLoading(false);
           handleErrors(res);
         } else {
-          Toast("info", "Vui lòng đợi...");
           setStudentData(res);
           setIsExist(true);
           handleErrors(0);

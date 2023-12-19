@@ -1,4 +1,4 @@
-export default function Input({
+const Input = ({
   id,
   title,
   isRequired,
@@ -10,7 +10,7 @@ export default function Input({
   placeholder,
   status = {},
   isLoading = false,
-}) {
+}) => {
   return (
     <>
       <label
@@ -35,7 +35,7 @@ export default function Input({
               ? "outline-gray-300 dark:outline-gray-700"
               : "outline-red-300 dark:outline-red-700"
           }`}
-          value={isLoading ? "" : selected}
+          value={selected}
           onChange={handleChange}
         >
           {selectList.length > 0 &&
@@ -61,7 +61,7 @@ export default function Input({
           id={id}
           name={id}
           type={type}
-          placeholder={isLoading ? "" : placeholder}
+          placeholder={placeholder}
           onChange={handleChange}
         />
       )}
@@ -74,4 +74,6 @@ export default function Input({
       </p>
     </>
   );
-}
+};
+
+export default Input;

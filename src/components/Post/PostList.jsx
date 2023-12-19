@@ -9,14 +9,15 @@ export function PostList({ category, isNested = false }) {
     (async () => {
       const data = await getPostByCategory(category);
       setResults(data);
+      setIsLoading(false);
     })();
-    setIsLoading(false);
   }, [category]);
 
   return (
     <>
-      {results.length > 0
-        ? results.map((post) => (
+      {isLoading === false ? (
+        results.length > 0 ? (
+          results.map((post) => (
             <Post
               key={post.node.id}
               title={post.node.title}
@@ -30,11 +31,12 @@ export function PostList({ category, isNested = false }) {
               path={`${isNested ? "" : category + "/"}${post.node.slug}`}
             />
           ))
-        : isLoading === false && (
-            <p className="text-center leading-relaxed sm:text-lg text-base text-gray-800 dark:text-gray-200 col-span-4">
-              Không có bài viết nào gần đây
-            </p>
-          )}
+        ) : (
+          <p className="text-center leading-relaxed sm:text-lg text-base text-gray-800 dark:text-gray-200 col-span-4">
+            Không có bài viết nào gần đây
+          </p>
+        )
+      ) : null}
     </>
   );
 }

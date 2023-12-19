@@ -12,7 +12,7 @@ function TeamItem({
 }) {
   return (
     <div className="hs-tooltip inline-block [--trigger:hover]">
-      <div className="hs-tooltip-toggle flex">
+      <div className="hs-tooltip-toggle flex min-w-max">
         <div
           className="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 w-1/2 md:w-1/4 lg:w-2/12 bg-white border border-gray-100 text-start rounded-md shadow-md after:absolute after:top-0 after:-start-4 after:w-4 after:h-full dark:bg-gray-800 dark:border-gray-700"
           role="tooltip"

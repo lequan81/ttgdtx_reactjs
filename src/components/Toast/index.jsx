@@ -6,8 +6,8 @@ import {
   XCircleIcon,
 } from "@heroicons/react/24/outline";
 
-export function Toast(type, title) {
-  return toast.custom(
+export default function Toast(type, title) {
+  toast.custom(
     (t) => (
       <div
         className={`flex flex-row grow items-center justify-center z-30 w-full mx-auto ${

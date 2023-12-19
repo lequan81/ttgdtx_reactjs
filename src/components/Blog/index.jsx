@@ -6,7 +6,7 @@ import { getPostContent } from "../../services/getPostContent";
 import HashtagItem from "./HashtagItem";
 import Button from "../Button";
 
-export default function Blog() {
+const Blog = () => {
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -145,4 +145,6 @@ export default function Blog() {
       </div>
     </div>
   );
-}
+};
+
+export default Blog;

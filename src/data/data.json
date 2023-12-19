@@ -233,8 +233,8 @@
           "title": "Cơ khí"
         },
         {
-          "value": "May",
-          "title": "May"
+          "value": "May vá",
+          "title": "May vá"
         }
       ]
     }
@@ -255,5 +255,38 @@
       "description": "Website chính thức của Sở Thông Tin và Truyền Thông tỉnh Đồng Nai",
       "path": "http://sgddt.dongnai.gov.vn/"
     }
-  ]
+  ],
+  "images": {
+    "landingImages": [
+      {
+        "url": "/images/landingImages/webp/landingImage0.webp",
+        "fallbackUrl": "/images/landingImages/jpg/landingImage0.jpg"
+      },
+      {
+        "url": "/images/landingImages/webp/landingImage1.webp",
+        "fallbackUrl": "/images/landingImages/jpg/landingImage1.jpg"
+      },
+      {
+        "url": "/images/landingImages/webp/landingImage2.webp",
+        "fallbackUrl": "/images/landingImages/jpg/landingImage2.jpg"
+      },
+      {
+        "url": "/images/landingImages/webp/landingImage3.webp",
+        "fallbackUrl": "/images/landingImages/jpg/landingImage3.jpg"
+      },
+      {
+        "url": "/images/landingImages/webp/landingImage4.webp",
+        "fallbackUrl": "/images/landingImages/jpg/landingImage4.jpg"
+      },
+      {
+        "url": "/images/landingImages/webp/landingImage5.webp",
+        "fallbackUrl": "/images/landingImages/jpg/landingImage5.jpg"
+      },
+      {
+        "url": "/images/landingImages/webp/landingImage6.webp",
+        "fallbackUrl": "/images/landingImages/jpg/landingImage6.jpg"
+      }
+    ],
+    "teamImages": []
+  }
 }
