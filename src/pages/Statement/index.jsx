@@ -31,7 +31,7 @@ export function Statement() {
               mật và độ an toàn. Bạn hiểu rằng mọi thông điệp hoặc thông tin mà
               bạn gửi có thể bị người khác đọc hoặc chặn lại.
             </p>
-            <p>
+            <p className="mb-1.5 lg:text-base text-sm">
               Trong bất kỳ trường hợp nào, Trung tâm GDNN-GDTX huyện Vĩnh Cửu
               cũng sẽ không chịu trách nhiệm về mọi hành vi trái phép của các
               bên thứ ba liên quan đến âm mưu phá hỏng các giao thức bảo mật của

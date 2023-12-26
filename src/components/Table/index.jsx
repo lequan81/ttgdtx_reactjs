@@ -10,9 +10,9 @@ export default function Table({ data }) {
       <div className="flex flex-col mt-6 items-center mb-10">
         <div className="-my-2 overflow-x-auto lg:-mx-6">
           {data !== undefined ? (
-            <div className="inline-block md:w-fit w-[22rem] py-2 align-middle mb-16 sm:mb-2">
+            <div className="inline-block xl:w-fit lg:w-20 w-[22rem] py-2 align-middle mb-16 sm:mb-2">
               <div className="sm:overflow-hidden overflow-y-scroll md:rounded-lg border border-gray-400 dark:border-gray-700">
-                <table className="table-automax-w-full divide-y divide-gray-300 dark:divide-gray-700">
+                <table className="table-auto max-w-full divide-y divide-gray-300 dark:divide-gray-700">
                   <caption className="p-3 text-left rtl:text-right bg-white dark:bg-gray-900">
                     <h2 className=" font-medium text-gray-800 dark:text-white">
                       {data.studentName || "Không tìm thấy tên"}
