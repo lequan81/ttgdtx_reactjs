@@ -60,12 +60,12 @@ export function Landing() {
                 "Trung tâm Giáo dục nghề nghiệp -\n Giáo dục thường xuyên huyện Vĩnh Cửu"
               } */}
             </h2>
-            <p className="md:mr-40 lg:mr-52 xl:mr-72 px-2 mb-10 text-base sm:text-sm lg:text-base text-gray-900 dark:text-gray-100">
+            <p className="antialiased hover:subpixel-antialiased md:mr-40 lg:mr-52 xl:mr-72 px-2 mb-10 text-base sm:text-sm lg:text-base text-gray-900 dark:text-gray-100">
               {data.landing[0].description}
             </p>
 
             <div className="mb-8 space-y-3 text-base">
-              <p className="flex items-center -mx-2 text-gray-800 dark:text-gray-200">
+              <p className="antialiased hover:subpixel-antialiased flex items-center -mx-2 text-gray-800 dark:text-gray-200">
                 <CheckCircleIcon
                   className="lg:w-6 lg:h-6 w-5 h-5 mx-2 text-blue-500"
                   fill="none"
@@ -77,7 +77,7 @@ export function Landing() {
                 </span>
               </p>
 
-              <p className="flex items-center -mx-2 text-gray-800 dark:text-gray-200">
+              <p className="antialiased hover:subpixel-antialiased flex items-center -mx-2 text-gray-800 dark:text-gray-200">
                 <CheckCircleIcon
                   className="lg:w-6 lg:h-6 w-5 h-5 mx-2 text-blue-500"
                   fill="none"
@@ -89,7 +89,7 @@ export function Landing() {
                 </span>
               </p>
 
-              <p className="flex items-center -mx-2 text-gray-800 dark:text-gray-200">
+              <p className="antialiased hover:subpixel-antialiased flex items-center -mx-2 text-gray-800 dark:text-gray-200">
                 <CheckCircleIcon
                   className="lg:w-6 lg:h-6 w-5 h-5 mx-2 text-blue-500"
                   fill="none"

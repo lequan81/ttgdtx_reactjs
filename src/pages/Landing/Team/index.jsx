@@ -12,7 +12,7 @@ function Team() {
             {teams.title || "Về chúng tôi"}
           </h1>
 
-          <p className="mt-3 text-gray-700 dark:text-gray-400 text-sm sm:text-base">
+          <p className="antialiased hover:subpixel-antialiased mt-3 text-gray-700 dark:text-gray-400 text-sm sm:text-base">
             {teams.subTitle ||
               "Giảng viên giàu kinh nghiệm, có trình độ chuyên môn cao, trải qua kì tuyển chọn đặc biệt"}
           </p>

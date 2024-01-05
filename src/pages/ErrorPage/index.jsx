@@ -11,7 +11,7 @@ export function ErrorPage() {
           <h1 className="block sm:text-8xl font-bold text-gray-800 text-6xl dark:text-white">
             404
           </h1>
-          <p className="sm:text-xl text-base mt-6 text-gray-700 dark:text-gray-300">
+          <p className="antialiased hover:subpixel-antialiased sm:text-xl text-base mt-6 text-gray-700 dark:text-gray-300">
             Rất tiếc, trang bạn tìm kiếm không tồn tại!
           </p>
           <div className="flex items-center justify-center w-full gap-x-6 py-2 dark:text-gray-400 text-gray-700 mt-2.5">

@@ -28,7 +28,9 @@ function TeamItem({
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                <p className="text-sm font-medium">{phone}</p>
+                <p className="antialiased hover:subpixel-antialiased tabular-nums text-sm font-medium">
+                  {phone}
+                </p>
               </div>
             </li>
             <li className="flex flex-row items-center">
@@ -41,7 +43,9 @@ function TeamItem({
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                <p className="text-sm font-medium">{email}</p>
+                <p className="antialiased hover:subpixel-antialiased text-sm font-medium">
+                  {email}
+                </p>
               </div>
             </li>
           </ul>
@@ -54,10 +58,10 @@ function TeamItem({
         />
 
         <div className="flex flex-col justify-center">
-          <p className="sm:text-lg text-base font-semibold sm:font-bold">
+          <p className="antialiased hover:subpixel-antialiased sm:text-lg text-base font-semibold sm:font-bold">
             {name}
           </p>
-          <p className="text-sm text-gray-800 dark:text-gray-400">
+          <p className="antialiased hover:subpixel-antialiased text-sm text-gray-800 dark:text-gray-400">
             {onPosition}
           </p>
         </div>

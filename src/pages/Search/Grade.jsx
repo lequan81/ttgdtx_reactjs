@@ -159,7 +159,7 @@ export function Grade() {
         <h1 className="text-center text-blue-600 dark:text-white sm:text-xl lg:text-lg md:text-base uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal">
           Tra cứu điểm thi
         </h1>
-        <p className="text-center leading-relaxed sm:text-lg text-sm text-gray-800 dark:text-gray-200">
+        <p className="antialiased hover:subpixel-antialiased text-center leading-relaxed sm:text-lg text-sm text-gray-800 dark:text-gray-200">
           {isExist === false
             ? "Vui lòng nhập tên lớp và số thứ tự trong lớp của bạn"
             : "Bảng điểm các môn"}

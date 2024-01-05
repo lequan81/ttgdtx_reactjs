@@ -9,7 +9,7 @@ function FAQItem({ ques, ans, isLink, href, linkTitle }) {
           <h3 className="md:text-lg font-semibold text-gray-800 dark:text-gray-100">
             {ques}
           </h3>
-          <p className="mt-1 text-gray-700 text-base dark:text-gray-400">
+          <p className="antialiased hover:subpixel-antialiased mt-1 text-gray-700 text-base dark:text-gray-400">
             {ans}
             {isLink && (
               <a className="no-underline text-blue-500 font-medium" href={href}>

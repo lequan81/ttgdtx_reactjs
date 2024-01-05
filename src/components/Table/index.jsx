@@ -18,7 +18,7 @@ export default function Table({ data }) {
                       {data.studentName || "Không tìm thấy tên"}
                     </h2>
 
-                    <p className="mt-0.5 text-sm text-gray-700 dark:text-gray-300">
+                    <p className="antialiased hover:subpixel-antialiased mt-0.5 text-sm text-gray-700 dark:text-gray-300">
                       {"STT: " + data.studentId || "_"}
                       <span className="text-sm text-gray-700 dark:text-gray-300">
                         {" "}
@@ -79,7 +79,7 @@ export default function Table({ data }) {
                   <tfoot>
                     <tr className="hidden lg:flex flex-row gap-x-16">
                       <td className="py-3.5 pl-2 text-left float-left flex flex-col gap-y-4">
-                        <p className="font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
+                        <p className="antialiased hover:subpixel-antialiased font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
                           {"TB HK I: "}
                           <span className="sm:inline block float-right font-semibold text-gray-900 dark:text-gray-100 sm:text-sm">
                             {data.overall[0].avgSem1 !== -1
@@ -87,7 +87,7 @@ export default function Table({ data }) {
                               : " -"}
                           </span>
                         </p>
-                        <p className="font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
+                        <p className="antialiased hover:subpixel-antialiased font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
                           {"TB HK II: "}
                           <span className="sm:inline block font-semibold float-right text-gray-900 dark:text-gray-100 sm:text-sm">
                             {data.overall[1].avgSem2 !== -1
@@ -95,7 +95,7 @@ export default function Table({ data }) {
                               : " -"}
                           </span>
                         </p>
-                        <p className="font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
+                        <p className="antialiased hover:subpixel-antialiased font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
                           {"TB năm: "}
                           <span className="sm:inline block font-semibold float-right text-gray-900 dark:text-gray-100 sm:text-sm">
                             {data.overall[2].allYear !== -1
@@ -105,7 +105,7 @@ export default function Table({ data }) {
                         </p>
                       </td>
                       <td className="py-3.5 text-left float-left flex flex-col gap-y-4">
-                        <p className="font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
+                        <p className="antialiased hover:subpixel-antialiased font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
                           Hạnh kiểm:
                           <span className="sm:inline block font-semibold text-gray-900 dark:text-gray-100 sm:text-sm">
                             {data.status[0].conduct
@@ -127,7 +127,7 @@ export default function Table({ data }) {
                             {data.status[0].conduct === -1 && " -"}
                           </span>
                         </p>
-                        <p className="font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
+                        <p className="antialiased hover:subpixel-antialiased font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
                           Học lực:
                           <span className="sm:inline block font-semibold text-gray-900 dark:text-gray-100 sm:text-sm">
                             {data.status[0].capacity
@@ -149,7 +149,7 @@ export default function Table({ data }) {
                             {data.status[0].capacity === -1 && " -"}
                           </span>
                         </p>
-                        <p className="font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
+                        <p className="antialiased hover:subpixel-antialiased font-normal text-gray-700 dark:text-gray-300 sm:text-sm">
                           Tình trạng:
                           <span
                             className={`sm:inline block sm:px-3 px-1 sm:py-1 py-0.5 sm:ml-4 ml-0 sm:mt-0 mt-2 font-semibold text-xs sm:text-sm rounded-sm dark:bg-gray-800 ${
@@ -170,7 +170,7 @@ export default function Table({ data }) {
                     </tr>
                     <tr className="lg:hidden">
                       <td className="py-3.5 pl-1.5 whitespace-nowrap text-left float-left flex flex-col gap-y-2">
-                        <p className="font-normal text-gray-700 dark:text-gray-300 text-xs">
+                        <p className="antialiased hover:subpixel-antialiased font-normal text-gray-700 dark:text-gray-300 text-xs">
                           {"TB HK I: "}
                           <span className="font-semibold float-right text-gray-900 dark:text-gray-100 text-xs">
                             {data.overall[0].avgSem1 !== -1
@@ -178,7 +178,7 @@ export default function Table({ data }) {
                               : " -"}
                           </span>
                         </p>
-                        <p className="font-normal text-gray-700 dark:text-gray-300 text-xs">
+                        <p className="antialiased hover:subpixel-antialiased font-normal text-gray-700 dark:text-gray-300 text-xs">
                           {"TB HK II: "}
                           <span className="font-semibold float-right text-gray-900 dark:text-gray-100 text-xs">
                             {data.overall[1].avgSem2 !== -1
@@ -186,7 +186,7 @@ export default function Table({ data }) {
                               : " -"}
                           </span>
                         </p>
-                        <p className="font-normal text-gray-700 dark:text-gray-300 text-xs">
+                        <p className="antialiased hover:subpixel-antialiased font-normal text-gray-700 dark:text-gray-300 text-xs">
                           {"TB năm: "}
                           <span className="font-semibold float-right text-gray-900 dark:text-gray-100 text-xs">
                             {data.overall[2].allYear !== -1
@@ -197,7 +197,7 @@ export default function Table({ data }) {
                       </td>
                       <td className="py-3.5 pl-1.5 whitespace-nowrap text-left float-left flex flex-col gap-y-2">
                         <div className="flex flex-row">
-                          <p className="font-normal text-gray-700 dark:text-gray-300 text-xs">
+                          <p className="antialiased hover:subpixel-antialiased font-normal text-gray-700 dark:text-gray-300 text-xs">
                             Hạnh kiểm:
                             <span className="inline font-semibold text-gray-900 dark:text-gray-100 text-xs">
                               {data.status[0].conduct
@@ -221,7 +221,7 @@ export default function Table({ data }) {
                           </p>
                         </div>
                         <div className="flex flex-row">
-                          <p className="font-normal text-gray-700 dark:text-gray-300 text-xs">
+                          <p className="antialiased hover:subpixel-antialiased font-normal text-gray-700 dark:text-gray-300 text-xs">
                             Học lực:
                             <span className="inline font-semibold text-gray-900 dark:text-gray-100 text-xs">
                               {data.status[0].capacity
@@ -245,7 +245,7 @@ export default function Table({ data }) {
                           </p>
                         </div>
                         <div className="flex flex-row">
-                          <p className="font-normal text-gray-700 dark:text-gray-300 text-xs">
+                          <p className="antialiased hover:subpixel-antialiased font-normal text-gray-700 dark:text-gray-300 text-xs">
                             Tình trạng:
                             <span
                               className={`block px-1.5 mt-2 font-medium text-xs sm:rounded-2xl rounded-sm dark:bg-gray-800 ${
@@ -298,7 +298,7 @@ export default function Table({ data }) {
                 <h1 className="mt-3 text-lg text-gray-800 dark:text-white">
                   Không tìm thấy dữ liệu!
                 </h1>
-                <p className="mt-2 text-gray-700 dark:text-gray-400">
+                <p className="antialiased hover:subpixel-antialiased mt-2 text-gray-700 dark:text-gray-400">
                   Vui lòng kiểm tra lại tên lớp và số thứ tự trong lớp của bạn
                 </p>
               </div>

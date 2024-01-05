@@ -7,7 +7,9 @@ function RefItem({ title, description, path = "#" }) {
         <h2 className="flex items-start gap-2 xl:text-lg text-base font-semibold md:h-14 h-12 line-clamp-2">
           {title}
         </h2>
-        <p className="my-1 h-12 line-clamp-2 text-sm">{description}</p>
+        <p className="antialiased hover:subpixel-antialiased my-1 h-12 line-clamp-2 text-sm">
+          {description}
+        </p>
         <div className="flex flex-wrap items-start my-2 xl:my-1 justify-end">
           <Button path={path} title={"Tìm hiểu thêm"} target={"_blank"} />
         </div>

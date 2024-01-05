@@ -11,7 +11,7 @@ export default function Contact() {
             {data.contact[0].title || "Thông tin liên hệ"}
           </h1>
 
-          <p className="mt-3 text-gray-700 dark:text-gray-400 text-sm sm:text-base">
+          <p className="antialiased hover:subpixel-antialiased mt-3 text-gray-700 dark:text-gray-400 text-sm sm:text-base">
             {data.contact[0].subTitle ||
               "Sự hài lòng của các bạn là trách nhiệm của chúng tôi"}
           </p>

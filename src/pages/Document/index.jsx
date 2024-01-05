@@ -36,7 +36,7 @@ export function Document() {
                   />
                 ))
               ) : (
-                <p className="text-center leading-relaxed sm:text-lg text-base text-gray-800 dark:text-gray-200 col-span-4">
+                <p className="antialiased hover:subpixel-antialiased text-center leading-relaxed sm:text-lg text-base text-gray-800 dark:text-gray-200 col-span-4">
                   Không có văn bản nào gần đây
                 </p>
               )

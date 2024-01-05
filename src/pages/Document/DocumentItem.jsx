@@ -7,7 +7,9 @@ function DocumentItem({ title, description, url = [], fileName = [] }) {
         <h2 className="flex items-start gap-2 xl:text-lg text-base font-semibold md:h-14 h-12 line-clamp-2">
           {title}
         </h2>
-        <p className="my-1 h-16 line-clamp-3 text-sm">{description}</p>
+        <p className="antialiased hover:subpixel-antialiased my-1 h-16 line-clamp-3 text-sm">
+          {description}
+        </p>
 
         <dt className="sm:text-sm text-xs font-medium leading-6 text-gray-900 dark:text-gray-100">
           Tài liệu đính kèm

@@ -300,7 +300,7 @@ export function SignUp() {
         <h1 className="text-center text-blue-600 dark:text-white sm:text-xl lg:text-lg md:text-base uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal">
           {data.signUp[0].title}
         </h1>
-        <p className="text-center leading-relaxed sm:text-lg text-sm text-gray-800 dark:text-gray-200">
+        <p className="antialiased hover:subpixel-antialiased text-center leading-relaxed sm:text-lg text-sm text-gray-800 dark:text-gray-200">
           {isDone.success === false &&
             isDone.show === true &&
             data.signUp[0].subTitle}
@@ -417,7 +417,7 @@ export function SignUp() {
             <h1 className="mt-3 sm:text-lg text-base font-medium sm:font-normal text-gray-800 dark:text-white">
               {isDone.success ? "Đã đăng ký thành công" : "Có lỗi xảy ra"}
             </h1>
-            <p className="mt-2 text-sm sm:text-base text-gray-500 dark:text-gray-400 whitespace-pre-line">
+            <p className="antialiased hover:subpixel-antialiased mt-2 text-sm sm:text-base text-gray-500 dark:text-gray-400 whitespace-pre-line">
               {isDone.success
                 ? "Cảm ơn bạn đã tin tưởng chúng tôi! \n Chúng tôi sẽ thông báo tới bạn sớm nhất có thể"
                 : "Xin vui lòng đợi và thử lại"}

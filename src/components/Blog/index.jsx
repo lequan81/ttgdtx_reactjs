@@ -61,12 +61,12 @@ const Blog = () => {
         {blogDatas.isDone === true && (
           <>
             <div className="sm:space-x-24 space-x-0 flex flex-col w-full">
-              <div className="flex flex-col w-full grow gap-y-2">
+              <div className="flex flex-col w-full grow gap-y-3">
                 <div className="flex flex-row items-center justify-between w-full">
-                  <p className=" dark:bg-sky-600 dark:text-white text-blue-500 bg-sky-100 rounded-sm w-fit flex items-center justify-center text-left tracking-wide text-sm px-1.5 py-0.5">
+                  <p className="antialiased hover:subpixel-antialiased dark:bg-blue-500 dark:text-white text-blue-600 bg-blue-50 rounded-sm w-fit flex items-center justify-center text-left tracking-wide text-sm px-1.5 py-0.5">
                     {blogDatas.category.name}
                   </p>
-                  <p className="text-xs text-gray-700 dark:text-gray-400">
+                  <p className="antialiased hover:subpixel-antialiased tabular-nums text-xs text-gray-700 dark:text-gray-400">
                     {new Date(
                       blogDatas.createdAt || "01/01/1970"
                     ).toLocaleDateString("vi-VN", {
@@ -83,29 +83,38 @@ const Blog = () => {
                 </div>
               </div>
             </div>
-            <div className="dark:text-gray-100 whitespace-pre-line">
+            <div className="dark:text-gray-100 whitespace-pre-line mx-1 sm:mx-2 md:mx-4 lg:mx-6 xl:mx-8">
               {Object.keys(blogDatas.content).length !== 0 && (
                 <RichText
                   content={blogDatas.content}
                   references={blogDatas.references}
                   renderers={{
-                    p: ({ children }) =>
-                      children.props.content[0].text !== "" ? (
-                        <p className="text-gray-900 dark:text-white mb-1.5 text-sm xl:text-base">
-                          {children}
-                        </p>
-                      ) : (
-                        <br />
-                      ),
+                    p: ({ children }) => (
+                      <p className="mb-4 antialiased hover:subpixel-antialiased text-gray-900 dark:text-white text-sm xl:text-base">
+                        <span className="">{children}</span>
+                      </p>
+                    ),
+                    ul: ({ children }) => (
+                      <ul className="list-disc list-outside ml-4 mb-4 space-y-2 antialiased hover:subpixel-antialiased text-gray-900 dark:text-white text-sm xl:text-base">
+                        {children}
+                      </ul>
+                    ),
+                    ol: ({ children }) => (
+                      <ol className="list-decimal list-outside ml-4 mb-4 space-y-2 antialiased hover:subpixel-antialiased text-gray-900 dark:text-white text-sm xl:text-base">
+                        {children}
+                      </ol>
+                    ),
+                    li: ({ children }) => (
+                      <li className="pl-1.5">{children}</li>
+                    ),
                     img: ({ src, altText }) => (
                       <figure className="mx-auto my-2 sm:max-w-2xl w-full bg-white/30 dark:bg-gray-800/70">
                         <img
-                          loading="lazy"
                           className="object-cover bg-center aspect-video rounded bg-no-repeat sm:max-w-2xl w-full mx-auto my-2 bg-transparent"
                           src={src}
-                          alt={altText}
+                          alt={altText || "blog image"}
                         />
-                        <figcaption className="bg-transparent px-5 py-1.5 text-center text-gray-900 dark:text-gray-200 text-sm font-medium">
+                        <figcaption className="bg-transparent px-5 py-1.5 text-center text-gray-900 dark:text-gray-200 text-sm italic font-medium">
                           {altText}
                         </figcaption>
                       </figure>
@@ -117,7 +126,7 @@ const Blog = () => {
           </>
         )}
       </article>
-      <div className="mx-2 text-sm dark:text-gray-400 lg:mt-3 lg:mb-9 mt-4 mb-32 flex flex-row space-x-2 md:space-x-4">
+      <div className="mx-2 text-sm dark:text-gray-400 lg:mt-3 lg:mb-9 mt-4 mb-28 flex flex-row space-x-2 md:space-x-4">
         <div className="flex lg:items-center items-start justify-between sm:w-3/12 w-full py-2 dark:text-gray-400 text-gray-700 group">
           <Button
             title={"Quay lại"}

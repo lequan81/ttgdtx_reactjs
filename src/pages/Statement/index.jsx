@@ -9,10 +9,10 @@ export function Statement() {
       <div className="shadow-none rounded flex w-full h-full">
         <div className="px-6 py-2.5 mx-auto w-full max-w-5xl text-gray-900 dark:text-gray-100 leading-6">
           <div className="mb-8">
-            <p className="text-left font-semibold text-lg lg:text-xl mb-2">
+            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-lg lg:text-xl mb-2">
               Các điều khoản
             </p>
-            <p className="mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
               Đôi khi các trang web và ứng dụng của chúng tôi có thể chứa các
               liên kết đến các trang web và dịch vụ không thuộc nhóm dịch vụ của
               Trung tâm GDNN-GDTX huyện Vĩnh Cửu. Các trang web và dịch vụ này
@@ -23,15 +23,15 @@ export function Statement() {
             </p>
           </div>
           <div className="mb-8">
-            <p className="text-left font-semibold text-lg lg:text-xl mb-2">
+            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-lg lg:text-xl mb-2">
               Bảo mật thông tin
             </p>
-            <p className="mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
               Các đường truyền Internet không hoàn toàn được đảm bảo về tính bảo
               mật và độ an toàn. Bạn hiểu rằng mọi thông điệp hoặc thông tin mà
               bạn gửi có thể bị người khác đọc hoặc chặn lại.
             </p>
-            <p className="mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
               Trong bất kỳ trường hợp nào, Trung tâm GDNN-GDTX huyện Vĩnh Cửu
               cũng sẽ không chịu trách nhiệm về mọi hành vi trái phép của các
               bên thứ ba liên quan đến âm mưu phá hỏng các giao thức bảo mật của
@@ -39,10 +39,10 @@ export function Statement() {
             </p>
           </div>
           <div className="mb-8">
-            <p className="text-left font-semibold text-lg lg:text-xl mb-2">
+            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-lg lg:text-xl mb-2">
               Từ chối bảo đảm
             </p>
-            <p className="mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
               Chúng tôi không chịu trách nhiệm đối với bất kỳ sự mất mát dữ
               liệu, tổn thất lợi ích nào hoặc các vấn đề khác liên quan đến việc
               truy cập website và sử dụng các dịch vụ, bao gồm nhưng không giới
@@ -50,30 +50,30 @@ export function Statement() {
               âm thanh, hình ảnh, đồ họa, video hoặc thông điệp mà bạn đã chia
               sẻ cho chúng tôi.
             </p>
-            <p className="mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
               Bạn đồng ý sử dụng các Dịch vụ với tất cả sự rủi ro.
             </p>
           </div>
           <div className="mb-8">
-            <p className="text-left font-semibold text-lg lg:text-xl mb-2">
+            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-lg lg:text-xl mb-2">
               Giới hạn trách nhiệm
             </p>
-            <p className="mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
               Bạn xác nhận và đồng ý rằng chúng tôi chỉ sẵn sàng cung cấp các
               dịch vụ bạn đồng ý giới hạn trách nhiệm của chúng tôi đối với bạn
               và các bên thứ ba.
             </p>
-            <p className="mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
               Bạn đồng ý chịu trách nhiệm bồi thường duy nhất và toàn bộ đối với
               bất kỳ khiếu nại, khiếu kiện nào tới chúng tôi liên quan đến bất
               kỳ sự vi phạm quy định sử dụng nào do việc sử dụng các dịch vụ
               hoặc ngừng sử dụng dịch vụ của chúng tôi.
             </p>
-            <p className="mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
               Bạn đồng ý tự chịu trách nhiệm với các nội dung và thông tin cung
               cấp cho chúng tôi.
             </p>
-            <p className="mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
               Bạn đồng ý bảo vệ, bồi thường và giữ cho chúng tôi và các công ty
               liên kết của chúng tôi và mỗi nhân viên, giám đốc, người lao động,
               đại lý, đại diện, người cung cấp thông tin và bên cấp phép của
@@ -86,7 +86,7 @@ export function Statement() {
               định của cơ quan Nhà nước có thẩm quyền liên quan đến hoặc phát
               sinh từ các sản phẩm và dịch vụ.
             </p>
-            <p className="mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
               Chúng tôi giữ quyền, bằng chi phí của mình, đảm nhận hoàn toàn
               việc bảo vệ và kiểm soát (nhưng không có trách nhiệm) đối với bất
               kỳ vấn đề nào phát sinh như vậy tùy thuộc vào sự bồi thường của
@@ -94,16 +94,16 @@ export function Statement() {
             </p>
           </div>
           <div className="mb-2">
-            <p className="text-left font-semibold text-lg lg:text-xl mb-2">
+            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-lg lg:text-xl mb-2">
               Các thay đổi đối với các điều khoản này
             </p>
-            <p className="mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
               Nếu chúng tôi quyết định thay đổi các điều khoản của mình, chúng
               tôi sẽ đăng các thay đổi ở đây. Nếu những thay đổi là quan trọng,
               chúng tôi cũng có thể chọn gửi email cho tất cả người dùng đã đăng
               ký của chúng tôi với các chi tiết mới
             </p>
-            <p className="mt-6 mb-16 sm:mb-0 md:text-sm text-xs italic">
+            <p className="antialiased hover:subpixel-antialiased mt-6 mb-16 sm:mb-0 md:text-sm text-xs italic">
               Cập nhật lần cuối: ngày 12 tháng 12 năm 2023
             </p>
           </div>
