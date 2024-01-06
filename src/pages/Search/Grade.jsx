@@ -156,10 +156,10 @@ export function Grade() {
   return (
     <section className="flex flex-col flex-grow h-full items-center justify-start bg-gray-100 dark:bg-gray-900 w-full mt-12">
       <div className="flex items-center justify-center flex-col">
-        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl lg:text-lg md:text-base uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal">
+        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl lg:text-lg md:text-base uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal animate__animated animate__zoomIn animate__faster">
           Tra cứu điểm thi
         </h1>
-        <p className="antialiased hover:subpixel-antialiased text-center leading-relaxed sm:text-lg text-sm text-gray-800 dark:text-gray-200">
+        <p className="antialiased hover:subpixel-antialiased text-center leading-relaxed sm:text-lg md:text-base text-sm text-gray-800 dark:text-gray-200 animate__animated animate__fadeIn">
           {isExist === false
             ? "Vui lòng nhập tên lớp và số thứ tự trong lớp của bạn"
             : "Bảng điểm các môn"}
@@ -168,7 +168,7 @@ export function Grade() {
       {isExist === false && (
         <form
           onSubmit={handleSubmit}
-          className="shadow-md transition-shadow shadow-gray-300 dark:shadow-none sm:rounded px-6 mt-10 sm:mt-4 py-6 justify-center bg-white dark:bg-gray-800 border border-gray-300 dark:border-none flex flex-row max-w-3xl"
+          className="animate__animated animate__zoomIn animate__fast shadow-md transition-shadow shadow-gray-300 dark:shadow-none sm:rounded px-6 mt-10 sm:mt-4 py-6 justify-center bg-white dark:bg-gray-800 border border-gray-300 dark:border-none flex flex-row max-w-3xl"
         >
           <div className="relative flex sm:flex-row flex-col items-start w-full">
             <div className="sm:w-2/6 px-3 h-28">

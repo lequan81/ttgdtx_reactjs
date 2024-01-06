@@ -4,7 +4,7 @@ export function FAQ() {
   return (
     <div className="w-full xl:pt-12 pt-10 mb-6 md:mb-12 px-4 sm:px-6 mx-auto dark:bg-gray-900 bg-gray-100">
       <div className="mx-auto mb-16">
-        <h2 className="text-2xl font-bold md:leading-tight dark:text-white text-gray-900 select-none fixed z-0 w-full bg-gray-100 dark:bg-gray-900 pb-2 pt-4">
+        <h2 className="text-xl xl:text-2xl font-bold md:leading-tight dark:text-white text-gray-900 select-none fixed z-0 w-full bg-gray-100 dark:bg-gray-900 pb-2 pt-4 animate__animated animate__slideInRight animate__fast">
           {data.faq[0].title}
         </h2>
       </div>

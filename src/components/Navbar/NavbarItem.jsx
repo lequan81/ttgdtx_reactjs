@@ -55,7 +55,7 @@ function NavbarItem({ title, path, isSubmenu, isCollapsed = false }) {
                   : `border-transparent ${
                       path === "/signup"
                         ? "group-hover:text-gray-800 dark:group-hover:text-white"
-                        : "hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500"
+                        : "hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 transition-colors transform duration-300"
                     }`
               }`
         }`

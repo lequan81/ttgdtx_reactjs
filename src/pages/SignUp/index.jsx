@@ -297,10 +297,10 @@ export function SignUp() {
   return (
     <section className="flex flex-col flex-grow h-full items-center justify-start bg-gray-100 dark:bg-gray-900 w-full mt-12">
       <div className="flex items-center justify-center flex-col">
-        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl lg:text-lg md:text-base uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal">
+        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl lg:text-lg md:text-base uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal animate__animated animate__zoomIn animate__faster">
           {data.signUp[0].title}
         </h1>
-        <p className="antialiased hover:subpixel-antialiased text-center leading-relaxed sm:text-lg text-sm text-gray-800 dark:text-gray-200">
+        <p className="antialiased hover:subpixel-antialiased text-center leading-relaxed sm:text-lg text-sm text-gray-800 dark:text-gray-200 animate__animated animate__fadeIn animate__slow">
           {isDone.success === false &&
             isDone.show === true &&
             data.signUp[0].subTitle}
@@ -309,7 +309,7 @@ export function SignUp() {
       {isDone.show === true ? (
         <form
           onSubmit={handleSubmit}
-          className="shadow-md transition-shadow shadow-gray-300 dark:shadow-none sm:rounded px-8 mx-auto mt-8 sm:mb-8 sm:py-8 py-4 mb-32 bg-white dark:bg-gray-800 border border-gray-200 dark:border-none flex flex-col w-full max-w-4xl"
+          className="animate__animated animate__zoomIn animate__fast shadow-md transition-shadow shadow-gray-300 dark:shadow-none sm:rounded px-8 mx-auto mt-8 sm:mb-8 sm:py-8 py-4 mb-32 bg-white dark:bg-gray-800 border border-gray-200 dark:border-none flex flex-col w-full max-w-4xl"
         >
           <div className="sm:flex mb-4">
             <div className="sm:w-5/12 px-3">
@@ -389,7 +389,7 @@ export function SignUp() {
           </div>
         </form>
       ) : (
-        <div className="flex items-center mt-6 text-center border sm:rounded-lg h-fit sm:w-full w-3/4 mx-auto sm:mx-0 max-w-md dark:border-gray-700">
+        <div className="animate__animated animate__zoomIn animate__fast flex items-center mt-6 text-center border sm:rounded-lg h-fit sm:w-full w-3/4 mx-auto sm:mx-0 max-w-md dark:border-gray-700">
           <div className="flex flex-col w-full px-4 sm:py-8 py-4 mx-auto">
             <div
               className={`p-1 sm:p-2 mx-auto rounded-full dark:bg-gray-800 ${

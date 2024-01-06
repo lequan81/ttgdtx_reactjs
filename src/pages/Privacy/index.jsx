@@ -2,28 +2,28 @@ export function Privacy() {
   return (
     <section className="flex flex-col h-full overflow-y-auto mt-12 mb-10 w-full">
       <div className="flex items-center justify-center flex-col">
-        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl lg:text-lg md:text-base uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal">
+        <h1 className="text-center text-blue-600 dark:text-white sm:text-xl lg:text-lg md:text-base uppercase font-bold mb-2 mt-4 whitespace-pre-line sm:whitespace-normal animate__animated animate__zoomIn animate__faster">
           Chính sách bảo mật
         </h1>
       </div>
-      <div className="shadow-none rounded flex w-full h-full">
+      <div className="shadow-none rounded flex w-full h-full animate__animated animate__slideInUp">
         <div className="px-6 py-2.5 mx-auto w-full max-w-5xl text-gray-900 dark:text-gray-100 leading-6">
           <div className="mb-8">
-            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-lg lg:text-xl mb-2">
+            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-base lg:text-lg mb-2">
               Chính sách bảo mật
             </p>
-            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-3 lg:text-base text-sm">
               Chính sách bảo mật này giải thích cách chúng tôi thu thập, sử
               dụng, chia sẻ dữ liệu cá nhân của bạn khi bạn sử dụng các dịch vụ
               được cung cấp trên các trang web và ứng dụng của chúng tôi hoặc
               tương tác với chúng tôi.
             </p>
-            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-3 lg:text-base text-sm">
               Dữ liệu cá nhân là bất kỳ thông tin nào về bạn mà bạn có thể được
               nhận dạng hoặc có thể nhận dạng được. Điều này có thể bao gồm các
               thông tin như:
             </p>
-            <ul className="list-disc list-inside space-y-2 lg:text-base text-sm">
+            <ul className="list-disc list-inside space-y-1 lg:text-base text-sm mb-4">
               <li>
                 Tên, ngày sinh, địa chỉ email, địa chỉ bưu điện, số điện thoại,
                 số điện thoại di động, chi tiết tài chính, chẳng hạn như thẻ
@@ -39,7 +39,7 @@ export function Privacy() {
                 trang web, ứng dụng và dịch vụ của chúng tôi.
               </li>
             </ul>
-            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-3 lg:text-base text-sm">
               Đôi khi các trang web và ứng dụng của chúng tôi có thể chứa các
               liên kết đến các trang web và dịch vụ không thuộc nhóm dịch vụ của
               Trung tâm GDNN-GDTX huyện Vĩnh Cửu. Các trang web và dịch vụ này
@@ -50,10 +50,10 @@ export function Privacy() {
             </p>
           </div>
           <div className="mb-8">
-            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-lg mb-2">
+            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-base lg:text-lg mb-2">
               Chúng tôi là ai và cách liên hệ với chúng tôi
             </p>
-            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-3 lg:text-base text-sm">
               Trung tâm GDNN-GDTX huyện Vĩnh Cửu, 102 Phan Chu Trinh, KP8, thị
               trấn Vĩnh An, Vĩnh Cửu, Đồng Nai là đơn vị kiểm soát dữ liệu liên
               quan đến dữ liệu cá nhân của bạn. Điều này có nghĩa là chúng tôi
@@ -64,17 +64,17 @@ export function Privacy() {
             </p>
           </div>
           <div className="mb-8">
-            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-lg mb-2">
+            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-base lg:text-lg mb-2">
               Các loại dữ liệu cá nhân chúng tôi thu thập về bạn
             </p>
-            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-3 lg:text-base text-sm">
               Chúng tôi thu thập dữ liệu cá nhân của bạn khi bạn truy cập các
               trang web, đăng ký khóa học, hoặc khi bạn tương tác với chúng tôi.
               Chúng tôi sẽ chỉ thu thập dữ liệu cá nhân của bạn theo luật hiện
               hành. Chúng tôi thu thập dữ liệu cá nhân của bạn theo nhiều cách
               khác nhau:
             </p>
-            <ul className="list-disc list-inside space-y-2 lg:text-base text-sm">
+            <ul className="list-disc list-inside space-y-1 lg:text-base text-sm mb-4">
               <li>
                 Trực tiếp từ bạn, khi bạn đăng ký dịch vụ của chúng tôi và khi
                 bạn duyệt các trang web của chúng tôi hoặc sử dụng các ứng dụng
@@ -90,10 +90,10 @@ export function Privacy() {
                 dữ liệu cá nhân giúp chúng tôi chống gian lận,...
               </li>
             </ul>
-            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-3 lg:text-base text-sm">
               Khi bạn đăng ký tư vấn trên trang chủ, chúng tôi thu thập:
             </p>
-            <ul className="list-disc list-inside space-y-2 lg:text-base text-sm">
+            <ul className="list-disc list-inside space-y-1 lg:text-base text-sm mb-4">
               <li>Tên của bạn</li>
               <li>Địa chỉ email của bạn</li>
               <li>Địa chỉ cư trú của bạn</li>
@@ -101,10 +101,10 @@ export function Privacy() {
             </ul>
           </div>
           <div className="mb-8">
-            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-lg mb-2">
+            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-base lg:text-lg mb-2">
               Cách chúng tôi sử dụng dữ liệu cá nhân của bạn
             </p>
-            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-3 lg:text-base text-sm">
               Chúng tôi chỉ sử dụng dữ liệu cá nhân được thu thập thông qua các
               trang web và ứng dụng của mình khi chúng tôi có lý do chính đáng
               và cơ sở pháp lý để làm như vậy. Chúng tôi xác định các cơ sở pháp
@@ -113,21 +113,21 @@ export function Privacy() {
             </p>
           </div>
           <div className="mb-8">
-            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-lg mb-2">
+            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-base lg:text-lg mb-2">
               Cookie và các công nghệ tương tự
             </p>
-            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-3 lg:text-base text-sm">
               Khi bạn truy cập các trang web của chúng tôi hoặc khi bạn sử dụng
               các ứng dụng của chúng tôi, chúng tôi có thể tự động thu thập dữ
               liệu cá nhân từ bạn bằng cách sử dụng cookie hoặc các công nghệ
               tương tự. Cookie là một tệp nhỏ có thể được đặt trên thiết bị của
               bạn cho phép chúng tôi nhận ra và ghi nhớ bạn.
             </p>
-            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-3 lg:text-base text-sm">
               Chúng tôi sử dụng cookie theo nhiều cách để cải thiện trải nghiệm
               của bạn trên trang web của chúng tôi, bao gồm:
             </p>
-            <ul className="list-disc list-inside space-y-2 lg:text-base text-sm">
+            <ul className="list-disc list-inside space-y-1 lg:text-base text-sm mb-4">
               <li>Hiểu cách bạn sử dụng trang web của chúng tôi</li>
               <li>Hiển thị cho bạn các nội dung có liên quan đến bạn</li>
               <li>
@@ -136,10 +136,10 @@ export function Privacy() {
             </ul>
           </div>
           <div className="mb-2">
-            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-lg mb-2">
+            <p className="antialiased hover:subpixel-antialiased text-left font-semibold text-base lg:text-lg mb-2">
               Các thay đổi đối với chính sách bảo mật này
             </p>
-            <p className="antialiased hover:subpixel-antialiased mb-1.5 lg:text-base text-sm">
+            <p className="antialiased hover:subpixel-antialiased mb-3 lg:text-base text-sm">
               Nếu chúng tôi quyết định thay đổi chính sách bảo mật của mình,
               chúng tôi sẽ đăng các thay đổi ở đây. Nếu những thay đổi là quan
               trọng, chúng tôi cũng có thể chọn gửi email cho tất cả người dùng

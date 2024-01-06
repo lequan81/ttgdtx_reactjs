@@ -1,8 +1,7 @@
-import { useLayoutEffect, lazy, Suspense } from "react";
+import { useLayoutEffect, Suspense } from "react";
 import { useRoutes, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import * as Pages from "./pages/index.js";
-lazy(() => import("./pages/index.js"));
 
 function App() {
   const location = useLocation();
