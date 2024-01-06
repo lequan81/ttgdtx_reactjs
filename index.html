@@ -69,7 +69,6 @@
         display: flex;
         overflow: hidden;
         position: absolute;
-        z-index: 10;
         background-color: #f0f9ff;
         justify-content: center;
         align-items: center;
@@ -126,20 +125,14 @@
       }
 
       @keyframes loader {
-        0% {
-          transform: scale(0);
-        }
-
-        40% {
-          transform: scale(1);
-        }
-
-        80% {
-          transform: scale(1);
-        }
-
+        0%,
         100% {
           transform: scale(0);
+        }
+
+        40%,
+        80% {
+          transform: scale(1);
         }
       }
     </style>

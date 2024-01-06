@@ -19,6 +19,7 @@ export function PostList({ category, isNested = false }) {
         results.length > 0 ? (
           results.map((post) => (
             <Post
+              show={true}
               key={post.node.id}
               title={post.node.title}
               description={post.node.description}
@@ -32,7 +33,7 @@ export function PostList({ category, isNested = false }) {
             />
           ))
         ) : (
-          <p className="antialiased hover:subpixel-antialiased text-center leading-relaxed sm:text-lg text-base text-gray-800 dark:text-gray-200 col-span-4">
+          <p className="antialiased hover:subpixel-antialiased text-center leading-relaxed sm:text-lg text-base text-gray-800 dark:text-gray-200 col-span-4 animate__animated animate__fadeIn">
             Không có bài viết nào gần đây
           </p>
         )
