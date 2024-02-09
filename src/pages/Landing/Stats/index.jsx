@@ -1,28 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import useIntersectionObserver from "../../../hook/useIntersectionObserver";
 
 function Stats() {
-  const ref = useRef(null);
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setShow(true);
-          }
-        });
-      },
-      { rootMargin: "200px 0px" }
-    );
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [ref]);
+  const [ref, show] = useIntersectionObserver();
 
   return (
     <>

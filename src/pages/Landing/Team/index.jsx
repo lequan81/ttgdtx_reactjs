@@ -1,30 +1,9 @@
-import { useEffect, useRef, useState } from "react";
 import TeamItem from "./TeamItem";
 import data from "../../../data/data.json";
+import useIntersectionObserver from "../../../hook/useIntersectionObserver";
 function Team() {
   const teams = data.teams[0];
-  const ref = useRef(null);
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setShow(true);
-          }
-        });
-      },
-      { rootMargin: "200px 0px" }
-    );
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [ref]);
+  const [ref, show] = useIntersectionObserver();
 
   return (
     <div

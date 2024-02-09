@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Post } from "../../../components/Post";
 import { getRecentPost } from "../../../services/getRecentPost";
+import useIntersectionObserver from "../../../hook/useIntersectionObserver";
 
 function Recently() {
-  const ref = useRef(null);
-  const [show, setShow] = useState(false);
   const [results, setResults] = useState([]);
+  const [ref, show] = useIntersectionObserver();
 
   useEffect(() => {
     (async () => {
@@ -13,26 +13,6 @@ function Recently() {
       setResults(data);
     })();
   }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setShow(true);
-          }
-        });
-      },
-      { rootMargin: "200px 0px" }
-    );
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [ref]);
 
   return (
     <div

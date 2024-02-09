@@ -1,31 +1,10 @@
-import { useEffect, useRef, useState } from "react";
 import ContactItem from "./ContactItem";
-import ContactIcon from "./ContactIcon";
 import data from "../../data/data.json";
+import useIntersectionObserver from "../../hook/useIntersectionObserver";
 
 export default function Contact() {
-  const ref = useRef(null);
-  const [show, setShow] = useState(false);
+  const [ref, show] = useIntersectionObserver();
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setShow(true);
-          }
-        });
-      },
-      { rootMargin: "200px 0px" }
-    );
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [ref]);
   return (
     <div
       ref={ref}
@@ -58,7 +37,7 @@ export default function Contact() {
               show={show}
               key={item.title}
               isIcon={item.isIcon}
-              icon={<ContactIcon type={item.icon} />}
+              icon={item.icon}
               title={item.title}
               subTitle={item.subTitle}
               href={item.href}

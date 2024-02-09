@@ -27,9 +27,9 @@ export default function Navbar() {
       <div className="sm:hidden top-12 w-full fixed z-10">
         <div
           id="navbar-collapse-with-animation"
-          className="hs-collapse dark:hs-collapse-open:bg-gray-900/[.98] hs-collapse-open:bg-gray-50 hs-collapse-close:bg-transparent p-4 hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
+          className="hs-collapse dark:hs-collapse-open:bg-gray-900 hs-collapse-open:bg-gray-50 hs-collapse-close:bg-transparent p-4 hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
         >
-          <div className="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7">
+          <div className="flex flex-col gap-y-4 gap-x-0 p-1.5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7">
             {data.menu.map((item) => {
               return item.isSubmenu ? (
                 <DropDownMenu key={item.name} data={item} isCollapsed={true} />
@@ -46,6 +46,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
       <div className="container sm:flex items-center justify-end h-full w-fit sm:w-full text-gray-700 dark:text-gray-300 order-3 sm:order-2 hs-collapse hidden">
         {data.menu.map((item) => {
           return item.isSubmenu ? (

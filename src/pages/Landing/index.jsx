@@ -24,48 +24,31 @@ export function Landing() {
 
   return (
     <section className="mt-10 xl:mt-12 w-full bg-gray-100 dark:bg-gray-900 shadow-lg transition-shadow shadow-gray-400 dark:shadow-none">
-      <div className="bg-white/70 dark:bg-gray-800/30 h-[75vh] sm:h-[85vh] shadow-md transition-shadow shadow-gray-300 dark:shadow-none relative flex flex-col py-4 lg:pt-0 lg:flex-col lg:pb-0">
-        <div className="animate__animated animate__slideInRight inset-y-0 top-0 right-0 z-0 w-full max-w-xl lg:max-w-2xl xl:max-w-4xl md:max-w-md px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 md:absolute xl:px-0">
-          <svg
-            className="sm:absolute left-0 z-10 lg:max-w-sm max-w-[16rem] lg:w-full md:w-3/4 hidden h-full text-blue-500 dark:text-blue-700 origin-center transition-all -translate-x-1/2 md:block"
-            viewBox="0 0 100 100"
-            fill="currentColor"
-            preserveAspectRatio="none slice"
-          >
-            <path d="M50 0H100L50 100H0L50 0Z" />
-          </svg>
-          <div
-            style={
-              slides.length > 0
-                ? {
-                    backgroundImage: `url(${
-                      slides[currentIndex].url ||
-                      slides[currentIndex].fallbackUrl
-                    })`,
-                  }
-                : {}
-            }
-            className={`sm:block hidden w-full h-full object-cover bg-no-repeat bg-center bg-cover duration-500 transform transition-all ease-in-out delay-200 ${
-              slides.length > 0
-                ? ""
-                : "bg-gray-300 dark:bg-gray-700 animate-pulse"
-            }`}
-          ></div>
-        </div>
-        <div className="relative flex flex-col items-start w-full max-w-lg px-4 md:px-0 lg:px-8 lg:max-w-screen-xl">
-          <div className="h-fit xl:mt-12 lg:mt-10 mt-2 md:mt-4 sm:max-w-xl xl:max-w-2xl w-full sm:mx-4">
-            <h2 className="animate__animated animate__slideInLeft animate__faster sm:mb-8 mb-4 text-2xl md:text-xl lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:leading-none sm:w-5/6 w-full md:w-10/12 lg:w-9/12 md:pr-12 lg:pr-10 xl:w-full md:whitespace-pre-line lg:whitespace-normal xl:whitespace-pre-line">
+      <div
+        style={
+          slides.length > 0
+            ? {
+                backgroundImage: `url(${
+                  slides[currentIndex].url || slides[currentIndex].fallbackUrl
+                })`,
+              }
+            : {}
+        }
+        className="relative bg-cover bg-center bg-no-repeat object-cover duration-500 transform transition-all ease-in-out delay-200 h-[85vh] md:h-[90vh]"
+      >
+        <div className="absolute inset-0 bg-black/80 sm:bg-black/20 sm:bg-gradient-to-r from-15% via-30% to-50% dark:from-20% dark:via-40% dark:to-55% from-black/90 via-black/70 dark:from-gray-900 dark:via-gray-900/70 to-transparent"></div>
+
+        <div className="relative flex flex-col h-full items-start w-full max-w-lg px-4 md:px-0 lg:px-8 lg:max-w-screen-xl">
+          <div className="h-full xl:mt-16 mt-12 md:mt-14 sm:max-w-xl lg:max-w-2xl w-full sm:mx-4">
+            <h2 className="animate__animated animate__slideInLeft animate__faster mb-4 md:mb-6 text-2xl sm:text-3xl md:text-2xl lg:text-3xl font-bold tracking-tight text-blue-600 sm:leading-none sm:w-5/6 w-full md:w-full md:pr-10 md:whitespace-pre-line xl:whitespace-pre-line">
               {data.landing[0].title}
-              {/* {
-                "Trung tâm Giáo dục nghề nghiệp -\n Giáo dục thường xuyên huyện Vĩnh Cửu"
-              } */}
             </h2>
-            <p className="animate__animated animate__slideInLeft antialiased hover:subpixel-antialiased md:mr-40 lg:mr-52 xl:mr-72 px-2 mb-10 text-base sm:text-sm lg:text-base text-gray-900 dark:text-gray-100">
+            <p className="animate__animated animate__slideInLeft antialiased hover:subpixel-antialiased md:max-w-lg px-2 mb-6 sm:mb-16 text-base text-gray-50">
               {data.landing[0].description}
             </p>
 
-            <div className="mb-8 space-y-3 text-base">
-              <p className="animate__animated animate__slideInLeft antialiased hover:subpixel-antialiased flex items-center -mx-2 text-gray-800 dark:text-gray-200">
+            <div className="mb-8 space-y-2 sm:space-y-3 text-sm sm:text-base">
+              <p className="animate__animated animate__slideInLeft antialiased hover:subpixel-antialiased flex items-center -mx-2 text-gray-100">
                 <CheckCircleIcon
                   className="lg:w-6 lg:h-6 w-5 h-5 mx-2 text-blue-500"
                   fill="none"
@@ -77,7 +60,7 @@ export function Landing() {
                 </span>
               </p>
 
-              <p className="animate__animated animate__slideInLeft antialiased hover:subpixel-antialiased flex items-center -mx-2 text-gray-800 dark:text-gray-200">
+              <p className="animate__animated animate__slideInLeft antialiased hover:subpixel-antialiased flex items-center -mx-2 text-gray-100">
                 <CheckCircleIcon
                   className="lg:w-6 lg:h-6 w-5 h-5 mx-2 text-blue-500"
                   fill="none"
@@ -89,7 +72,7 @@ export function Landing() {
                 </span>
               </p>
 
-              <p className="animate__animated animate__slideInLeft antialiased hover:subpixel-antialiased flex items-center -mx-2 text-gray-800 dark:text-gray-200">
+              <p className="animate__animated animate__slideInLeft antialiased hover:subpixel-antialiased flex items-center -mx-2 text-gray-100">
                 <CheckCircleIcon
                   className="lg:w-6 lg:h-6 w-5 h-5 mx-2 text-blue-500"
                   fill="none"
@@ -102,7 +85,7 @@ export function Landing() {
               </p>
             </div>
 
-            <div className="flex items-center w-fit mb-4 sm:mb-8 mt-8 lg:mt-10 xl:mt-12 animate__animated animate__fadeIn">
+            <div className="flex items-center w-fit mb-4 sm:mb-8 mt-10 lg:mt-10 xl:mt-12 animate__animated animate__fadeIn">
               <Button title={"Đăng ký ngay"} path={"/signup"} />
             </div>
           </div>

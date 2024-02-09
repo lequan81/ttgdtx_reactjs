@@ -1,3 +1,9 @@
+import {
+  AtSymbolIcon,
+  PhoneIcon,
+  MapPinIcon,
+} from "@heroicons/react/24/outline";
+
 function ContactItem({
   show,
   isIcon,
@@ -22,7 +28,30 @@ function ContactItem({
           target="_blank"
           rel="noreferrer"
         >
-          {icon}
+          {icon === "phone" && (
+            <PhoneIcon
+              fill="none"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="sm:w-6 sm:h-6 w-5 h-5"
+            />
+          )}
+          {icon === "address" && (
+            <MapPinIcon
+              fill="none"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="sm:w-6 sm:h-6 w-5 h-5"
+            />
+          )}
+          {icon === "email" && (
+            <AtSymbolIcon
+              fill="none"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="sm:w-6 sm:h-6 w-5 h-5"
+            />
+          )}
         </a>
       )}
       <h2 className="mt-4 text-base xl:text-lg font-medium text-gray-800 dark:text-white">

@@ -9,7 +9,7 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location]);
 
-  let routes = [
+  let routes = useRoutes([
     {
       path: "/",
       children: [
@@ -146,7 +146,7 @@ function App() {
       ),
     },
     { path: "*", element: <Pages.ErrorPage /> },
-  ];
+  ]);
 
   return (
     <>
@@ -154,7 +154,7 @@ function App() {
         <Pages.Header />
         <Toaster />
         <div className="flex flex-col w-full h-full flex-grow flex-1 bg-gray-100 dark:bg-gray-900">
-          {useRoutes(routes)}
+          {routes}
         </div>
         <Pages.Footer />
       </div>
