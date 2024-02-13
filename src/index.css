@@ -18,6 +18,18 @@
     display: none;
   }
 
+  @keyframes loader {
+    0%,
+    100% {
+      transform: scale(0);
+    }
+
+    40%,
+    80% {
+      transform: scale(1);
+    }
+  }
+
   /* @font-face {
     font-family: "Be Vietnam Pro";
     src:

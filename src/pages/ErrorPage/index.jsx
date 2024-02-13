@@ -1,8 +1,8 @@
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
-import Button from "../../components/Button";
+import Button from "@components/Button";
 
-export function ErrorPage() {
+export default function ErrorPage() {
   const navigate = useNavigate();
   return (
     <>

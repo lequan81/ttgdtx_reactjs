@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getPostByCategory } from "../../services/getPostByCategory";
+import { getPostByCategory } from "@services/getPostByCategory";
 import { Post } from "./Post";
 
 export function PostList({ category, isNested = false }) {

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { getDocument } from "../../services/getDocument";
 import DocumentItem from "./DocumentItem";
+import { getDocument } from "@services/getDocument";
 
-export function Document() {
+export default function Document() {
   const [documents, setDocuments] = useState([]);
   const [loading, setIsLoading] = useState(true);
 

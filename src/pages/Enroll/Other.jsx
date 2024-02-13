@@ -1,6 +1,6 @@
-import { PostList } from "../../components/Post";
+import { PostList } from "@components/Post/PostList";
 
-export function Other() {
+export default function Other() {
   return (
     <section className="flex flex-col h-full overflow-y-auto mt-12 mb-10 w-full">
       <div className="flex items-center justify-center flex-col">

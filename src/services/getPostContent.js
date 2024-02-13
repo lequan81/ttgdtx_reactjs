@@ -15,7 +15,12 @@ export const getPostContent = async (slug) => {
         hashtag
         coverImage {
           id
-          url(transformation: {document: {output: {format: webp}}})
+          url(
+            transformation: {
+              document: { output: { format: webp } }
+              image: { resize: { width: 400, height: 300 } }
+            }
+          )
         }
         content {
           json
@@ -23,7 +28,12 @@ export const getPostContent = async (slug) => {
           references {
             ... on Asset {
               id
-              url(transformation: {document: {output: {format: webp}}})
+              url(
+                transformation: {
+                  document: { output: { format: webp } }
+                  image: { resize: { width: 400, height: 300 } }
+                }
+              )
               mimeType
               altText
             }

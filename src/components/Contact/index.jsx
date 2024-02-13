@@ -1,6 +1,6 @@
 import ContactItem from "./ContactItem";
 import data from "../../data/data.json";
-import useIntersectionObserver from "../../hook/useIntersectionObserver";
+import useIntersectionObserver from "@hook/useIntersectionObserver";
 
 export default function Contact() {
   const [ref, show] = useIntersectionObserver();
@@ -8,9 +8,7 @@ export default function Contact() {
   return (
     <div
       ref={ref}
-      className={`flex flex-col w-full ${
-        show ? "animate__animated animate__slideInUp mt-6 lg:mt-2" : "mt-72"
-      }`}
+      className={`flex flex-col w-full ${show ? "mt-6 lg:mt-2" : "mt-72"}`}
     >
       <div className="container px-6 py-0 lg:py-6 mx-auto">
         <div className="text-center">

@@ -13,7 +13,12 @@ export const getRecentPost = async () => {
         slug
         coverImage {
           id
-          url(transformation: { document: { output: { format: webp } } })
+          url(
+            transformation: {
+              document: { output: { format: webp } }
+              image: { resize: { width: 400, height: 300 } }
+            }
+          )
         }
         category {
           name

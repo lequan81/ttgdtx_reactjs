@@ -1,4 +1,4 @@
-export function Statement() {
+export default function Statement() {
   return (
     <section className="flex flex-col h-full overflow-y-auto mt-12 mb-10 w-full">
       <div className="flex items-center justify-center flex-col">

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
-import useDarkMode from "../../hook/useDarkMode";
+import useDarkMode from "@hook/useDarkMode";
 
 function DarkModeBtn() {
   const [colorTheme, setTheme] = useDarkMode();

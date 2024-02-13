@@ -1,6 +1,6 @@
 import TeamItem from "./TeamItem";
-import data from "../../../data/data.json";
-import useIntersectionObserver from "../../../hook/useIntersectionObserver";
+import useIntersectionObserver from "@hook/useIntersectionObserver";
+import data from "@data/data.json";
 function Team() {
   const teams = data.teams[0];
   const [ref, show] = useIntersectionObserver();
@@ -8,9 +8,7 @@ function Team() {
   return (
     <div
       ref={ref}
-      className={`flex flex-col w-full ${
-        show ? "animate__animated animate__slideInUp mt-6 lg:mt-2" : "mt-72"
-      }`}
+      className={`flex flex-col w-full ${show ? "mt-6 lg:mt-2" : "mt-72"}`}
     >
       <div className="container px-6 md:py-8 py-6 mx-auto">
         <div className="text-center">
@@ -23,7 +21,9 @@ function Team() {
           </h1>
 
           <p
-            className={`antialiased hover:subpixel-antialiased mt-3 text-gray-700 dark:text-gray-400 text-sm lg:text-base {show ? "animate__animated animate__fadeIn" : ""}`}
+            className={`antialiased hover:subpixel-antialiased mt-3 text-gray-700 dark:text-gray-400 text-sm lg:text-base ${
+              show ? "animate__animated animate__fadeIn" : ""
+            }`}
           >
             {teams.subTitle ||
               "Giảng viên giàu kinh nghiệm, có trình độ chuyên môn cao, trải qua kì tuyển chọn đặc biệt"}
@@ -39,13 +39,13 @@ function Team() {
             onPosition={team.onPosition || "Giáo viên"}
             avatar={
               data.images.teamImages[index]?.url ||
-              `https://api.dicebear.com/7.x/initials/svg?fontSize=40&randomizeIds=true&seed=${
+              `https://api.dicebear.com/7.x/initials/svg?fontSize=40&size=64&randomizeIds=true&seed=${
                 team.name || "Anomynous"
               }`
             }
             fallbackAvatar={
               data.images.teamImages[index]?.fallbackUrl ||
-              `https://api.dicebear.com/7.x/initials/svg?fontSize=40&randomizeIds=true&seed=${
+              `https://api.dicebear.com/7.x/initials/svg?fontSize=40&size=64&randomizeIds=true&seed=${
                 team.name || "Anomynous"
               }`
             }

@@ -1,7 +1,8 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import NavbarItem from "./NavbarItem";
 import DropDownMenu from "./DropDownMenu";
-import data from "../../data/data.json";
+import data from "@data/data.json";
+
 export default function Navbar() {
   return (
     <>

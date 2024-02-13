@@ -7,6 +7,8 @@ function Heading({ heading }) {
       >
         <img
           src="/icon.ico"
+          height={32}
+          width={32}
           alt="logo"
           className="block md:inline bg-center bg-no-repeat object-cover h-8 md:h-6 xl:h-8"
         />

@@ -1,13 +1,13 @@
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
-import { getPostContent } from "../../services/getPostContent";
+import { getPostContent } from "@services/getPostContent";
+import Button from "@components/Button";
 import HashtagItem from "./HashtagItem";
-import Button from "../Button";
 
 const Blog = () => {
-  useLayoutEffect(() => {
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
   const navigate = useNavigate();
@@ -25,14 +25,14 @@ const Blog = () => {
   });
 
   const [results, setResults] = useState([]);
-  useLayoutEffect(() => {
+  useEffect(() => {
     (async () => {
       const data = await getPostContent(slug);
       setResults(data);
     })();
   }, [slug]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     results.map((data) => {
       setBlogDatas({
         id: data?.id,
@@ -63,7 +63,7 @@ const Blog = () => {
             <div className="sm:space-x-24 space-x-0 flex flex-col w-full">
               <div className="flex flex-col w-full grow gap-y-3">
                 <div className="flex flex-row items-center justify-between w-full">
-                  <p className="antialiased hover:subpixel-antialiased dark:bg-blue-500 dark:text-white text-blue-600 bg-blue-50 rounded-sm w-fit flex items-center justify-center text-left tracking-wide text-sm px-1.5 py-0.5">
+                  <p className="antialiased hover:subpixel-antialiased dark:bg-blue-600 dark:text-white text-blue-600 bg-blue-50 rounded-sm w-fit flex items-center justify-center text-left tracking-wide text-sm px-1.5 py-0.5">
                     {blogDatas.category.name}
                   </p>
                   <p className="antialiased hover:subpixel-antialiased tabular-nums text-xs text-gray-700 dark:text-gray-400">

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { Post } from "../../../components/Post";
-import { getRecentPost } from "../../../services/getRecentPost";
-import useIntersectionObserver from "../../../hook/useIntersectionObserver";
+import { Post } from "@components/Post/Post";
+import { getRecentPost } from "@services/getRecentPost";
+import useIntersectionObserver from "@hook/useIntersectionObserver";
 
 function Recently() {
   const [results, setResults] = useState([]);
@@ -17,9 +17,7 @@ function Recently() {
   return (
     <div
       ref={ref}
-      className={`flex flex-col w-full ${
-        show ? "animate__animated animate__slideInUp mt-6 lg:mt-2" : "mt-72"
-      }`}
+      className={`flex flex-col w-full ${show ? "mt-6 lg:mt-2" : "mt-72"}`}
     >
       <div className="container px-6 sm:py-8 lg:py-4 py-0 mx-auto">
         <div className="text-center">

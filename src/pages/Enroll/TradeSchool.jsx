@@ -1,5 +1,5 @@
-import { PostList } from "../../components/Post";
-export function TradeSchool() {
+import { PostList } from "@components/Post/PostList";
+export default function TradeSchool() {
   return (
     <section className="flex flex-col h-full overflow-y-auto mt-12 mb-10 w-full">
       <div className="flex items-center justify-center flex-col">

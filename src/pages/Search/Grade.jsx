@@ -1,12 +1,12 @@
 import { useState } from "react";
-import Toast from "../../components/Toast";
-import Button from "../../components/Button";
-import Input from "../../components/Input";
-import Table from "../../components/Table";
-import { getStudentGrade } from "../../services/getStudentGrade";
-import { validateGrade } from "../../services/validate";
+import Toast from "@components/Toast";
+import Button from "@components/Button";
+import Input from "@components/Input";
+import Table from "@components/Table";
+import { getStudentGrade } from "@services/getStudentGrade";
+import { validateGrade } from "@services/validate";
 
-export function Grade() {
+export default function Grade() {
   const [error, setError] = useState({
     classNameErr: { isValid: true, message: "" },
     studentIdErr: { isValid: true, message: "" },

@@ -12,7 +12,7 @@ function TeamItem({
   address,
 }) {
   return (
-    <div className="hs-tooltip inline-block [--trigger:hover] [--placement:bottom] [--prevent-popper:true] cursor-pointer">
+    <div className="hs-tooltip inline-block [--trigger:hover] cursor-pointer">
       <div className="hs-tooltip-toggle flex min-w-max">
         <div
           className={`flex ${show ? "animate__animated animate__zoomIn" : ""}`}

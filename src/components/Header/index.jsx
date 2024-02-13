@@ -1,7 +1,7 @@
-import data from "../../data/data.json";
-import Navbar from "../Navbar";
 import Heading from "./Heading";
 import DarkModeBtn from "./DarkModeBtn";
+import Navbar from "@components/Navbar";
+import data from "@data/data.json";
 
 export default function Header() {
   return (

@@ -1,7 +1,7 @@
 import { XCircleIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
+import Button from "@components/Button";
 import TableItem from "./TableItem";
-import Button from "../Button";
 
 export default function Table({ data }) {
   const navigate = useNavigate();

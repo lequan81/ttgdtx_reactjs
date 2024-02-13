@@ -1,6 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 function NavbarItem({ title, path, isSubmenu, isCollapsed = false }) {
+  const location = useLocation();
+
   return (
     <NavLink
       to={path}
@@ -19,7 +21,9 @@ function NavbarItem({ title, path, isSubmenu, isCollapsed = false }) {
                       path === "/signup"
                         ? "border-none px-2 py-1.5 bg-blue-600 text-white"
                         : `text-gray-900 dark:text-white ${
-                            isActive
+                            isActive ||
+                            (location.pathname.split("/")[1] === "recently" &&
+                              path === "/")
                               ? "border-b-[3px] border-blue-500"
                               : "border-none"
                           }`
@@ -40,7 +44,9 @@ function NavbarItem({ title, path, isSubmenu, isCollapsed = false }) {
                               : "group relative transform transition-all duration-300 group-hover:text-gray-800 dark:group-hover:text-white"
                           }`
                         : `sm:relative w-fit sm:block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-500 after:w-full after:transition after:duration-300 after:origin-left ${
-                            isActive
+                            isActive ||
+                            (location.pathname.split("/")[1] === "recently" &&
+                              path === "/")
                               ? "text-blue-600 dark:text-gray-200 after:scale-x-100"
                               : "dark:hover:text-gray-200 hover:text-blue-600 after:scale-x-0 after:hover:scale-x-100"
                           }`

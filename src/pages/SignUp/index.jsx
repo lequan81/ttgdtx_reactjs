@@ -3,14 +3,14 @@ import {
   CheckCircleIcon,
   ExclamationCircleIcon,
 } from "@heroicons/react/24/outline";
-import Button from "../../components/Button";
-import Input from "../../components/Input";
-import Toast from "../../components/Toast";
-import { validateForm } from "../../services/validate";
-import { postSignUp } from "../../services/postSignUp";
-import data from "../../data/data.json";
+import Button from "@components/Button";
+import Input from "@components/Input";
+import Toast from "@components/Toast";
+import { validateForm } from "@services/validate";
+import { postSignUp } from "@services/postSignUp";
+import data from "@data/data.json";
 
-export function SignUp() {
+export default function SignUp() {
   const [error, setError] = useState({
     fullnameErr: { isValid: true, message: "" },
     emailErr: { isValid: true, message: "" },

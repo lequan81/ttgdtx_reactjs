@@ -1,6 +1,6 @@
 import FAQItem from "./FAQItem";
-import data from "../../data/data.json";
-export function FAQ() {
+import data from "@data/data.json";
+export default function FAQ() {
   return (
     <div className="w-full xl:pt-12 pt-10 mb-6 md:mb-12 px-4 sm:px-6 mx-auto dark:bg-gray-900 bg-gray-100">
       <div className="mx-auto mb-16">

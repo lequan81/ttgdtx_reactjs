@@ -1,7 +1,7 @@
 import RefItem from "./RefItem";
-import data from "../../data/data.json";
+import data from "@data/data.json";
 
-export function Ref() {
+export default function Ref() {
   return (
     <section className="flex flex-col h-full overflow-y-auto mt-12 mb-10 w-full">
       <div className="flex items-center justify-center flex-col">
