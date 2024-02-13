@@ -131,11 +131,7 @@ const Blog = () => {
           <Button
             title={"Quay lại"}
             type={"button"}
-            onClickHandle={() =>
-              location.pathname.includes("/recently")
-                ? navigate("/")
-                : navigate(-1)
-            }
+            onClickHandle={() => navigate(-1)}
             isIcon={true}
             isLoading={false}
             icon={

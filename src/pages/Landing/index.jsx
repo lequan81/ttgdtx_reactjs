@@ -26,6 +26,10 @@ export default function Landing() {
     return () => clearTimeout();
   }, [nextSlide, slideDuration]);
 
+  useEffect(() => {
+    window.HSTooltip.autoInit();
+  }, []);
+
   return (
     <section className="mt-10 xl:mt-12 w-full bg-gray-100 dark:bg-gray-900 shadow-lg transition-shadow shadow-gray-400 dark:shadow-none">
       <div

@@ -10,16 +10,16 @@ export default function Navbar() {
         <button
           type="button"
           className="hs-collapse-toggle w-9 h-9 flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white active:text-blue-500 dark:focus:outline-none"
-          data-hs-collapse="#navbar-collapse-with-animation"
-          aria-controls="navbar-collapse-with-animation"
+          data-hs-collapse="#navbar-hover-event"
+          aria-controls="navbar-hover-event"
           aria-label="Toggle navigation"
         >
           <Bars3Icon
-            className="hs-collapse-open:hidden flex-shrink-0 w-5 h-5"
+            className="hs-collapse-open:hidden flex-shrink-0 size-4"
             strokeWidth={2}
           />
           <XMarkIcon
-            className="hs-collapse-open:block hidden flex-shrink-0 w-5 h-5"
+            className="hs-collapse-open:block hidden flex-shrink-0 size-4"
             strokeWidth={2}
           />
         </button>

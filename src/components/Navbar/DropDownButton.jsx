@@ -1,12 +1,9 @@
-import { useId } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { useLocation } from "react-router-dom";
 function DropDownButton({ title, path, isCollapsed }) {
   let location = useLocation();
-  const id = useId();
   return (
     <button
-      id={`hs-mega-menu-basic-dr-${id}`}
       type="button"
       className={`flex items-center font-medium ${
         isCollapsed
@@ -25,7 +22,7 @@ function DropDownButton({ title, path, isCollapsed }) {
       <div className="inline-flex w-fit items-center">
         <span>{title}</span>
         <ChevronDownIcon
-          className="ml-1.5 w-2.5 h-2.5"
+          className="ml-1.5 size-2.5"
           stroke="currentColor"
           strokeWidth={2}
           strokeLinecap="round"

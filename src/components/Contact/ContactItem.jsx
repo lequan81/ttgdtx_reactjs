@@ -33,7 +33,7 @@ function ContactItem({
               fill="none"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="sm:w-6 sm:h-6 w-5 h-5"
+              className="sm:size-6 size-5"
             />
           )}
           {icon === "address" && (
@@ -41,7 +41,7 @@ function ContactItem({
               fill="none"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="sm:w-6 sm:h-6 w-5 h-5"
+              className="sm:size-6 size-5"
             />
           )}
           {icon === "email" && (
@@ -49,7 +49,7 @@ function ContactItem({
               fill="none"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="sm:w-6 sm:h-6 w-5 h-5"
+              className="sm:size-6 size-5"
             />
           )}
         </a>

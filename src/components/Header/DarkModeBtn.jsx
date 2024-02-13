@@ -20,13 +20,13 @@ function DarkModeBtn() {
       >
         {isDarkMode ? (
           <SunIcon
-            className="w-5 h-5 text-gray-700 group-hover:text-blue-600 font-medium dark:text-gray-400 dark:group-hover:text-gray-200 group-hover:rotate-180 duration-300"
+            className="size-5 text-gray-700 group-hover:text-blue-600 font-medium dark:text-gray-400 dark:group-hover:text-gray-200 group-hover:rotate-180 duration-300"
             strokeWidth={2}
             aria-label="light mode"
           />
         ) : (
           <MoonIcon
-            className="w-5 h-5 text-gray-700 group-hover:text-blue-600 font-medium dark:text-gray-400 dark:group-hover:text-gray-200 group-hover:rotate-[360deg] duration-500"
+            className="size-5 text-gray-700 group-hover:text-blue-600 font-medium dark:text-gray-400 dark:group-hover:text-gray-200 group-hover:rotate-[360deg] duration-500"
             strokeWidth={2}
             aria-label="dark mode"
           />

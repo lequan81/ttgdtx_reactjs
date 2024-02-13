@@ -12,14 +12,14 @@ function TeamItem({
   address,
 }) {
   return (
-    <div className="hs-tooltip inline-block [--trigger:hover] cursor-pointer">
+    <div className="cursor-default  hs-tooltip inline-block [--trigger:hover]">
       <div className="hs-tooltip-toggle flex min-w-max">
         <div
           className={`flex ${show ? "animate__animated animate__zoomIn" : ""}`}
         >
           <img
             loading="lazy"
-            className="object-cover sm:w-20 sm:h-20 w-16 h-16 mr-4 rounded-full shadow-md transition-shadow shadow-gray-400 dark:shadow-none"
+            className="object-cover sm:size-20 size-16 mr-4 rounded-full shadow-md transition-shadow shadow-gray-400 dark:shadow-none"
             src={avatar || fallbackAvatar}
             alt={name}
           />

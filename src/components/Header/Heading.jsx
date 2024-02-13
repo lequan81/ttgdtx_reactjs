@@ -6,7 +6,7 @@ function Heading({ heading }) {
         className="text-xl font-semibold dark:text-white text-gray-900 cursor-default inline-flex space-x-2 flex-row items-center w-full"
       >
         <img
-          src="/icon.ico"
+          src="/heading_icon.ico"
           height={32}
           width={32}
           alt="logo"
