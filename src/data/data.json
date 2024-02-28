@@ -21,19 +21,16 @@
       "path": "/enroll",
       "children": [
         {
-          "id": 19,
           "title": "Lớp 10",
           "subtTitle": "Thông tin tuyển sinh lớp 10",
           "path": "/grade10"
         },
         {
-          "id": 21,
           "title": "Cao đẳng Trung cấp",
           "subtTitle": "Thông tin tuyển sinh Cao đẳng Trung cấp",
           "path": "/tradeschool"
         },
         {
-          "id": 18,
           "title": "Các chương trình khác",
           "subtTitle": "Các chương trình khác",
           "path": "/other"
@@ -46,9 +43,8 @@
       "isSubmenu": true,
       "path": "/search",
       "children": [
-        { "id": 16, "title": "Kết quả học tập", "path": "/grade" },
+        { "title": "Kết quả học tập", "path": "/grade" },
         {
-          "id": 17,
           "title": "Hoạt động ngoại khóa",
           "path": "/extra-activities"
         }
@@ -134,36 +130,31 @@
           "name": "Nguyễn Văn A",
           "onPosition": "Giám đốc",
           "phone": "",
-          "email": "",
-          "address": ""
+          "email": ""
         },
         {
           "name": "Võ Thành Sự",
           "onPosition": "Phó Giám đốc",
           "phone": "",
-          "email": "",
-          "address": ""
+          "email": ""
         },
         {
           "name": "Nguyễn Thị Thanh Tâm",
           "onPosition": "Chủ tịch Công đoàn",
           "phone": "",
-          "email": "",
-          "address": ""
+          "email": ""
         },
         {
           "name": "Ngô Thị Thu Huyền",
           "onPosition": "Phòng Đào tạo nghề",
           "phone": "0975940054",
-          "email": "",
-          "address": ""
+          "email": ""
         },
         {
           "name": "Phạm Thị Hòa",
           "onPosition": "Phòng Hành chính tổng hợp",
           "phone": "0916605479",
-          "email": "",
-          "address": ""
+          "email": ""
         }
       ]
     }
@@ -173,7 +164,6 @@
       "title": "Bạn đang thắc mắc rằng...",
       "children": [
         {
-          "id": 1,
           "isLink": false,
           "ques": "Khi nào tôi có thể hủy khóa học?",
           "ans": "Bạn có thể hủy khóa học bất cứ lúc nào bạn thích. Tuy nhiên chúng tôi sẽ rất vui nếu bạn có thể cho chúng tôi xin một số nhận xét về khóa học",
@@ -181,7 +171,6 @@
           "href": ""
         },
         {
-          "id": 2,
           "isLink": false,
           "ques": "Làm sao để biết tôi đã đăng ký thành công?",
           "ans": "Khi bạn đã đăng ký thành công, hệ thống sẽ hiển thị thông báo đã đăng ký thành công trên màn hình",
@@ -189,7 +178,6 @@
           "href": ""
         },
         {
-          "id": 3,
           "isLink": false,
           "ques": "Khi nào tôi sẽ nhận được phản hồi?",
           "ans": "Sau khi bạn đăng ký thành công, trong vòng 1-5 ngày sẽ có nhân viên tư vấn liên hệ và tư vấn cho bạn",
@@ -197,7 +185,6 @@
           "href": ""
         },
         {
-          "id": 4,
           "isLink": true,
           "ques": "Làm sao để tra cứu kết quả học tập?",
           "ans": "Mỗi sinh viên sẽ được cấp một mã sinh viên duy nhất, bạn hãy dùng mã này để tra cứu",

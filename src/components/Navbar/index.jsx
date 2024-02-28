@@ -10,8 +10,8 @@ export default function Navbar() {
         <button
           type="button"
           className="hs-collapse-toggle w-9 h-9 flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white active:text-blue-500 dark:focus:outline-none"
-          data-hs-collapse="#navbar-hover-event"
-          aria-controls="navbar-hover-event"
+          data-hs-collapse="#navbar-collapse-with-animation"
+          aria-controls="navbar-collapse-with-animation"
           aria-label="Toggle navigation"
         >
           <Bars3Icon

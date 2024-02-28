@@ -19,7 +19,7 @@ function DropDownMenu({ data, isCollapsed = false }) {
         {data.children.map((item) => {
           return (
             <NavbarItem
-              key={item.id}
+              key={item.title}
               title={item.title}
               path={`${data.path}${item.path}`}
               isSubmenu={true}

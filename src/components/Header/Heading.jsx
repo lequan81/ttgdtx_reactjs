@@ -1,4 +1,6 @@
-function Heading({ heading }) {
+import data from "@data/data.json";
+
+function Heading() {
   return (
     <div className="flex items-center lg:w-full md:max-w-fit w-full justify-start h-full px-2 md:px-0">
       <a
@@ -13,7 +15,7 @@ function Heading({ heading }) {
           className="block md:inline bg-center bg-no-repeat object-cover h-8 md:h-6 xl:h-8"
         />
         <span className="hidden lg:block sm:text-xs md:text-sm xl:text-lg">
-          {heading}
+          {data.landing[0].heading}
         </span>
       </a>
     </div>

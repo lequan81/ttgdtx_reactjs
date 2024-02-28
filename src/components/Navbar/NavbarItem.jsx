@@ -40,7 +40,7 @@ function NavbarItem({ title, path, isSubmenu, isCollapsed = false }) {
                       path === "/signup"
                         ? `px-2 py-1 ${
                             isActive
-                              ? "bg-sky-600 text-white border-blue-500"
+                              ? "bg-blue-600 text-white border-blue-500"
                               : "group relative transform transition-all duration-300 group-hover:text-gray-800 dark:group-hover:text-white"
                           }`
                         : `sm:relative w-fit sm:block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-500 after:w-full after:transition after:duration-300 after:origin-left ${
@@ -57,11 +57,11 @@ function NavbarItem({ title, path, isSubmenu, isCollapsed = false }) {
     >
       {path === "/signup" && isCollapsed === false ? (
         <>
-          <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-sky-600 group-hover:w-full"></span>
-          <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-sky-600 group-hover:w-full"></span>
-          <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-sky-600 group-hover:h-full"></span>
-          <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-sky-600 group-hover:h-full"></span>
-          <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-sky-600 opacity-0 group-hover:opacity-100"></span>
+          <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-blue-600 group-hover:w-full"></span>
+          <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-blue-600 group-hover:w-full"></span>
+          <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-blue-600 group-hover:h-full"></span>
+          <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-blue-600 group-hover:h-full"></span>
+          <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-blue-600 opacity-0 group-hover:opacity-100"></span>
           <span className="relative group-hover:delay-300 duration-300 group-hover:text-white">
             {title}
           </span>
