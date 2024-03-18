@@ -4,7 +4,7 @@ const Footer = memo(() => {
   return (
     <footer className="px-2 sm:px-4 flex flex-row justify-between py-1 mt-auto mx-auto w-full text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-700 sm:dark:bg-gray-800 bottom-0 fixed z-10 ">
       <div className="flex items-center flex-col sm:flex-row w-full">
-        <p className="antialiased hover:subpixel-antialiased sm:w-1/2 w-0 flex items-center justify-start text-sm text-gray-700 dark:text-gray-300">
+        <p className="antialiased hover:subpixel-antialiased sm:w-1/2 w-0 flex items-center justify-start text-sm text-gray-900 dark:text-gray-300">
           <span className="hidden sm:block text-xs xl:text-sm min-w-max">
             © 2023 TTGDNN-GDTX huyện Vĩnh Cửu
           </span>
@@ -17,7 +17,7 @@ const Footer = memo(() => {
                 `text-xs xl:text-sm transition-colors sm:whitespace-normal duration-300 ${
                   isActive
                     ? "text-blue-500"
-                    : "dark:text-white sm:text-gray-700 sm:dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
+                    : "dark:text-white sm:text-gray-900 sm:dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-500"
                 }`
               }
             >
@@ -31,7 +31,7 @@ const Footer = memo(() => {
                 `text-xs xl:text-sm transition-colors sm:whitespace-normal duration-300 ${
                   isActive
                     ? "text-blue-500"
-                    : "dark:text-white sm:text-gray-700 sm:dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
+                    : "dark:text-white sm:text-gray-900 sm:dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-500"
                 }`
               }
             >
@@ -45,7 +45,7 @@ const Footer = memo(() => {
                 `text-xs xl:text-sm transition-colors sm:whitespace-normal duration-300 ${
                   isActive
                     ? "text-blue-500"
-                    : "dark:text-white sm:text-gray-700 sm:dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500"
+                    : "dark:text-white sm:text-gray-900 sm:dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-500"
                 }`
               }
             >
@@ -54,11 +54,11 @@ const Footer = memo(() => {
           </li>
         </ul>
         <div className="flex flex-grow md:flex-grow-0 sm:w-fit w-full flex-row items-center sm:justify-end sm:mb-0 mb-2">
-          <p className="antialiased hover:subpixel-antialiased sm:hidden flex items-center w-full justify-start font-medium text-xs text-gray-700 dark:text-gray-300">
+          <p className="antialiased hover:subpixel-antialiased sm:hidden flex items-center w-full justify-start font-medium text-xs text-gray-900 dark:text-gray-300">
             <span>© 2023 TTGDNN-GDTX huyện Vĩnh Cửu</span>
           </p>
           <a
-            className="mx-2 text-gray-700 transition-colors duration-300 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+            className="mx-2 text-gray-900 transition-colors duration-300 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400"
             href="https://www.facebook.com/profile.php?id=100069135613333&mibextid=LQQJ4d"
             target="_blank"
             aria-label="Facebook"

@@ -57,7 +57,10 @@ function ContactItem({
       <h2 className="mt-4 text-base xl:text-lg font-medium text-gray-800 dark:text-white">
         {title}
       </h2>
-      <p className="antialiased hover:subpixel-antialiased mt-2 text-gray-700 dark:text-gray-400 text-sm xl:text-base">
+      <p
+        data-nosnippet
+        className="antialiased hover:subpixel-antialiased mt-2 text-gray-700 dark:text-gray-400 text-sm xl:text-base"
+      >
         {subTitle}
       </p>
       <a

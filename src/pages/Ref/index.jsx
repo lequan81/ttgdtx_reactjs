@@ -9,7 +9,7 @@ export default function Ref() {
           Thông tin thêm
         </h1>
       </div>
-      <div className="shadow-none rounded flex w-full h-full">
+      <div data-nosnippet className="shadow-none rounded flex w-full h-full">
         <div className="px-6 py-2.5 mx-auto w-full">
           <div className="grid gap-6 grid-cols-1 mb-16 sm:mb-0 sm:grid-cols-4 md:grid-cols-3 xl:grid-cols-4 sm:max-w-full">
             {data.ref.length > 0 ? (

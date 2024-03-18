@@ -50,7 +50,7 @@ const Blog = () => {
   }, [results]);
 
   return (
-    <div className="w-full sm:px-20 px-0 sm:mt-16 mt-12 mx-auto">
+    <div className="w-full max-w-4xl px-0 sm:mt-16 mt-12 mx-auto">
       <article
         className={`xl:space-y-8 space-y-4 text-gray-900 dark:text-gray-50 sm:p-6 p-4 min-h-[80vh] shadow-md shadow-gray-300 dark:shadow-none rounded-sm ${
           blogDatas.isDone
@@ -83,7 +83,7 @@ const Blog = () => {
                 </div>
               </div>
             </div>
-            <div className="dark:text-gray-100 whitespace-pre-line mx-1 sm:mx-2 md:mx-4 lg:mx-6 xl:mx-8">
+            <div className="dark:text-gray-100 whitespace-pre-line">
               {Object.keys(blogDatas.content).length !== 0 && (
                 <RichText
                   content={blogDatas.content}
@@ -108,13 +108,13 @@ const Blog = () => {
                       <li className="pl-1.5">{children}</li>
                     ),
                     img: ({ src, altText }) => (
-                      <figure className="mx-auto my-2 sm:max-w-2xl w-full bg-white/30 dark:bg-gray-800/70">
+                      <figure className="mx-auto my-2 max-w-2xl">
                         <img
-                          className="object-cover bg-center aspect-video rounded bg-no-repeat sm:max-w-2xl w-full mx-auto my-2 bg-transparent"
+                          className="object-cover bg-center aspect-video rounded bg-no-repeat w-full mx-auto"
                           src={src}
                           alt={altText || "blog image"}
                         />
-                        <figcaption className="bg-transparent px-5 py-1.5 text-center text-gray-900 dark:text-gray-200 text-sm italic font-medium">
+                        <figcaption className="px-5 py-1.5 text-center text-gray-700 dark:text-gray-300 text-xs italic font-medium">
                           {altText}
                         </figcaption>
                       </figure>

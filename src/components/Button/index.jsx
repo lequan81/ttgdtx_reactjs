@@ -11,15 +11,17 @@ const Button = ({
 }) => {
   return type === "default" ? (
     <a
+      data-nosnippet
       href={path}
       target={target}
-      className="inline-flex min-h-full h-9 cursor-pointer flex-shrink-0 select-none flex-wrap items-center justify-center rounded px-3.5 text-center text-sm gap-2 font-medium bg-blue-600 hover:bg-blue-500 dark:bg-blue-600 dark:hover:bg-blue-500 transition-colors duration-300 text-white"
+      className="antialiased hover:subpixel-antialiased inline-flex min-h-full h-9 cursor-pointer flex-shrink-0 select-none flex-wrap items-center justify-center rounded px-3.5 text-center text-sm gap-2 font-medium bg-blue-600 hover:bg-blue-500 dark:bg-blue-600 dark:hover:bg-blue-500 transition-colors duration-300 text-white"
       rel="noreferrer"
     >
       {title}
     </a>
   ) : (
     <button
+      data-nosnippet
       type={type}
       formNoValidate={true}
       onClick={onClickHandle}
@@ -55,7 +57,9 @@ const Button = ({
       ) : (
         icon
       )}
-      <span className={`text-sm ${isBold ? "font-semibold" : ""}`}>
+      <span
+        className={`text-sm antialiased hover:subpixel-antialiased ${isBold ? "font-semibold" : ""}`}
+      >
         {isLoading === false ? title : ""}
       </span>
     </button>

@@ -7,7 +7,7 @@ export default function Training() {
           Đào tạo ngắn hạn
         </h1>
       </div>
-      <div className="shadow-none rounded flex w-full h-full">
+      <div data-nosnippet className="shadow-none rounded flex w-full h-full">
         <div className="px-6 py-2.5 mx-auto w-full">
           <div className="grid sm:gap-6 md:grid-cols-3 xl:grid-cols-4 sm:max-w-full mb-24 sm:mb-4 grid-cols-1 gap-y-6">
             {/* Post List */}

@@ -8,11 +8,12 @@ function Heading() {
         className="text-xl font-semibold dark:text-white text-gray-900 cursor-default inline-flex space-x-2 flex-row items-center w-full"
       >
         <img
-          src="/heading_icon.ico"
+          data-nosnippet
+          src="/icon.ico"
           height={32}
           width={32}
           alt="logo"
-          className="block md:inline bg-center bg-no-repeat object-cover h-8 md:h-6 xl:h-8"
+          className="block md:inline bg-center bg-no-repeat object-cover h-8"
         />
         <span className="hidden lg:block sm:text-xs md:text-sm xl:text-lg">
           {data.landing[0].heading}
