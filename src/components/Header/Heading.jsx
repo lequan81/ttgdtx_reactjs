@@ -2,13 +2,15 @@ import data from "@data/data.json";
 
 function Heading() {
   return (
-    <div className="flex items-center lg:w-full md:max-w-fit w-full justify-start h-full px-2 md:px-0">
+    <div
+      data-nosnippet
+      className="flex items-center lg:w-full md:max-w-fit w-full justify-start h-full px-2 md:px-0"
+    >
       <a
         href="/"
         className="text-xl font-semibold dark:text-white text-gray-900 cursor-default inline-flex space-x-2 flex-row items-center w-full"
       >
         <img
-          data-nosnippet
           src="/icon.ico"
           height={32}
           width={32}

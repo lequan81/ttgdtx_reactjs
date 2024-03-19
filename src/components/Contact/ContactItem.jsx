@@ -57,12 +57,12 @@ function ContactItem({
       <h2 className="mt-4 text-base xl:text-lg font-medium text-gray-800 dark:text-white">
         {title}
       </h2>
-      <p
+      <span
         data-nosnippet
         className="antialiased hover:subpixel-antialiased mt-2 text-gray-700 dark:text-gray-400 text-sm xl:text-base"
       >
         {subTitle}
-      </p>
+      </span>
       <a
         className="mt-2 text-blue-700 dark:text-blue-400 w-full sm:w-10/12 text-base"
         href={href}

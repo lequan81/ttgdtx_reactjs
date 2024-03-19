@@ -9,11 +9,7 @@ export const postSignUp = async (data) => {
       },
       body: JSON.stringify({
         ...data,
-        createdAt: new Date().toLocaleDateString("vi-VN", {
-          day: "2-digit",
-          month: "2-digit",
-          year: "numeric",
-        }),
+        createdAt: new Date().toISOString(),
       }),
     });
 

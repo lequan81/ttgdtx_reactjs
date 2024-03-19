@@ -308,11 +308,10 @@ export default function SignUp() {
       </div>
       {isDone.show === true ? (
         <form
-          data-nosnippet
           onSubmit={handleSubmit}
           className="animate__animated animate__zoomIn animate__fast shadow-md transition-shadow shadow-gray-300 dark:shadow-none sm:rounded px-8 mx-auto mt-8 sm:mb-8 sm:py-8 py-4 mb-32 bg-white dark:bg-gray-800 border border-gray-200 dark:border-none flex flex-col w-full max-w-4xl"
         >
-          <div className="sm:flex mb-4">
+          <div data-nosnippet className="sm:flex mb-4">
             <div className="sm:w-5/12 px-3">
               <Input
                 isLoading={isDone.loading}
@@ -340,7 +339,7 @@ export default function SignUp() {
               />
             </div>
           </div>
-          <div className="sm:flex mb-4">
+          <div data-nosnippetclassName="sm:flex mb-4">
             <div className="sm:w-5/12 px-3">
               <Input
                 isLoading={isDone.loading}
@@ -381,7 +380,7 @@ export default function SignUp() {
               />
             </div>
           </div>
-          <div className="flex items-center px-3 mt-2">
+          <div data-nosnippetclassName="flex items-center px-3 mt-2">
             <Button
               type="submit"
               isLoading={isDone.loading}

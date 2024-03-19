@@ -23,20 +23,20 @@ export function Post({
         className="group-hover:scale-[102%] brightness-95 group-hover:brightness-100 object-cover aspect-video w-full xl:h-52 lg:h-40 md:h-36 h-52 opacity-95 bg-center bg-no-repeat bg-cover group-hover:opacity-100 transition-all transform duration-200"
         alt={title || "Title"}
       />
-      <div className="p-4 pb-2 md:pt-4 md:px-2.5 flex flex-col">
-        <p className="antialiased hover:subpixel-antialiased mb-2 h-auto max-h-12 sm:max-h-max lg:h-12 xl:h-14 text-base xl:text-lg font-bold leading-6 transition-colors duration-200 text-gray-900 dark:text-white line-clamp-2">
+      <div className="p-4 flex flex-col">
+        <p className="antialiased hover:subpixel-antialiased mb-2.5 h-12 text-lg font-semibold leading-6 transition-colors duration-200 text-gray-900 dark:text-white line-clamp-2">
           {title || "Title"}
         </p>
-        <p className="antialiased hover:subpixel-antialiased mb-2 sm:mb-4 max-h-max h-full text-gray-700 dark:text-gray-300 line-clamp-3 text-sm">
+        <p className="antialiased hover:subpixel-antialiased mb-2 sm:mb-4 h-[3.75rem] text-gray-700 dark:text-gray-300 line-clamp-3 text-sm">
           {description || "This is a description"}
         </p>
         <div className="flex flex-row w-full mt-1 text-xs font-semibold uppercase gap-x-12 justify-between lg:gap-x-6 lg:mb-2 h-4">
-          <p
+          <span
             data-nosnippet
             className="antialiased hover:subpixel-antialiased flex flex-grow justify-start transition-colors duration-200 text-blue-600 dark:text-blue-400 hover:text-blue-600 line-clamp-1"
           >
             {hashtag || "other"}
-          </p>
+          </span>
           <span
             data-nosnippet
             className="text-gray-700 dark:text-gray-400 justify-end text-xs tabular-nums"

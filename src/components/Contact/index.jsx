@@ -20,13 +20,14 @@ export default function Contact() {
             {data.contact[0].title}
           </h1>
 
-          <p
+          <span
+            data-nosnippet
             className={`antialiased hover:subpixel-antialiased mt-3 text-gray-700 dark:text-gray-400 text-sm lg:text-base ${
               show ? "animate__animated animate__fadeIn" : ""
             }`}
           >
             {data.contact[0].subTitle}
-          </p>
+          </span>
         </div>
 
         <div className="grid grid-cols-1 lg:gap-x-2 gap-y-8 lg:gap-y-0 lg:mt-10 mt-6 mb-24 sm:mb-8 space-y-4 lg:space-y-0 lg:grid-cols-3">
