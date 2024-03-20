@@ -48,7 +48,7 @@ export default function Landing() {
 
         <div className="relative flex flex-col h-full items-start w-full px-4 md:px-0 lg:px-8 cursor-default">
           <div className="h-full xl:mt-16 mt-12 md:mt-14 lg:max-w-2xl w-full sm:mx-4">
-            <h2 className="h-max py-2 animate__animated animate__slideInLeft animate__faster mb-10 sm:mb-14 text-2xl sm:text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-500 to-blue-600 inline-block text-transparent bg-clip-text sm:leading-none w-full md:whitespace-pre-line xl:whitespace-pre-line">
+            <h2 className="h-max py-2 animate__animated animate__slideInLeft animate__faster mb-8 sm:mb-14 text-2xl sm:text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-500 to-blue-600 inline-block text-transparent bg-clip-text sm:leading-none w-full md:whitespace-pre-line xl:whitespace-pre-line">
               {data.landing[0].title}
             </h2>
             <p className="animate__animated animate__slideInLeft antialiased hover:subpixel-antialiased md:max-w-md pr-2 mb-8 text-base text-gray-900 dark:text-gray-50">

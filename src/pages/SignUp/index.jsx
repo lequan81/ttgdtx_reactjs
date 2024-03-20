@@ -339,7 +339,7 @@ export default function SignUp() {
               />
             </div>
           </div>
-          <div data-nosnippetclassName="sm:flex mb-4">
+          <div data-nosnippet className="sm:flex mb-4">
             <div className="sm:w-5/12 px-3">
               <Input
                 isLoading={isDone.loading}
@@ -380,7 +380,7 @@ export default function SignUp() {
               />
             </div>
           </div>
-          <div data-nosnippetclassName="flex items-center px-3 mt-2">
+          <div data-nosnippet className="flex items-center px-3 mt-2">
             <Button
               type="submit"
               isLoading={isDone.loading}

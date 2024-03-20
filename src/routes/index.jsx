@@ -47,6 +47,7 @@ export default function Routes() {
       children: [
         {
           path: "grade10",
+          index: true,
           element: (
             <Suspense fallback={<Loader />}>
               <Grade10 />
@@ -84,6 +85,7 @@ export default function Routes() {
       children: [
         {
           path: "grade",
+          index: true,
           element: (
             <Suspense fallback={<Loader />}>
               <Grade />

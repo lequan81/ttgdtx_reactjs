@@ -15,7 +15,7 @@ export default function Toast(type, title) {
         }`}
       >
         <div
-          className={`flex min-w-fit max-w-sm pr-6 overflow-hidden rounded sm:rounded-md shadow-none dark:bg-gray-800 border cursor-default 
+          className={`flex min-w-fit max-w-sm sm:pr-3 md:pr-6 overflow-hidden rounded sm:rounded-md shadow-none dark:bg-gray-800 border cursor-default 
           ${type === "success" && "bg-emerald-50 border-emerald-500"}
           ${type === "info" && "bg-sky-50 border-sky-500"}
           ${type === "warning" && "bg-orange-50 border-orange-500"}
@@ -29,22 +29,22 @@ export default function Toast(type, title) {
           ${type === "error" && "dark:bg-red-500 bg-red-400"}`}
           >
             {type === "success" && (
-              <CheckCircleIcon className="w-6 h-6 text-white" strokeWidth={2} />
+              <CheckCircleIcon className="size-6 text-white" strokeWidth={2} />
             )}
             {type === "info" && (
               <InformationCircleIcon
-                className="w-6 h-6 text-white"
+                className="size-6 text-white"
                 strokeWidth={2}
               />
             )}
             {type === "warning" && (
               <ExclamationCircleIcon
-                className="w-6 h-6 text-white"
+                className="size-6 text-white"
                 strokeWidth={2}
               />
             )}
             {type === "error" && (
-              <XCircleIcon className="w-6 h-6 text-white" strokeWidth={2} />
+              <XCircleIcon className="size-6 text-white" strokeWidth={2} />
             )}
           </div>
 

@@ -52,7 +52,7 @@ const Blog = () => {
   return (
     <div className="w-full max-w-4xl px-0 sm:mt-16 mt-12 mx-auto">
       <article
-        className={`xl:space-y-8 space-y-4 text-gray-900 dark:text-gray-50 sm:p-6 p-4 min-h-[80vh] shadow-md shadow-gray-300 dark:shadow-none rounded-sm ${
+        className={`space-y-8 text-gray-900 dark:text-gray-50 sm:p-6 p-4 min-h-[80vh] shadow-md shadow-gray-300 dark:shadow-none rounded-sm ${
           blogDatas.isDone
             ? "dark:bg-gray-800/70 bg-white"
             : "dark:bg-gray-800 bg-white/80 animate-pulse"
@@ -77,7 +77,7 @@ const Blog = () => {
                   </p>
                 </div>
                 <div className="flex flex-row w-full">
-                  <h1 className="xl:text-2xl md:text-xl sm:text-lg font-bold">
+                  <h1 className="md:text-2xl xl:text-3xl text-xl font-bold xl:font-semibold">
                     {blogDatas.title}
                   </h1>
                 </div>
@@ -90,17 +90,17 @@ const Blog = () => {
                   references={blogDatas.references}
                   renderers={{
                     p: ({ children }) => (
-                      <p className="mb-4 antialiased hover:subpixel-antialiased text-gray-900 dark:text-white text-sm xl:text-base">
-                        <span className="">{children}</span>
+                      <p className="mb-4 antialiased hover:subpixel-antialiased text-gray-900 dark:text-white text-sm sm:text-base">
+                        <span>{children}</span>
                       </p>
                     ),
                     ul: ({ children }) => (
-                      <ul className="list-disc list-outside ml-4 mb-4 space-y-2 antialiased hover:subpixel-antialiased text-gray-900 dark:text-white text-sm xl:text-base">
+                      <ul className="list-disc list-outside ml-4 mb-4 space-y-2 antialiased hover:subpixel-antialiased text-gray-900 dark:text-white text-sm sm:text-base">
                         {children}
                       </ul>
                     ),
                     ol: ({ children }) => (
-                      <ol className="list-decimal list-outside ml-4 mb-4 space-y-2 antialiased hover:subpixel-antialiased text-gray-900 dark:text-white text-sm xl:text-base">
+                      <ol className="list-decimal list-outside ml-4 mb-4 space-y-2 antialiased hover:subpixel-antialiased text-gray-900 dark:text-white text-sm sm:text-base">
                         {children}
                       </ol>
                     ),
@@ -108,13 +108,13 @@ const Blog = () => {
                       <li className="pl-1.5">{children}</li>
                     ),
                     img: ({ src, altText }) => (
-                      <figure className="mx-auto my-2 max-w-2xl">
+                      <figure className="mx-auto my-4 w-full">
                         <img
-                          className="object-cover bg-center aspect-video rounded bg-no-repeat w-full mx-auto"
+                          className="object-cover bg-center max-h-[40rem] rounded-sm bg-no-repeat w-full mx-auto"
                           src={src}
                           alt={altText || "blog image"}
                         />
-                        <figcaption className="px-5 py-1.5 text-center text-gray-700 dark:text-gray-300 text-xs italic font-medium">
+                        <figcaption className="px-5 py-1.5 text-center text-gray-700 dark:text-gray-300 text-xs sm:text-sm italic">
                           {altText}
                         </figcaption>
                       </figure>
